@@ -115,7 +115,7 @@ export default function App() {
   justifyContent: "center",
   alignItems: "center",
 },
-    },
+    
     heroLogo: {
   width: "100%",
   maxWidth: "340px",
@@ -126,7 +126,7 @@ export default function App() {
   mixBlendMode: "normal",
   borderRadius: "8px",
 },
-    },
+   
     trustStrip: {
       borderBottom: "1px solid #e5e7eb",
       backgroundColor: "#ffffff",
