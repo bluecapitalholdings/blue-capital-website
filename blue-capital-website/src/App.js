@@ -12,99 +12,125 @@ export default function App() {
     nav: {
       borderBottom: "1px solid #e5e7eb",
       backgroundColor: "#ffffff",
-      boxShadow: "0 1px 4px rgba(0,0,0,0.05)",
+      boxShadow: "0 1px 8px rgba(0,0,0,0.04)",
+      position: "sticky",
+      top: 0,
+      zIndex: 10,
     },
     navInner: {
-      maxWidth: "1100px",
+      maxWidth: "1180px",
       margin: "0 auto",
-      padding: "14px 24px",
+      padding: "18px 28px",
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
-      gap: "20px",
+      gap: "24px",
       flexWrap: "wrap",
     },
-    brand: {
-      display: "flex",
-      alignItems: "center",
-      gap: "12px",
-    },
-    logo: {
-      height: "34px",
-      width: "auto",
-      objectFit: "contain",
-    },
     brandText: {
-      fontSize: "20px",
+      fontSize: "18px",
       fontWeight: 700,
       letterSpacing: "-0.02em",
+      color: "#102a56",
     },
     navLinks: {
       display: "flex",
-      gap: "20px",
-      fontSize: "14px",
+      gap: "28px",
+      fontSize: "15px",
       color: "#374151",
       flexWrap: "wrap",
+      alignItems: "center",
     },
     link: {
       textDecoration: "none",
-      color: "#374151",
+      color: "#334155",
       fontWeight: 500,
     },
     hero: {
-      background: "linear-gradient(135deg, #0f2d5c, #173d78)",
+      background: "linear-gradient(135deg, #0f2d5c 0%, #173f7a 55%, #123364 100%)",
       color: "#ffffff",
-      padding: "80px 24px",
+      padding: "96px 28px 88px",
     },
     heroInner: {
-      maxWidth: "1100px",
+      maxWidth: "1180px",
       margin: "0 auto",
+      display: "grid",
+      gridTemplateColumns: "1.2fr 0.8fr",
+      gap: "56px",
+      alignItems: "center",
     },
     heroTitle: {
-      fontSize: "48px",
-      lineHeight: 1.1,
-      fontWeight: 700,
-      maxWidth: "720px",
-      marginBottom: "20px",
+      fontSize: "64px",
+      lineHeight: 1.02,
+      fontWeight: 800,
+      maxWidth: "760px",
+      marginBottom: "26px",
+      letterSpacing: "-0.04em",
     },
     heroText: {
       fontSize: "20px",
-      lineHeight: 1.6,
-      maxWidth: "760px",
+      lineHeight: 1.7,
+      maxWidth: "720px",
       color: "#dbeafe",
-      marginBottom: "30px",
+      marginBottom: "34px",
     },
     buttonRow: {
       display: "flex",
-      gap: "14px",
+      gap: "16px",
       flexWrap: "wrap",
     },
     primaryBtn: {
       backgroundColor: "#ffffff",
-      color: "#0f2d5c",
+      color: "#102a56",
       textDecoration: "none",
-      padding: "14px 24px",
-      borderRadius: "10px",
+      padding: "15px 26px",
+      borderRadius: "12px",
       fontWeight: 700,
       display: "inline-block",
+      boxShadow: "0 8px 24px rgba(0,0,0,0.16)",
     },
     secondaryBtn: {
-      border: "1px solid rgba(255,255,255,0.45)",
+      border: "1px solid rgba(255,255,255,0.35)",
       color: "#ffffff",
       textDecoration: "none",
-      padding: "14px 24px",
-      borderRadius: "10px",
+      padding: "15px 26px",
+      borderRadius: "12px",
       fontWeight: 600,
       display: "inline-block",
+      backgroundColor: "rgba(255,255,255,0.04)",
+    },
+    heroLogoWrap: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+    },
+    heroLogoCard: {
+      width: "100%",
+      maxWidth: "410px",
+      backgroundColor: "rgba(255,255,255,0.08)",
+      border: "1px solid rgba(255,255,255,0.10)",
+      borderRadius: "24px",
+      padding: "34px",
+      boxShadow: "0 20px 60px rgba(0,0,0,0.18)",
+      backdropFilter: "blur(4px)",
+    },
+    heroLogo: {
+      width: "100%",
+      maxWidth: "300px",
+      display: "block",
+      margin: "0 auto",
+      opacity: 0.5,
+      filter: "brightness(1.25) contrast(1.05)",
+      mixBlendMode: "screen",
     },
     trustStrip: {
       borderBottom: "1px solid #e5e7eb",
       backgroundColor: "#ffffff",
     },
     trustInner: {
-      maxWidth: "1100px",
+      maxWidth: "1180px",
       margin: "0 auto",
-      padding: "22px 24px",
+      padding: "22px 28px",
       display: "grid",
       gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
       gap: "14px",
@@ -113,19 +139,20 @@ export default function App() {
       fontWeight: 600,
     },
     section: {
-      maxWidth: "1100px",
+      maxWidth: "1180px",
       margin: "0 auto",
-      padding: "70px 24px",
+      padding: "84px 28px",
     },
     sectionGray: {
       backgroundColor: "#f8fafc",
-      padding: "70px 0",
+      padding: "84px 0",
     },
     sectionTitle: {
-      fontSize: "36px",
-      fontWeight: 700,
+      fontSize: "40px",
+      fontWeight: 800,
       marginBottom: "24px",
       color: "#111827",
+      letterSpacing: "-0.03em",
     },
     twoCol: {
       display: "grid",
@@ -135,15 +162,16 @@ export default function App() {
     },
     paragraph: {
       fontSize: "17px",
-      lineHeight: 1.75,
+      lineHeight: 1.85,
       color: "#374151",
       marginBottom: "18px",
     },
     card: {
       backgroundColor: "#ffffff",
-      borderRadius: "18px",
-      boxShadow: "0 2px 10px rgba(0,0,0,0.06)",
-      padding: "28px",
+      borderRadius: "20px",
+      boxShadow: "0 10px 30px rgba(15, 23, 42, 0.06)",
+      padding: "30px",
+      border: "1px solid #eef2f7",
     },
     cardTitle: {
       fontSize: "22px",
@@ -152,7 +180,7 @@ export default function App() {
       color: "#111827",
     },
     list: {
-      paddingLeft: "18px",
+      paddingLeft: "20px",
       margin: 0,
       color: "#374151",
       lineHeight: 1.9,
@@ -165,65 +193,70 @@ export default function App() {
       marginBottom: "28px",
     },
     sellSection: {
-      backgroundColor: "#0f2d5c",
+      background: "linear-gradient(135deg, #0f2d5c 0%, #143769 100%)",
       color: "#ffffff",
-      padding: "70px 0",
+      padding: "84px 0",
     },
     sellText: {
       color: "#dbeafe",
       fontSize: "18px",
-      lineHeight: 1.75,
+      lineHeight: 1.8,
       maxWidth: "760px",
       marginBottom: "28px",
     },
     formWrap: {
-      maxWidth: "820px",
+      maxWidth: "860px",
       margin: "0 auto",
-      padding: "70px 24px",
+      padding: "84px 28px",
     },
     form: {
       display: "grid",
-      gap: "16px",
+      gap: "18px",
     },
     input: {
       width: "100%",
-      padding: "14px 16px",
-      borderRadius: "10px",
+      padding: "15px 16px",
+      borderRadius: "12px",
       border: "1px solid #d1d5db",
       fontSize: "16px",
       boxSizing: "border-box",
+      backgroundColor: "#ffffff",
     },
     textarea: {
       width: "100%",
-      padding: "14px 16px",
-      borderRadius: "10px",
+      padding: "15px 16px",
+      borderRadius: "12px",
       border: "1px solid #d1d5db",
       fontSize: "16px",
-      minHeight: "140px",
+      minHeight: "150px",
       boxSizing: "border-box",
       resize: "vertical",
+      backgroundColor: "#ffffff",
     },
     submit: {
-      backgroundColor: "#0f2d5c",
+      backgroundColor: "#102a56",
       color: "#ffffff",
       border: "none",
-      borderRadius: "10px",
+      borderRadius: "12px",
       padding: "16px 20px",
       fontSize: "16px",
       fontWeight: 700,
       cursor: "pointer",
+      boxShadow: "0 10px 24px rgba(16, 42, 86, 0.18)",
     },
     footer: {
       backgroundColor: "#f3f4f6",
       textAlign: "center",
-      padding: "36px 24px",
+      padding: "38px 24px",
       color: "#4b5563",
       fontSize: "14px",
       lineHeight: 1.8,
+      borderTop: "1px solid #e5e7eb",
     },
     footerBrand: {
       fontWeight: 700,
       color: "#111827",
+      fontSize: "15px",
     },
   };
 
@@ -231,10 +264,7 @@ export default function App() {
     <div style={styles.page}>
       <nav style={styles.nav}>
         <div style={styles.navInner}>
-          <div style={styles.brand}>
-            <img src="/logo.png" alt="Blue Capital Holdings" style={styles.logo} />
-            <div style={styles.brandText}>Blue Capital Holdings LLC</div>
-          </div>
+          <div style={styles.brandText}>Blue Capital Holdings LLC</div>
 
           <div style={styles.navLinks}>
             <a href="#home" style={styles.link}>Home</a>
@@ -247,52 +277,33 @@ export default function App() {
       </nav>
 
       <section id="home" style={styles.hero}>
-  <div
-    style={{
-      ...styles.heroInner,
-      display: "flex",
-      alignItems: "center",
-      justifyContent: "space-between",
-      gap: "40px",
-      flexWrap: "wrap",
-    }}
-  >
-    <div style={{ maxWidth: "600px" }}>
-      <h1 style={styles.heroTitle}>
-        Acquiring and Growing Profitable Small Businesses
-      </h1>
+        <div style={styles.heroInner}>
+          <div>
+            <h1 style={styles.heroTitle}>
+              Acquiring and Growing Profitable Small Businesses
+            </h1>
+            <p style={styles.heroText}>
+              Blue Capital Holdings LLC is a private investment firm focused on
+              acquiring and operating established small businesses with strong
+              fundamentals and long-term growth potential.
+            </p>
+            <div style={styles.buttonRow}>
+              <a href="#contact" style={styles.primaryBtn}>
+                Start a Confidential Conversation
+              </a>
+              <a href="#criteria" style={styles.secondaryBtn}>
+                View Acquisition Criteria
+              </a>
+            </div>
+          </div>
 
-      <p style={styles.heroText}>
-        Blue Capital Holdings LLC is a private investment firm focused on
-        acquiring and operating established small businesses with strong
-        fundamentals and long-term growth potential.
-      </p>
-
-      <div style={styles.buttonRow}>
-        <a href="#contact" style={styles.primaryBtn}>
-          Start a Confidential Conversation
-        </a>
-        <a href="#criteria" style={styles.secondaryBtn}>
-          View Acquisition Criteria
-        </a>
-      </div>
-    </div>
-
-    <div style={{ flex: 1, textAlign: "center" }}>
-      <img
-        src="/logo.png"
-        alt="Blue Capital Holdings"
-        style={{
-          maxWidth: "260px",
-          width: "100%",
-          opacity: 0.15,
-          filter: "grayscale(100%) brightness(1.8)",
-        }}
-      />
-    </div>
-  </div>
-</section>
-      
+          <div style={styles.heroLogoWrap}>
+            <div style={styles.heroLogoCard}>
+              <img src="/logo.png" alt="Blue Capital Holdings" style={styles.heroLogo} />
+            </div>
+          </div>
+        </div>
+      </section>
 
       <section style={styles.trustStrip}>
         <div style={styles.trustInner}>
