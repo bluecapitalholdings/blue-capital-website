@@ -1,213 +1,415 @@
 import React from "react";
 
 export default function App() {
+  const styles = {
+    page: {
+      fontFamily: "Arial, sans-serif",
+      color: "#1f2937",
+      backgroundColor: "#ffffff",
+      margin: 0,
+      padding: 0,
+    },
+    nav: {
+      borderBottom: "1px solid #e5e7eb",
+      backgroundColor: "#ffffff",
+      boxShadow: "0 1px 4px rgba(0,0,0,0.05)",
+    },
+    navInner: {
+      maxWidth: "1100px",
+      margin: "0 auto",
+      padding: "14px 24px",
+      display: "flex",
+      justifyContent: "space-between",
+      alignItems: "center",
+      gap: "20px",
+      flexWrap: "wrap",
+    },
+    brand: {
+      display: "flex",
+      alignItems: "center",
+      gap: "12px",
+    },
+    logo: {
+      height: "34px",
+      width: "auto",
+      objectFit: "contain",
+    },
+    brandText: {
+      fontSize: "20px",
+      fontWeight: 700,
+      letterSpacing: "-0.02em",
+    },
+    navLinks: {
+      display: "flex",
+      gap: "20px",
+      fontSize: "14px",
+      color: "#374151",
+      flexWrap: "wrap",
+    },
+    link: {
+      textDecoration: "none",
+      color: "#374151",
+      fontWeight: 500,
+    },
+    hero: {
+      background: "linear-gradient(135deg, #0f2d5c, #173d78)",
+      color: "#ffffff",
+      padding: "80px 24px",
+    },
+    heroInner: {
+      maxWidth: "1100px",
+      margin: "0 auto",
+    },
+    heroTitle: {
+      fontSize: "48px",
+      lineHeight: 1.1,
+      fontWeight: 700,
+      maxWidth: "720px",
+      marginBottom: "20px",
+    },
+    heroText: {
+      fontSize: "20px",
+      lineHeight: 1.6,
+      maxWidth: "760px",
+      color: "#dbeafe",
+      marginBottom: "30px",
+    },
+    buttonRow: {
+      display: "flex",
+      gap: "14px",
+      flexWrap: "wrap",
+    },
+    primaryBtn: {
+      backgroundColor: "#ffffff",
+      color: "#0f2d5c",
+      textDecoration: "none",
+      padding: "14px 24px",
+      borderRadius: "10px",
+      fontWeight: 700,
+      display: "inline-block",
+    },
+    secondaryBtn: {
+      border: "1px solid rgba(255,255,255,0.45)",
+      color: "#ffffff",
+      textDecoration: "none",
+      padding: "14px 24px",
+      borderRadius: "10px",
+      fontWeight: 600,
+      display: "inline-block",
+    },
+    trustStrip: {
+      borderBottom: "1px solid #e5e7eb",
+      backgroundColor: "#ffffff",
+    },
+    trustInner: {
+      maxWidth: "1100px",
+      margin: "0 auto",
+      padding: "22px 24px",
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+      gap: "14px",
+      color: "#4b5563",
+      fontSize: "14px",
+      fontWeight: 600,
+    },
+    section: {
+      maxWidth: "1100px",
+      margin: "0 auto",
+      padding: "70px 24px",
+    },
+    sectionGray: {
+      backgroundColor: "#f8fafc",
+      padding: "70px 0",
+    },
+    sectionTitle: {
+      fontSize: "36px",
+      fontWeight: 700,
+      marginBottom: "24px",
+      color: "#111827",
+    },
+    twoCol: {
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+      gap: "40px",
+      alignItems: "start",
+    },
+    paragraph: {
+      fontSize: "17px",
+      lineHeight: 1.75,
+      color: "#374151",
+      marginBottom: "18px",
+    },
+    card: {
+      backgroundColor: "#ffffff",
+      borderRadius: "18px",
+      boxShadow: "0 2px 10px rgba(0,0,0,0.06)",
+      padding: "28px",
+    },
+    cardTitle: {
+      fontSize: "22px",
+      fontWeight: 700,
+      marginBottom: "18px",
+      color: "#111827",
+    },
+    list: {
+      paddingLeft: "18px",
+      margin: 0,
+      color: "#374151",
+      lineHeight: 1.9,
+      fontSize: "16px",
+    },
+    criteriaGrid: {
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+      gap: "24px",
+      marginBottom: "28px",
+    },
+    sellSection: {
+      backgroundColor: "#0f2d5c",
+      color: "#ffffff",
+      padding: "70px 0",
+    },
+    sellText: {
+      color: "#dbeafe",
+      fontSize: "18px",
+      lineHeight: 1.75,
+      maxWidth: "760px",
+      marginBottom: "28px",
+    },
+    formWrap: {
+      maxWidth: "820px",
+      margin: "0 auto",
+      padding: "70px 24px",
+    },
+    form: {
+      display: "grid",
+      gap: "16px",
+    },
+    input: {
+      width: "100%",
+      padding: "14px 16px",
+      borderRadius: "10px",
+      border: "1px solid #d1d5db",
+      fontSize: "16px",
+      boxSizing: "border-box",
+    },
+    textarea: {
+      width: "100%",
+      padding: "14px 16px",
+      borderRadius: "10px",
+      border: "1px solid #d1d5db",
+      fontSize: "16px",
+      minHeight: "140px",
+      boxSizing: "border-box",
+      resize: "vertical",
+    },
+    submit: {
+      backgroundColor: "#0f2d5c",
+      color: "#ffffff",
+      border: "none",
+      borderRadius: "10px",
+      padding: "16px 20px",
+      fontSize: "16px",
+      fontWeight: 700,
+      cursor: "pointer",
+    },
+    footer: {
+      backgroundColor: "#f3f4f6",
+      textAlign: "center",
+      padding: "36px 24px",
+      color: "#4b5563",
+      fontSize: "14px",
+      lineHeight: 1.8,
+    },
+    footerBrand: {
+      fontWeight: 700,
+      color: "#111827",
+    },
+  };
+
   return (
-    <div className="bg-white text-gray-900 font-sans">
-      {/* NAVBAR */}
-      <nav className="w-full border-b border-gray-200 bg-white shadow-sm">
-        <div className="max-w-6xl mx-auto flex justify-between items-center px-6 py-3">
-          <div className="flex items-center gap-3">
-            {/* SMALLER CLEAN LOGO */}
-            <img
-              src="/logo.png"
-              alt="Blue Capital Holdings"
-              className="h-7 md:h-8 object-contain"
-            />
-            <div className="text-base md:text-lg font-semibold tracking-tight">
-              Blue Capital Holdings LLC
-            </div>
+    <div style={styles.page}>
+      <nav style={styles.nav}>
+        <div style={styles.navInner}>
+          <div style={styles.brand}>
+            <img src="/logo.png" alt="Blue Capital Holdings" style={styles.logo} />
+            <div style={styles.brandText}>Blue Capital Holdings LLC</div>
           </div>
 
-          <div className="hidden md:flex gap-8 text-sm font-medium text-gray-700">
-            <a href="#home" className="hover:text-blue-700 transition">Home</a>
-            <a href="#about" className="hover:text-blue-700 transition">About</a>
-            <a href="#criteria" className="hover:text-blue-700 transition">Criteria</a>
-            <a href="#sell" className="hover:text-blue-700 transition">Sell Your Business</a>
-            <a href="#contact" className="hover:text-blue-700 transition">Contact</a>
+          <div style={styles.navLinks}>
+            <a href="#home" style={styles.link}>Home</a>
+            <a href="#about" style={styles.link}>About</a>
+            <a href="#criteria" style={styles.link}>Criteria</a>
+            <a href="#sell" style={styles.link}>Sell Your Business</a>
+            <a href="#contact" style={styles.link}>Contact</a>
           </div>
         </div>
       </nav>
 
-      {/* HERO SECTION */}
-      <section id="home" className="bg-gradient-to-br from-blue-900 via-blue-800 to-blue-900 text-white">
-        <div className="max-w-6xl mx-auto px-6 py-24">
-          <div className="max-w-3xl">
-            <h1 className="text-4xl md:text-5xl font-bold leading-tight mb-6">
-              Acquiring and Growing Profitable Small Businesses
-            </h1>
-
-            <p className="text-lg text-blue-100 mb-8 leading-relaxed">
-              Blue Capital Holdings LLC is a private investment firm focused on acquiring and
-              operating established small businesses with strong fundamentals and long‑term growth
-              potential.
-            </p>
-
-            <div className="flex flex-col sm:flex-row gap-4">
-              <a
-                href="#contact"
-                className="bg-white text-blue-900 font-semibold px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition"
-              >
-                Start a Confidential Conversation
-              </a>
-
-              <a
-                href="#criteria"
-                className="border border-white/40 text-white px-8 py-4 rounded-xl hover:bg-white/10 transition"
-              >
-                View Acquisition Criteria
-              </a>
-            </div>
+      <section id="home" style={styles.hero}>
+        <div style={styles.heroInner}>
+          <h1 style={styles.heroTitle}>
+            Acquiring and Growing Profitable Small Businesses
+          </h1>
+          <p style={styles.heroText}>
+            Blue Capital Holdings LLC is a private investment firm focused on
+            acquiring and operating established small businesses with strong
+            fundamentals and long-term growth potential.
+          </p>
+          <div style={styles.buttonRow}>
+            <a href="#contact" style={styles.primaryBtn}>
+              Start a Confidential Conversation
+            </a>
+            <a href="#criteria" style={styles.secondaryBtn}>
+              View Acquisition Criteria
+            </a>
           </div>
         </div>
       </section>
 
-      {/* TRUST STRIP */}
-      <section className="border-b border-gray-200 bg-white">
-        <div className="max-w-6xl mx-auto px-6 py-6 grid md:grid-cols-4 gap-6 text-sm text-gray-600">
-          <div className="font-medium">Long‑term ownership focused</div>
-          <div className="font-medium">Privately held investment firm</div>
-          <div className="font-medium">U.S. small business acquisitions</div>
-          <div className="font-medium">Confidential process for owners</div>
+      <section style={styles.trustStrip}>
+        <div style={styles.trustInner}>
+          <div>Long-term ownership focused</div>
+          <div>Privately held investment firm</div>
+          <div>U.S. small business acquisitions</div>
+          <div>Confidential process for owners</div>
         </div>
       </section>
 
-      {/* ABOUT / INTRO */}
-      <section id="about" className="max-w-6xl mx-auto px-6 py-20">
-        <div className="grid md:grid-cols-2 gap-14 items-center">
+      <section id="about" style={styles.section}>
+        <div style={styles.twoCol}>
           <div>
-            <h2 className="text-3xl font-bold mb-6">Long‑Term Ownership. Responsible Growth.</h2>
-
-            <p className="text-gray-700 mb-5 leading-relaxed">
-              We partner with business owners who are preparing for retirement, succession, or a
-              transition. Our goal is to preserve the legacy you built while supporting long‑term
-              growth and stability for employees and customers.
+            <h2 style={styles.sectionTitle}>Long-Term Ownership. Responsible Growth.</h2>
+            <p style={styles.paragraph}>
+              We partner with business owners who are preparing for retirement,
+              succession, or a transition. Our goal is to preserve the legacy
+              you built while supporting long-term growth and stability for
+              employees and customers.
             </p>
-
-            <p className="text-gray-700 leading-relaxed">
-              Rather than buying and flipping companies, we acquire businesses to operate and grow
-              them over the long term through operational improvement and responsible ownership.
+            <p style={styles.paragraph}>
+              Rather than buying and flipping companies, we acquire businesses
+              to operate and grow them over the long term through operational
+              improvement and responsible ownership.
             </p>
           </div>
 
-          <div className="bg-gray-50 p-10 rounded-2xl shadow-sm">
-            <h3 className="text-xl font-semibold mb-5">Core Focus</h3>
-            <ul className="space-y-4 text-gray-700">
-              <li>• Small business acquisitions</li>
-              <li>• Operational improvement</li>
-              <li>• Long‑term ownership strategy</li>
-              <li>• Strategic investments</li>
+          <div style={styles.card}>
+            <div style={styles.cardTitle}>Core Focus</div>
+            <ul style={styles.list}>
+              <li>Small business acquisitions</li>
+              <li>Operational improvement</li>
+              <li>Long-term ownership strategy</li>
+              <li>Strategic investments</li>
             </ul>
           </div>
         </div>
       </section>
 
-      {/* ACQUISITION CRITERIA */}
-      <section id="criteria" className="bg-gray-50 py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-12">Acquisition Criteria</h2>
+      <section id="criteria" style={styles.sectionGray}>
+        <div style={styles.section}>
+          <h2 style={styles.sectionTitle}>Acquisition Criteria</h2>
 
-          <div className="grid md:grid-cols-3 gap-8">
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="font-semibold text-lg mb-4">Revenue</h3>
-              <p className="text-gray-700">$500,000 – $5,000,000 annually</p>
+          <div style={styles.criteriaGrid}>
+            <div style={styles.card}>
+              <div style={styles.cardTitle}>Revenue</div>
+              <p style={styles.paragraph}>$500,000 – $5,000,000 annually</p>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="font-semibold text-lg mb-4">Profitability</h3>
-              <p className="text-gray-700">Consistent positive cash flow</p>
+            <div style={styles.card}>
+              <div style={styles.cardTitle}>Profitability</div>
+              <p style={styles.paragraph}>Consistent positive cash flow</p>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="font-semibold text-lg mb-4">Location</h3>
-              <p className="text-gray-700">United States based businesses</p>
+            <div style={styles.card}>
+              <div style={styles.cardTitle}>Location</div>
+              <p style={styles.paragraph}>United States based businesses</p>
             </div>
           </div>
 
-          <div className="grid md:grid-cols-2 gap-10 mt-12">
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="font-semibold text-lg mb-4">Industries of Interest</h3>
-              <ul className="space-y-3 text-gray-700">
-                <li>• Service businesses</li>
-                <li>• Logistics and distribution</li>
-                <li>• Commercial services</li>
-                <li>• Light manufacturing</li>
-                <li>• Real‑estate supported businesses</li>
+          <div style={styles.twoCol}>
+            <div style={styles.card}>
+              <div style={styles.cardTitle}>Industries of Interest</div>
+              <ul style={styles.list}>
+                <li>Service businesses</li>
+                <li>Logistics and distribution</li>
+                <li>Commercial services</li>
+                <li>Light manufacturing</li>
+                <li>Real-estate supported businesses</li>
               </ul>
             </div>
 
-            <div className="bg-white p-8 rounded-2xl shadow-sm">
-              <h3 className="font-semibold text-lg mb-4">Preferred Characteristics</h3>
-              <ul className="space-y-3 text-gray-700">
-                <li>• Established customer base</li>
-                <li>• Experienced employees</li>
-                <li>• Stable operations</li>
-                <li>• Opportunities for operational improvement</li>
+            <div style={styles.card}>
+              <div style={styles.cardTitle}>Preferred Characteristics</div>
+              <ul style={styles.list}>
+                <li>Established customer base</li>
+                <li>Experienced employees</li>
+                <li>Stable operations</li>
+                <li>Opportunities for operational improvement</li>
               </ul>
             </div>
           </div>
         </div>
       </section>
 
-      {/* SELL YOUR BUSINESS */}
-      <section id="sell" className="bg-blue-900 text-white py-20">
-        <div className="max-w-6xl mx-auto px-6">
-          <h2 className="text-3xl font-bold mb-6">Considering Selling Your Business?</h2>
-
-          <p className="text-blue-100 max-w-3xl mb-10 leading-relaxed">
-            We work directly with business owners preparing for retirement, succession, or a
-            transition. Our process is confidential, flexible, and focused on protecting the legacy
-            of your company.
+      <section id="sell" style={styles.sellSection}>
+        <div style={styles.section}>
+          <h2 style={styles.sectionTitle}>Considering Selling Your Business?</h2>
+          <p style={styles.sellText}>
+            We work directly with business owners preparing for retirement,
+            succession, or a transition. Our process is confidential, flexible,
+            and focused on protecting the legacy of your company.
           </p>
+          <div style={styles.twoCol}>
+            <div style={styles.card}>
+              <div style={styles.cardTitle}>Why Owners Work With Us</div>
+              <ul style={styles.list}>
+                <li>Confidential acquisition process</li>
+                <li>Flexible deal structures</li>
+                <li>Long-term ownership approach</li>
+                <li>Commitment to employees and customers</li>
+              </ul>
+            </div>
 
-          <div className="grid md:grid-cols-2 gap-6 text-blue-100 mb-10">
-            <div>• Confidential acquisition process</div>
-            <div>• Flexible deal structures</div>
-            <div>• Long‑term ownership approach</div>
-            <div>• Commitment to employees and customers</div>
+            <div style={styles.card}>
+              <div style={styles.cardTitle}>Transition Structures</div>
+              <ul style={styles.list}>
+                <li>Full acquisitions</li>
+                <li>Seller financing arrangements</li>
+                <li>Gradual ownership transitions</li>
+              </ul>
+            </div>
           </div>
-
-          <a
-            href="#contact"
-            className="inline-block bg-white text-blue-900 font-semibold px-8 py-4 rounded-xl shadow-md hover:shadow-lg transition"
-          >
-            Submit Your Business Confidentially
-          </a>
         </div>
       </section>
 
-      {/* CONTACT FORM */}
-      <section id="contact" className="max-w-4xl mx-auto px-6 py-20">
-        <h2 className="text-3xl font-bold mb-8">Submit Your Business</h2>
-
+      <section id="contact" style={styles.formWrap}>
+        <h2 style={styles.sectionTitle}>Submit Your Business</h2>
         <form
           action="https://formspree.io/f/YOUR_FORM_ID"
           method="POST"
-          className="grid gap-6"
+          style={styles.form}
         >
-          <input name="name" placeholder="Your Name" className="border p-4 rounded-lg" />
-          <input name="company" placeholder="Company Name" className="border p-4 rounded-lg" />
-          <input name="revenue" placeholder="Annual Revenue" className="border p-4 rounded-lg" />
-          <input name="location" placeholder="Location" className="border p-4 rounded-lg" />
-          <input name="email" placeholder="Email" className="border p-4 rounded-lg" />
-          <input name="phone" placeholder="Phone" className="border p-4 rounded-lg" />
+          <input name="name" placeholder="Your Name" style={styles.input} />
+          <input name="company" placeholder="Company Name" style={styles.input} />
+          <input name="revenue" placeholder="Annual Revenue" style={styles.input} />
+          <input name="location" placeholder="Location" style={styles.input} />
+          <input name="email" placeholder="Email" style={styles.input} />
+          <input name="phone" placeholder="Phone" style={styles.input} />
           <textarea
             name="message"
             placeholder="Tell us about the business"
-            className="border p-4 rounded-lg"
-            rows="5"
-          ></textarea>
-
-          <button className="bg-blue-900 text-white font-semibold py-4 rounded-xl hover:bg-blue-800 transition">
+            style={styles.textarea}
+          />
+          <button type="submit" style={styles.submit}>
             Submit Confidentially
           </button>
         </form>
       </section>
 
-      {/* FOOTER */}
-      <footer className="bg-gray-100 py-12 text-center text-sm text-gray-600">
-        <div className="font-semibold mb-2">Blue Capital Holdings LLC</div>
+      <footer style={styles.footer}>
+        <div style={styles.footerBrand}>Blue Capital Holdings LLC</div>
         <div>Business Acquisition & Investment Firm</div>
-        <div className="mt-3">info@bluecapitalholdings.com | 812‑312‑1910</div>
+        <div>info@bluecapitalholdings.com | 812-312-1910</div>
       </footer>
     </div>
   );
