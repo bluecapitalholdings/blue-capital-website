@@ -247,25 +247,52 @@ export default function App() {
       </nav>
 
       <section id="home" style={styles.hero}>
-        <div style={styles.heroInner}>
-          <h1 style={styles.heroTitle}>
-            Acquiring and Growing Profitable Small Businesses
-          </h1>
-          <p style={styles.heroText}>
-            Blue Capital Holdings LLC is a private investment firm focused on
-            acquiring and operating established small businesses with strong
-            fundamentals and long-term growth potential.
-          </p>
-          <div style={styles.buttonRow}>
-            <a href="#contact" style={styles.primaryBtn}>
-              Start a Confidential Conversation
-            </a>
-            <a href="#criteria" style={styles.secondaryBtn}>
-              View Acquisition Criteria
-            </a>
-          </div>
-        </div>
-      </section>
+  <div
+    style={{
+      ...styles.heroInner,
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "space-between",
+      gap: "40px",
+      flexWrap: "wrap",
+    }}
+  >
+    <div style={{ maxWidth: "600px" }}>
+      <h1 style={styles.heroTitle}>
+        Acquiring and Growing Profitable Small Businesses
+      </h1>
+
+      <p style={styles.heroText}>
+        Blue Capital Holdings LLC is a private investment firm focused on
+        acquiring and operating established small businesses with strong
+        fundamentals and long-term growth potential.
+      </p>
+
+      <div style={styles.buttonRow}>
+        <a href="#contact" style={styles.primaryBtn}>
+          Start a Confidential Conversation
+        </a>
+        <a href="#criteria" style={styles.secondaryBtn}>
+          View Acquisition Criteria
+        </a>
+      </div>
+    </div>
+
+    <div style={{ flex: 1, textAlign: "center" }}>
+      <img
+        src="/logo.png"
+        alt="Blue Capital Holdings"
+        style={{
+          maxWidth: "260px",
+          width: "100%",
+          opacity: 0.15,
+          filter: "grayscale(100%) brightness(1.8)",
+        }}
+      />
+    </div>
+  </div>
+</section>
+      
 
       <section style={styles.trustStrip}>
         <div style={styles.trustInner}>
