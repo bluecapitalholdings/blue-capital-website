@@ -60,16 +60,18 @@ export default function App() {
       alignItems: "center",
     },
     heroTitle: {
-      fontSize: "60px",
+      fontSize: "58px",
       lineHeight: 1.05,
       fontWeight: 800,
       marginBottom: "24px",
+      letterSpacing: "-0.03em",
     },
     heroText: {
       fontSize: "20px",
       lineHeight: 1.7,
       color: "#dbeafe",
       marginBottom: "32px",
+      maxWidth: "720px",
     },
     buttonRow: {
       display: "flex",
@@ -83,6 +85,7 @@ export default function App() {
       borderRadius: "10px",
       fontWeight: 700,
       textDecoration: "none",
+      boxShadow: "0 8px 24px rgba(0,0,0,0.16)",
     },
     secondaryBtn: {
       border: "1px solid rgba(255,255,255,0.4)",
@@ -91,6 +94,7 @@ export default function App() {
       borderRadius: "10px",
       fontWeight: 600,
       textDecoration: "none",
+      backgroundColor: "rgba(255,255,255,0.04)",
     },
     heroLogoWrap: {
       display: "flex",
@@ -100,35 +104,150 @@ export default function App() {
     heroLogo: {
       width: "100%",
       maxWidth: "340px",
+      display: "block",
+    },
+    trustStrip: {
+      borderBottom: "1px solid #e5e7eb",
+      backgroundColor: "#ffffff",
+    },
+    trustInner: {
+      maxWidth: "1180px",
+      margin: "0 auto",
+      padding: "22px 28px",
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+      gap: "14px",
+      color: "#4b5563",
+      fontSize: "14px",
+      fontWeight: 600,
     },
     section: {
       maxWidth: "1180px",
       margin: "0 auto",
       padding: "80px 28px",
     },
+    sectionGray: {
+      backgroundColor: "#f8fafc",
+      padding: "80px 0",
+    },
     sectionTitle: {
       fontSize: "36px",
       fontWeight: 800,
       marginBottom: "20px",
+      letterSpacing: "-0.02em",
+      color: "#111827",
     },
     paragraph: {
       fontSize: "17px",
       lineHeight: 1.8,
       marginBottom: "16px",
       color: "#374151",
+      maxWidth: "860px",
+    },
+    twoCol: {
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+      gap: "32px",
+      alignItems: "start",
     },
     card: {
       backgroundColor: "#ffffff",
       borderRadius: "16px",
       padding: "24px",
       boxShadow: "0 6px 20px rgba(0,0,0,0.06)",
+      border: "1px solid #eef2f7",
+    },
+    cardTitle: {
+      fontSize: "22px",
+      fontWeight: 700,
+      marginBottom: "14px",
+      color: "#111827",
+    },
+    list: {
+      paddingLeft: "20px",
+      margin: 0,
+      color: "#374151",
+      lineHeight: 1.9,
+      fontSize: "16px",
+    },
+    criteriaGrid: {
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+      gap: "24px",
+      marginBottom: "28px",
+    },
+    sellSection: {
+      background: "linear-gradient(135deg, #0f2d5c 0%, #143769 100%)",
+      color: "#ffffff",
+      padding: "84px 0",
+    },
+    sellText: {
+      color: "#dbeafe",
+      fontSize: "18px",
+      lineHeight: 1.8,
+      maxWidth: "760px",
+      marginBottom: "28px",
+    },
+    founderName: {
+      fontSize: "22px",
+      fontWeight: 700,
+      color: "#102a56",
+      marginBottom: "12px",
+    },
+    contactWrap: {
+      maxWidth: "860px",
+      margin: "0 auto",
+      padding: "80px 28px",
+    },
+    form: {
+      display: "grid",
+      gap: "18px",
+      marginTop: "22px",
+    },
+    input: {
+      width: "100%",
+      padding: "15px 16px",
+      borderRadius: "12px",
+      border: "1px solid #d1d5db",
+      fontSize: "16px",
+      boxSizing: "border-box",
+      backgroundColor: "#ffffff",
+    },
+    textarea: {
+      width: "100%",
+      padding: "15px 16px",
+      borderRadius: "12px",
+      border: "1px solid #d1d5db",
+      fontSize: "16px",
+      minHeight: "150px",
+      boxSizing: "border-box",
+      resize: "vertical",
+      backgroundColor: "#ffffff",
+    },
+    submit: {
+      backgroundColor: "#102a56",
+      color: "#ffffff",
+      border: "none",
+      borderRadius: "12px",
+      padding: "16px 20px",
+      fontSize: "16px",
+      fontWeight: 700,
+      cursor: "pointer",
+      boxShadow: "0 10px 24px rgba(16, 42, 86, 0.18)",
     },
     footer: {
       backgroundColor: "#f3f4f6",
       textAlign: "center",
       padding: "36px",
       fontSize: "14px",
-    }
+      lineHeight: 1.8,
+      borderTop: "1px solid #e5e7eb",
+      color: "#4b5563",
+    },
+    footerBrand: {
+      fontWeight: 700,
+      color: "#111827",
+    },
   };
 
   return (
@@ -139,6 +258,8 @@ export default function App() {
           <div style={styles.navLinks}>
             <a href="#home" style={styles.link}>Home</a>
             <a href="#about" style={styles.link}>About</a>
+            <a href="#criteria" style={styles.link}>Criteria</a>
+            <a href="#sell" style={styles.link}>Sell Your Business</a>
             <a href="#founder" style={styles.link}>Founder</a>
             <a href="#contact" style={styles.link}>Contact</a>
           </div>
@@ -152,52 +273,172 @@ export default function App() {
               Acquiring and Growing Profitable Small Businesses
             </h1>
             <p style={styles.heroText}>
-              We acquire and operate established small businesses with strong fundamentals and long-term growth potential.
+              Blue Capital Holdings LLC is a private investment firm focused on acquiring and operating established small businesses with strong fundamentals, durable cash flow, and long-term growth potential.
             </p>
             <div style={styles.buttonRow}>
-              <a href="#contact" style={styles.primaryBtn}>Start a Conversation</a>
-              <a href="#about" style={styles.secondaryBtn}>Learn More</a>
+              <a href="#contact" style={styles.primaryBtn}>Start a Confidential Conversation</a>
+              <a href="#criteria" style={styles.secondaryBtn}>View Acquisition Criteria</a>
             </div>
           </div>
 
           <div style={styles.heroLogoWrap}>
-            <img src="/logo.png" alt="Logo" style={styles.heroLogo} />
+            <img src="/logo.png" alt="Blue Capital Holdings logo" style={styles.heroLogo} />
           </div>
+        </div>
+      </section>
+
+      <section style={styles.trustStrip}>
+        <div style={styles.trustInner}>
+          <div>Long-term ownership focused</div>
+          <div>Privately held acquisition firm</div>
+          <div>U.S. small business acquisitions</div>
+          <div>Confidential process for owners</div>
         </div>
       </section>
 
       <section id="about" style={styles.section}>
         <h2 style={styles.sectionTitle}>About Blue Capital Holdings</h2>
         <p style={styles.paragraph}>
-          Blue Capital Holdings LLC is a private investment firm focused on acquiring and operating small to mid-sized businesses.
+          Blue Capital Holdings LLC is a private investment firm focused on acquiring and operating established small to mid-sized businesses.
         </p>
         <p style={styles.paragraph}>
-          Our strategy centers on long-term ownership, operational improvement, and sustainable growth.
+          The firm’s strategy centers on long-term ownership, operational improvement, and disciplined growth. Rather than purchasing businesses for short-term resale, Blue Capital Holdings seeks to build durable value by preserving what already works, strengthening operations, and supporting sustainable expansion over time.
         </p>
+        <p style={styles.paragraph}>
+          We work with owners who are preparing for retirement, succession planning, or a strategic transition and value a thoughtful, responsible buyer.
+        </p>
+      </section>
+
+      <section id="criteria" style={styles.sectionGray}>
+        <div style={styles.section}>
+          <h2 style={styles.sectionTitle}>Acquisition Criteria</h2>
+
+          <div style={styles.criteriaGrid}>
+            <div style={styles.card}>
+              <div style={styles.cardTitle}>Revenue</div>
+              <p style={styles.paragraph}>$500,000 to $5,000,000 annually</p>
+            </div>
+
+            <div style={styles.card}>
+              <div style={styles.cardTitle}>Profitability</div>
+              <p style={styles.paragraph}>Consistent positive cash flow and stable operations</p>
+            </div>
+
+            <div style={styles.card}>
+              <div style={styles.cardTitle}>Geography</div>
+              <p style={styles.paragraph}>United States based businesses</p>
+            </div>
+          </div>
+
+          <div style={styles.twoCol}>
+            <div style={styles.card}>
+              <div style={styles.cardTitle}>Industries of Interest</div>
+              <ul style={styles.list}>
+                <li>Service businesses</li>
+                <li>Logistics and distribution</li>
+                <li>Commercial services</li>
+                <li>Light manufacturing</li>
+                <li>Real-estate supported businesses</li>
+              </ul>
+            </div>
+
+            <div style={styles.card}>
+              <div style={styles.cardTitle}>Preferred Characteristics</div>
+              <ul style={styles.list}>
+                <li>Established customer base</li>
+                <li>Experienced employees</li>
+                <li>Stable operations</li>
+                <li>Operational improvement opportunities</li>
+                <li>Flexible transition structures, including seller financing</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="sell" style={styles.sellSection}>
+        <div style={styles.section}>
+          <h2 style={styles.sectionTitle}>Considering Selling Your Business?</h2>
+          <p style={styles.sellText}>
+            Blue Capital Holdings works directly with business owners preparing for retirement, succession, or a transition. Our approach is confidential, flexible, and focused on protecting the legacy of the company while supporting continuity for employees and customers.
+          </p>
+          <div style={styles.twoCol}>
+            <div style={styles.card}>
+              <div style={styles.cardTitle}>Why Owners Work With Us</div>
+              <ul style={styles.list}>
+                <li>Confidential acquisition process</li>
+                <li>Flexible deal structures</li>
+                <li>Long-term ownership approach</li>
+                <li>Commitment to employees and customers</li>
+              </ul>
+            </div>
+
+            <div style={styles.card}>
+              <div style={styles.cardTitle}>Transition Approach</div>
+              <ul style={styles.list}>
+                <li>Full acquisitions</li>
+                <li>Seller financing arrangements</li>
+                <li>Gradual ownership transitions where appropriate</li>
+              </ul>
+            </div>
+          </div>
+        </div>
       </section>
 
       <section id="founder" style={styles.section}>
-        <h2 style={styles.sectionTitle}>Founder / Operator</h2>
-        <p style={styles.paragraph}><strong>Michael McMullan</strong></p>
-        <p style={styles.paragraph}>
-          Michael brings years of management experience across operations, finance, and supply chain environments.
-        </p>
-        <p style={styles.paragraph}>
-          He holds a degree in Finance and Supply Chain Management with a minor in Economics, and is a Lean Six Sigma Green Belt.
-        </p>
-        <p style={styles.paragraph}>
-          Based in Indianapolis, Indiana.
-        </p>
+        <div style={styles.twoCol}>
+          <div>
+            <h2 style={styles.sectionTitle}>Founder / Operator</h2>
+            <div style={styles.founderName}>Michael McMullan</div>
+            <p style={styles.paragraph}>
+              Michael McMullan brings years of management experience across operations, finance, and supply chain environments, with a practical focus on process improvement, execution, and long-term business performance.
+            </p>
+            <p style={styles.paragraph}>
+              He holds a Bachelor of Science from the Indiana University Kelley School of Business, with a double major in Finance and Supply Chain Management and a minor in Economics. He is also Lean Six Sigma Green Belt certified.
+            </p>
+            <p style={styles.paragraph}>
+              Based in Avon, Indiana, Michael founded Blue Capital Holdings LLC to acquire and grow quality small businesses through disciplined ownership and operational stewardship.
+            </p>
+          </div>
+
+          <div style={styles.card}>
+            <div style={styles.cardTitle}>Why This Matters to Lenders, Brokers, and Sellers</div>
+            <ul style={styles.list}>
+              <li>Operator-oriented acquisition approach</li>
+              <li>Financial and supply chain background</li>
+              <li>Process improvement mindset</li>
+              <li>Clear acquisition strategy and criteria</li>
+              <li>Long-term ownership philosophy</li>
+            </ul>
+          </div>
+        </div>
       </section>
 
-      <section id="contact" style={styles.section}>
+      <section id="contact" style={styles.contactWrap}>
         <h2 style={styles.sectionTitle}>Contact</h2>
-        <p style={styles.paragraph}>info@bluecapitalholdingsllc.com</p>
-        <p style={styles.paragraph}>812-312-1910</p>
+        <p style={styles.paragraph}>
+          Blue Capital Holdings LLC welcomes confidential conversations with business owners, brokers, and referral partners.
+        </p>
+        <p style={styles.paragraph}><strong>Email:</strong> info@bluecapitalholdingsllc.com</p>
+        <p style={styles.paragraph}><strong>Phone:</strong> 812-312-1910</p>
+        <p style={styles.paragraph}><strong>Location:</strong> Avon, Indiana</p>
+
+        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style={styles.form}>
+          <input name="name" placeholder="Your Name" style={styles.input} />
+          <input name="company" placeholder="Company Name" style={styles.input} />
+          <input name="revenue" placeholder="Annual Revenue" style={styles.input} />
+          <input name="location" placeholder="Location" style={styles.input} />
+          <input name="email" placeholder="Email" style={styles.input} />
+          <input name="phone" placeholder="Phone" style={styles.input} />
+          <textarea name="message" placeholder="Tell us about the business" style={styles.textarea} />
+          <button type="submit" style={styles.submit}>Submit Confidentially</button>
+        </form>
       </section>
 
       <footer style={styles.footer}>
-        Blue Capital Holdings LLC | Indianapolis, Indiana
+        <div style={styles.footerBrand}>Blue Capital Holdings LLC</div>
+        <div>Business Acquisition & Investment Firm</div>
+        <div>Avon, Indiana | info@bluecapitalholdingsllc.com | 812-312-1910</div>
       </footer>
     </div>
   );
