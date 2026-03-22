@@ -1,6 +1,8 @@
 import React from "react";
 
 export default function App() {
+  const isThankYouPage = typeof window !== "undefined" && window.location.pathname === "/thank-you";
+
   const styles = {
     page: {
       fontFamily: "Arial, sans-serif",
@@ -248,7 +250,64 @@ export default function App() {
       fontWeight: 700,
       color: "#111827",
     },
+    thankYouWrap: {
+      minHeight: "100vh",
+      background: "linear-gradient(135deg, #0f2d5c 0%, #173f7a 55%, #123364 100%)",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      padding: "32px",
+    },
+    thankYouCard: {
+      maxWidth: "760px",
+      width: "100%",
+      backgroundColor: "#ffffff",
+      borderRadius: "20px",
+      boxShadow: "0 20px 60px rgba(0,0,0,0.18)",
+      padding: "48px",
+      textAlign: "center",
+    },
+    thankYouTitle: {
+      fontSize: "40px",
+      fontWeight: 800,
+      color: "#102a56",
+      marginBottom: "16px",
+      letterSpacing: "-0.02em",
+    },
+    thankYouText: {
+      fontSize: "18px",
+      lineHeight: 1.8,
+      color: "#374151",
+      marginBottom: "18px",
+    },
+    thankYouButton: {
+      display: "inline-block",
+      marginTop: "10px",
+      backgroundColor: "#102a56",
+      color: "#ffffff",
+      textDecoration: "none",
+      padding: "14px 24px",
+      borderRadius: "10px",
+      fontWeight: 700,
+    },
   };
+
+  if (isThankYouPage) {
+    return (
+      <div style={styles.thankYouWrap}>
+        <div style={styles.thankYouCard}>
+          <h1 style={styles.thankYouTitle}>Thank You</h1>
+          <p style={styles.thankYouText}>
+            Your inquiry has been submitted successfully.
+          </p>
+          <p style={styles.thankYouText}>
+            Blue Capital Holdings LLC appreciates your interest. All inquiries are reviewed confidentially, and a follow-up will be made if there appears to be a potential fit.
+          </p>
+          <a href="/" style={styles.thankYouButton}>Return to Homepage</a>
+        </div>
+      </div>
+    );
+  }
 
   return (
     <div style={styles.page}>
@@ -296,25 +355,25 @@ export default function App() {
         </div>
       </section>
 
-  <section id="about" style={styles.section}>
-  <h2 style={styles.sectionTitle}>About Blue Capital Holdings</h2>
+      <section id="about" style={styles.section}>
+        <h2 style={styles.sectionTitle}>About Blue Capital Holdings</h2>
 
-  <p style={styles.paragraph}>
-    Blue Capital Holdings LLC is a private investment firm focused on acquiring and operating established small to mid-sized businesses.
-  </p>
+        <p style={styles.paragraph}>
+          Blue Capital Holdings LLC is a private investment firm focused on acquiring and operating established small to mid-sized businesses.
+        </p>
 
-  <p style={styles.paragraph}>
-    We pursue long-term ownership through operational improvement, disciplined growth, and responsible stewardship. Rather than short-term resale, we focus on preserving what works, strengthening operations, and building durable enterprise value over time.
-  </p>
+        <p style={styles.paragraph}>
+          We pursue long-term ownership through operational improvement, disciplined growth, and responsible stewardship. Rather than short-term resale, we focus on preserving what works, strengthening operations, and building durable enterprise value over time.
+        </p>
 
-  <p style={styles.paragraph}>
-    We partner with business owners navigating retirement, succession, or transition who value a thoughtful, capable, and long-term buyer.
-  </p>
+        <p style={styles.paragraph}>
+          We partner with business owners navigating retirement, succession, or transition who value a thoughtful, capable, and long-term buyer.
+        </p>
 
-  <p style={styles.paragraph}>
-    Blue Capital Holdings LLC is actively seeking acquisition opportunities and welcomes confidential conversations with business owners, brokers, and referral partners.
-  </p>
-</section>
+        <p style={styles.paragraph}>
+          Blue Capital Holdings LLC is actively seeking acquisition opportunities and welcomes confidential conversations with business owners, brokers, and referral partners.
+        </p>
+      </section>
 
       <section id="criteria" style={styles.sectionGray}>
         <div style={styles.section}>
@@ -392,42 +451,42 @@ export default function App() {
         </div>
       </section>
 
-<section id="founder" style={styles.section}>
-  <div style={styles.twoCol}>
-    <div>
-      <h2 style={styles.sectionTitle}>Founder / Operator</h2>
-      <div style={styles.founderName}>Michael McMullan</div>
+      <section id="founder" style={styles.section}>
+        <div style={styles.twoCol}>
+          <div>
+            <h2 style={styles.sectionTitle}>Founder / Operator</h2>
+            <div style={styles.founderName}>Michael McMullan</div>
 
-      <p style={styles.paragraph}>
-        Michael McMullan brings over a decade of management experience across operations, finance, and supply chain environments, with a practical focus on execution, process improvement, and long-term business performance.
-      </p>
+            <p style={styles.paragraph}>
+              Michael McMullan brings over a decade of management experience across operations, finance, and supply chain environments, with a practical focus on execution, process improvement, and long-term business performance.
+            </p>
 
-      <p style={styles.paragraph}>
-        He holds a Bachelor of Science from the Indiana University Kelley School of Business, with a double major in Finance and Supply Chain Management and a minor in Economics. He is also Lean Six Sigma Green Belt certified.
-      </p>
+            <p style={styles.paragraph}>
+              He holds a Bachelor of Science from the Indiana University Kelley School of Business, with a double major in Finance and Supply Chain Management and a minor in Economics. He is also Lean Six Sigma Green Belt certified.
+            </p>
 
-      <p style={styles.paragraph}>
-        Based in Avon, Indiana, Michael founded Blue Capital Holdings LLC to acquire and grow quality small businesses through disciplined ownership and operational stewardship.
-      </p>
-    </div>
+            <p style={styles.paragraph}>
+              Based in Avon, Indiana, Michael founded Blue Capital Holdings LLC to acquire and grow quality small businesses through disciplined ownership and operational stewardship.
+            </p>
+          </div>
 
-    <div style={styles.card}>
-      <div style={styles.cardTitle}>Why This Matters to Lenders, Brokers, and Sellers</div>
+          <div style={styles.card}>
+            <div style={styles.cardTitle}>Why This Matters to Lenders, Brokers, and Sellers</div>
 
-      <ul style={styles.list}>
-        <li>Over a decade of management experience</li>
-        <li>Finance, supply chain, and economics background</li>
-        <li>Lean Six Sigma Green Belt certified</li>
-        <li>Operator-oriented acquisition approach</li>
-        <li>Clear acquisition strategy and long-term ownership philosophy</li>
-      </ul>
+            <ul style={styles.list}>
+              <li>Over a decade of management experience</li>
+              <li>Finance, supply chain, and economics background</li>
+              <li>Lean Six Sigma Green Belt certified</li>
+              <li>Operator-oriented acquisition approach</li>
+              <li>Clear acquisition strategy and long-term ownership philosophy</li>
+            </ul>
 
-      <p style={styles.paragraph}>
-        The firm is actively seeking acquisition opportunities.
-      </p>
-    </div>
-  </div>
-</section>
+            <p style={styles.paragraph}>
+              The firm is actively seeking acquisition opportunities.
+            </p>
+          </div>
+        </div>
+      </section>
 
       <section id="contact" style={styles.contactWrap}>
         <h2 style={styles.sectionTitle}>Contact</h2>
@@ -438,34 +497,33 @@ export default function App() {
         <p style={styles.paragraph}><strong>Phone:</strong> 812-312-1910</p>
         <p style={styles.paragraph}><strong>Location:</strong> Avon, Indiana</p>
 
-     <form action="https://formspree.io/f/mwvrjwnk" method="POST">
-  <input name="name" placeholder="Your Name" style={styles.input} />
-  <input name="company" placeholder="Company Name" style={styles.input} />
-  <input name="revenue" placeholder="Annual Revenue" style={styles.input} />
-  <input name="location" placeholder="Location" style={styles.input} />
-  <input name="email" placeholder="Email" style={styles.input} />
-  <input name="phone" placeholder="Phone" style={styles.input} />
-
-  <input name="industry" placeholder="Industry" style={styles.input} />
-  <input name="cashflow" placeholder="Annual EBITDA / Owner Cash Flow" style={styles.input} />
-  <input name="askingPrice" placeholder="Asking Price" style={styles.input} />
-  <input name="yearsInBusiness" placeholder="Years in Business" style={styles.input} />
-  <input name="employees" placeholder="Number of Employees" style={styles.input} />
-  <input name="reasonForSelling" placeholder="Reason for Selling" style={styles.input} />
-  <input name="timeline" placeholder="Desired Timeline to Sell" style={styles.input} />
-  <input name="sellerFinancing" placeholder="Is Seller Financing Available?" style={styles.input} />
-
-  <textarea
-    name="message"
-    placeholder="Tell us about the business"
-    style={styles.textarea}
-  ></textarea>
-
-  <button type="submit" style={styles.submit}>
-    Submit Confidentially
-  </button>
-</form>
-</section>
+        <form action="https://formspree.io/f/mwvrjwnk" method="POST">
+          <input type="hidden" name="_next" value="https://www.bluecapitalholdingsllc.com/thank-you" />
+          <input type="hidden" name="_subject" value="New Acquisition Inquiry - Blue Capital Holdings" />
+          <input name="name" placeholder="Your Name" style={styles.input} />
+          <input name="company" placeholder="Company Name" style={styles.input} />
+          <input name="revenue" placeholder="Annual Revenue" style={styles.input} />
+          <input name="location" placeholder="Location" style={styles.input} />
+          <input name="email" placeholder="Email" style={styles.input} />
+          <input name="phone" placeholder="Phone" style={styles.input} />
+          <input name="industry" placeholder="Industry" style={styles.input} />
+          <input name="cashflow" placeholder="Annual EBITDA / Owner Cash Flow" style={styles.input} />
+          <input name="askingPrice" placeholder="Asking Price" style={styles.input} />
+          <input name="yearsInBusiness" placeholder="Years in Business" style={styles.input} />
+          <input name="employees" placeholder="Number of Employees" style={styles.input} />
+          <input name="reasonForSelling" placeholder="Reason for Selling" style={styles.input} />
+          <input name="timeline" placeholder="Desired Timeline to Sell" style={styles.input} />
+          <input name="sellerFinancing" placeholder="Is Seller Financing Available?" style={styles.input} />
+          <textarea
+            name="message"
+            placeholder="Tell us about the business"
+            style={styles.textarea}
+          ></textarea>
+          <button type="submit" style={styles.submit}>
+            Submit Confidentially
+          </button>
+        </form>
+      </section>
 
       <footer style={styles.footer}>
         <div style={styles.footerBrand}>Blue Capital Holdings LLC</div>
