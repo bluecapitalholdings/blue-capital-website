@@ -1,9 +1,27 @@
-import React from "react";
+import React, { useState } from "react";
 
 export default function App() {
-  const isThankYouPage =
-    typeof window !== "undefined" &&
-    window.location.pathname === "/thank-you";
+  const [submitted, setSubmitted] = useState(false);
+  const [submitting, setSubmitting] = useState(false);
+  const [errorMessage, setErrorMessage] = useState("");
+
+  const [formData, setFormData] = useState({
+    name: "",
+    company: "",
+    revenue: "",
+    location: "",
+    email: "",
+    phone: "",
+    industry: "",
+    cashflow: "",
+    askingPrice: "",
+    yearsInBusiness: "",
+    employees: "",
+    reasonForSelling: "",
+    timeline: "",
+    sellerFinancing: "",
+    message: "",
+  });
 
   const styles = {
     page: {
@@ -90,6 +108,7 @@ export default function App() {
       fontWeight: 700,
       textDecoration: "none",
       boxShadow: "0 8px 24px rgba(0,0,0,0.16)",
+      display: "inline-block",
     },
     secondaryBtn: {
       border: "1px solid rgba(255,255,255,0.4)",
@@ -99,6 +118,7 @@ export default function App() {
       fontWeight: 600,
       textDecoration: "none",
       backgroundColor: "rgba(255,255,255,0.04)",
+      display: "inline-block",
     },
     heroLogoWrap: {
       display: "flex",
@@ -239,18 +259,20 @@ export default function App() {
       cursor: "pointer",
       boxShadow: "0 10px 24px rgba(16, 42, 86, 0.18)",
     },
-    footer: {
-      backgroundColor: "#f3f4f6",
-      textAlign: "center",
-      padding: "36px",
+    note: {
       fontSize: "14px",
-      lineHeight: 1.8,
-      borderTop: "1px solid #e5e7eb",
-      color: "#4b5563",
+      color: "#6b7280",
+      lineHeight: 1.7,
+      marginTop: "4px",
+      marginBottom: "4px",
     },
-    footerBrand: {
-      fontWeight: 700,
-      color: "#111827",
+    errorBox: {
+      backgroundColor: "#fef2f2",
+      color: "#991b1b",
+      border: "1px solid #fecaca",
+      borderRadius: "10px",
+      padding: "12px 14px",
+      fontSize: "14px",
     },
     thankYouWrap: {
       minHeight: "100vh",
@@ -291,10 +313,85 @@ export default function App() {
       padding: "14px 24px",
       borderRadius: "10px",
       fontWeight: 700,
+      border: "none",
+      cursor: "pointer",
+    },
+    footer: {
+      backgroundColor: "#f3f4f6",
+      textAlign: "center",
+      padding: "36px",
+      fontSize: "14px",
+      lineHeight: 1.8,
+      borderTop: "1px solid #e5e7eb",
+      color: "#4b5563",
+    },
+    footerBrand: {
+      fontWeight: 700,
+      color: "#111827",
     },
   };
 
-  if (isThankYouPage) {
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+  };
+
+  const resetForm = () => {
+    setFormData({
+      name: "",
+      company: "",
+      revenue: "",
+      location: "",
+      email: "",
+      phone: "",
+      industry: "",
+      cashflow: "",
+      askingPrice: "",
+      yearsInBusiness: "",
+      employees: "",
+      reasonForSelling: "",
+      timeline: "",
+      sellerFinancing: "",
+      message: "",
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setSubmitting(true);
+    setErrorMessage("");
+
+    try {
+      const response = await fetch("https://formspree.io/f/mwvrjwnk", {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          Accept: "application/json",
+        },
+        body: JSON.stringify({
+          ...formData,
+          _subject: "New Acquisition Inquiry - Blue Capital Holdings",
+        }),
+      });
+
+      if (response.ok) {
+        resetForm();
+        setSubmitted(true);
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      } else {
+        setErrorMessage("Something went wrong while submitting the form. Please try again.");
+      }
+    } catch (error) {
+      setErrorMessage("Something went wrong while submitting the form. Please try again.");
+    } finally {
+      setSubmitting(false);
+    }
+  };
+
+  if (submitted) {
     return (
       <div style={styles.thankYouWrap}>
         <div style={styles.thankYouCard}>
@@ -307,9 +404,13 @@ export default function App() {
             reviewed confidentially, and a follow-up will be made if there appears
             to be a potential fit.
           </p>
-          <a href="/" style={styles.thankYouButton}>
+          <button
+            type="button"
+            style={styles.thankYouButton}
+            onClick={() => setSubmitted(false)}
+          >
             Return to Homepage
-          </a>
+          </button>
         </div>
       </div>
     );
@@ -542,69 +643,132 @@ export default function App() {
           <strong>Location:</strong> Avon, Indiana
         </p>
 
-        <form
-          action="https://formspree.io/f/mwvrjwnk"
-          method="POST"
-          acceptCharset="UTF-8"
-          style={styles.form}
-        >
-          <input
-            type="hidden"
-            name="_next"
-            value="https://bluecapitalholdingsllc.com/thank-you"
-          />
+        <form onSubmit={handleSubmit} style={styles.form}>
           <input
             type="hidden"
             name="_subject"
             value="New Acquisition Inquiry - Blue Capital Holdings"
           />
 
-          <input name="name" placeholder="Your Name" style={styles.input} />
-          <input name="company" placeholder="Company Name" style={styles.input} />
-          <input name="revenue" placeholder="Annual Revenue" style={styles.input} />
-          <input name="location" placeholder="Location" style={styles.input} />
-          <input name="email" placeholder="Email" style={styles.input} />
-          <input name="phone" placeholder="Phone" style={styles.input} />
-          <input name="industry" placeholder="Industry" style={styles.input} />
+          <input
+            name="name"
+            placeholder="Your Name"
+            style={styles.input}
+            value={formData.name}
+            onChange={handleChange}
+            required
+          />
+          <input
+            name="company"
+            placeholder="Company Name"
+            style={styles.input}
+            value={formData.company}
+            onChange={handleChange}
+          />
+          <input
+            name="revenue"
+            placeholder="Annual Revenue"
+            style={styles.input}
+            value={formData.revenue}
+            onChange={handleChange}
+          />
+          <input
+            name="location"
+            placeholder="Location"
+            style={styles.input}
+            value={formData.location}
+            onChange={handleChange}
+          />
+          <input
+            name="email"
+            placeholder="Email"
+            style={styles.input}
+            value={formData.email}
+            onChange={handleChange}
+            required
+          />
+          <input
+            name="phone"
+            placeholder="Phone"
+            style={styles.input}
+            value={formData.phone}
+            onChange={handleChange}
+          />
+          <input
+            name="industry"
+            placeholder="Industry"
+            style={styles.input}
+            value={formData.industry}
+            onChange={handleChange}
+          />
           <input
             name="cashflow"
             placeholder="Annual EBITDA / Owner Cash Flow"
             style={styles.input}
+            value={formData.cashflow}
+            onChange={handleChange}
           />
-          <input name="askingPrice" placeholder="Asking Price" style={styles.input} />
+          <input
+            name="askingPrice"
+            placeholder="Asking Price"
+            style={styles.input}
+            value={formData.askingPrice}
+            onChange={handleChange}
+          />
           <input
             name="yearsInBusiness"
             placeholder="Years in Business"
             style={styles.input}
+            value={formData.yearsInBusiness}
+            onChange={handleChange}
           />
           <input
             name="employees"
             placeholder="Number of Employees"
             style={styles.input}
+            value={formData.employees}
+            onChange={handleChange}
           />
           <input
             name="reasonForSelling"
             placeholder="Reason for Selling"
             style={styles.input}
+            value={formData.reasonForSelling}
+            onChange={handleChange}
           />
           <input
             name="timeline"
             placeholder="Desired Timeline to Sell"
             style={styles.input}
+            value={formData.timeline}
+            onChange={handleChange}
           />
           <input
             name="sellerFinancing"
             placeholder="Is Seller Financing Available?"
             style={styles.input}
+            value={formData.sellerFinancing}
+            onChange={handleChange}
           />
           <textarea
             name="message"
             placeholder="Tell us about the business"
             style={styles.textarea}
+            value={formData.message}
+            onChange={handleChange}
           ></textarea>
 
-          <button type="submit" style={styles.submit}>
-            Submit Confidentially
+          <p style={styles.note}>
+            Please include revenue, cash flow, and reason for selling. All
+            inquiries are strictly confidential.
+          </p>
+
+          {errorMessage ? (
+            <div style={styles.errorBox}>{errorMessage}</div>
+          ) : null}
+
+          <button type="submit" style={styles.submit} disabled={submitting}>
+            {submitting ? "Submitting..." : "Submit Confidentially"}
           </button>
         </form>
       </section>
