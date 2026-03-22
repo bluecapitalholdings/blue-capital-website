@@ -296,18 +296,25 @@ export default function App() {
         </div>
       </section>
 
-      <section id="about" style={styles.section}>
-        <h2 style={styles.sectionTitle}>About Blue Capital Holdings</h2>
-        <p style={styles.paragraph}>
-          Blue Capital Holdings LLC is a private investment firm focused on acquiring and operating established small to mid-sized businesses.
-        </p>
-        <p style={styles.paragraph}>
-          The firm’s strategy centers on long-term ownership, operational improvement, and disciplined growth. Rather than purchasing businesses for short-term resale, Blue Capital Holdings seeks to build durable value by preserving what already works, strengthening operations, and supporting sustainable expansion over time.
-        </p>
-        <p style={styles.paragraph}>
-          We work with owners who are preparing for retirement, succession planning, or a strategic transition and value a thoughtful, responsible buyer.
-        </p>
-      </section>
+  <section id="about" style={styles.section}>
+  <h2 style={styles.sectionTitle}>About Blue Capital Holdings</h2>
+
+  <p style={styles.paragraph}>
+    Blue Capital Holdings LLC is a private investment firm focused on acquiring and operating established small to mid-sized businesses.
+  </p>
+
+  <p style={styles.paragraph}>
+    We pursue long-term ownership through operational improvement, disciplined growth, and responsible stewardship. Rather than short-term resale, we focus on preserving what works, strengthening operations, and building durable enterprise value over time.
+  </p>
+
+  <p style={styles.paragraph}>
+    We partner with business owners navigating retirement, succession, or transition who value a thoughtful, capable, and long-term buyer.
+  </p>
+
+  <p style={styles.paragraph}>
+    Blue Capital Holdings LLC is actively seeking acquisition opportunities and welcomes confidential conversations with business owners, brokers, and referral partners.
+  </p>
+</section>
 
       <section id="criteria" style={styles.sectionGray}>
         <div style={styles.section}>
@@ -385,34 +392,42 @@ export default function App() {
         </div>
       </section>
 
-      <section id="founder" style={styles.section}>
-        <div style={styles.twoCol}>
-          <div>
-            <h2 style={styles.sectionTitle}>Founder / Operator</h2>
-            <div style={styles.founderName}>Michael McMullan</div>
-            <p style={styles.paragraph}>
-              Michael McMullan brings years of management experience across operations, finance, and supply chain environments, with a practical focus on process improvement, execution, and long-term business performance.
-            </p>
-            <p style={styles.paragraph}>
-              He holds a Bachelor of Science from the Indiana University Kelley School of Business, with a double major in Finance and Supply Chain Management and a minor in Economics. He is also Lean Six Sigma Green Belt certified.
-            </p>
-            <p style={styles.paragraph}>
-              Based in Avon, Indiana, Michael founded Blue Capital Holdings LLC to acquire and grow quality small businesses through disciplined ownership and operational stewardship.
-            </p>
-          </div>
+<section id="founder" style={styles.section}>
+  <div style={styles.twoCol}>
+    <div>
+      <h2 style={styles.sectionTitle}>Founder / Operator</h2>
+      <div style={styles.founderName}>Michael McMullan</div>
 
-          <div style={styles.card}>
-            <div style={styles.cardTitle}>Why This Matters to Lenders, Brokers, and Sellers</div>
-            <ul style={styles.list}>
-              <li>Operator-oriented acquisition approach</li>
-              <li>Financial and supply chain background</li>
-              <li>Process improvement mindset</li>
-              <li>Clear acquisition strategy and criteria</li>
-              <li>Long-term ownership philosophy</li>
-            </ul>
-          </div>
-        </div>
-      </section>
+      <p style={styles.paragraph}>
+        Michael McMullan brings over a decade of management experience across operations, finance, and supply chain environments, with a practical focus on execution, process improvement, and long-term business performance.
+      </p>
+
+      <p style={styles.paragraph}>
+        He holds a Bachelor of Science from the Indiana University Kelley School of Business, with a double major in Finance and Supply Chain Management and a minor in Economics. He is also Lean Six Sigma Green Belt certified.
+      </p>
+
+      <p style={styles.paragraph}>
+        Based in Avon, Indiana, Michael founded Blue Capital Holdings LLC to acquire and grow quality small businesses through disciplined ownership and operational stewardship.
+      </p>
+    </div>
+
+    <div style={styles.card}>
+      <div style={styles.cardTitle}>Why This Matters to Lenders, Brokers, and Sellers</div>
+
+      <ul style={styles.list}>
+        <li>Over a decade of management experience</li>
+        <li>Finance, supply chain, and economics background</li>
+        <li>Lean Six Sigma Green Belt certified</li>
+        <li>Operator-oriented acquisition approach</li>
+        <li>Clear acquisition strategy and long-term ownership philosophy</li>
+      </ul>
+
+      <p style={styles.paragraph}>
+        The firm is actively seeking acquisition opportunities.
+      </p>
+    </div>
+  </div>
+</section>
 
       <section id="contact" style={styles.contactWrap}>
         <h2 style={styles.sectionTitle}>Contact</h2>
