@@ -423,17 +423,24 @@ export default function App() {
         <p style={styles.paragraph}><strong>Phone:</strong> 812-312-1910</p>
         <p style={styles.paragraph}><strong>Location:</strong> Avon, Indiana</p>
 
-        <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" style={styles.form}>
-          <input name="name" placeholder="Your Name" style={styles.input} />
-          <input name="company" placeholder="Company Name" style={styles.input} />
-          <input name="revenue" placeholder="Annual Revenue" style={styles.input} />
-          <input name="location" placeholder="Location" style={styles.input} />
-          <input name="email" placeholder="Email" style={styles.input} />
-          <input name="phone" placeholder="Phone" style={styles.input} />
-          <textarea name="message" placeholder="Tell us about the business" style={styles.textarea} />
-          <button type="submit" style={styles.submit}>Submit Confidentially</button>
-        </form>
-      </section>
+     <form action="https://formspree.io/f/mwvrjwnk" method="POST">
+  <input name="name" placeholder="Your Name" style={styles.input} />
+  <input name="company" placeholder="Company Name" style={styles.input} />
+  <input name="revenue" placeholder="Annual Revenue" style={styles.input} />
+  <input name="location" placeholder="Location" style={styles.input} />
+  <input name="email" placeholder="Email" style={styles.input} />
+  <input name="phone" placeholder="Phone" style={styles.input} />
+
+  <textarea
+    name="message"
+    placeholder="Tell us about the business"
+    style={styles.textarea}
+  </textarea>
+
+  <button type="submit" style={styles.submit}>
+    Submit Confidentially
+  </button>
+</form>
 
       <footer style={styles.footer}>
         <div style={styles.footerBrand}>Blue Capital Holdings LLC</div>
