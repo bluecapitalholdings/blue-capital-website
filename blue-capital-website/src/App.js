@@ -431,11 +431,20 @@ export default function App() {
   <input name="email" placeholder="Email" style={styles.input} />
   <input name="phone" placeholder="Phone" style={styles.input} />
 
+  <input name="industry" placeholder="Industry" style={styles.input} />
+  <input name="cashflow" placeholder="Annual EBITDA / Owner Cash Flow" style={styles.input} />
+  <input name="askingPrice" placeholder="Asking Price" style={styles.input} />
+  <input name="yearsInBusiness" placeholder="Years in Business" style={styles.input} />
+  <input name="employees" placeholder="Number of Employees" style={styles.input} />
+  <input name="reasonForSelling" placeholder="Reason for Selling" style={styles.input} />
+  <input name="timeline" placeholder="Desired Timeline to Sell" style={styles.input} />
+  <input name="sellerFinancing" placeholder="Is Seller Financing Available?" style={styles.input} />
+
   <textarea
     name="message"
     placeholder="Tell us about the business"
     style={styles.textarea}
-  </textarea>
+  ></textarea>
 
   <button type="submit" style={styles.submit}>
     Submit Confidentially
