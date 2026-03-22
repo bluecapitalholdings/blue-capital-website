@@ -465,6 +465,7 @@ export default function App() {
     Submit Confidentially
   </button>
 </form>
+</section>
 
       <footer style={styles.footer}>
         <div style={styles.footerBrand}>Blue Capital Holdings LLC</div>
