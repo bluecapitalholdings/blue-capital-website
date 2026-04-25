@@ -26,7 +26,7 @@ export default function App() {
 
   const styles = {
     page: {
-      fontFamily: "Arial, sans-serif",
+      fontFamily: "'Segoe UI', 'Helvetica Neue', Arial, sans-serif",
       color: "#1f2937",
       backgroundColor: "#fcfdff",
       margin: 0,
@@ -44,22 +44,34 @@ export default function App() {
     navInner: {
       maxWidth: "1180px",
       margin: "0 auto",
-      padding: "18px 28px",
+      padding: "16px 28px",
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
       gap: "24px",
       flexWrap: "wrap",
     },
+    brandWrap: {
+      display: "flex",
+      alignItems: "center",
+      gap: "14px",
+    },
+    navLogo: {
+      width: "68px",
+      height: "auto",
+      display: "block",
+      objectFit: "contain",
+    },
     brandText: {
-      fontSize: "20px",
+      fontSize: "18px",
       fontWeight: 700,
-      letterSpacing: "-0.02em",
+      letterSpacing: "0.01em",
       color: "#00305b",
+      textTransform: "uppercase",
     },
     navLinks: {
       display: "flex",
-      gap: "22px",
+      gap: "18px",
       fontSize: "15px",
       color: "#374151",
       flexWrap: "wrap",
@@ -68,7 +80,17 @@ export default function App() {
     link: {
       textDecoration: "none",
       color: "#334155",
-      fontWeight: 500,
+      fontWeight: 600,
+      padding: "8px 0",
+    },
+    missionNavBtn: {
+      textDecoration: "none",
+      color: "#00305b",
+      fontWeight: 700,
+      padding: "9px 14px",
+      borderRadius: "999px",
+      backgroundColor: "#e8f6f7",
+      border: "1px solid #bde7eb",
     },
     hero: {
       background:
@@ -77,12 +99,12 @@ export default function App() {
       padding: "108px 28px 92px",
     },
     heroInner: {
-      maxWidth: "1180px",
+      maxWidth: "1040px",
       margin: "0 auto",
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-      gap: "56px",
-      alignItems: "center",
+      display: "block",
+    },
+    heroContent: {
+      maxWidth: "820px",
     },
     heroEyebrow: {
       display: "inline-block",
@@ -103,21 +125,24 @@ export default function App() {
       fontWeight: 800,
       marginBottom: "24px",
       letterSpacing: "-0.03em",
+      fontFamily: "Georgia, 'Times New Roman', serif",
+      maxWidth: "900px",
     },
     heroText: {
-      fontSize: "18px",
-      lineHeight: 1.8,
+      fontSize: "19px",
+      lineHeight: 1.9,
       color: "#48657a",
       marginBottom: "32px",
       maxWidth: "720px",
     },
     missionStatement: {
-      fontSize: "20px",
-      lineHeight: 1.75,
+      fontSize: "22px",
+      lineHeight: 1.8,
       color: "#21445f",
       maxWidth: "760px",
       marginBottom: "28px",
       fontWeight: 600,
+      fontFamily: "Georgia, 'Times New Roman', serif",
     },
     reassuranceRow: {
       display: "flex",
@@ -182,26 +207,6 @@ export default function App() {
       fontSize: "14px",
       lineHeight: 1.6,
     },
-    heroLogoWrap: {
-      display: "flex",
-      justifyContent: "center",
-      alignItems: "center",
-    },
-    heroLogoCard: {
-      width: "100%",
-      maxWidth: "380px",
-      backgroundColor: "#ffffff",
-      border: "1px solid #dce8ef",
-      borderRadius: "28px",
-      padding: "28px",
-      boxShadow: "0 24px 52px rgba(0,48,91,0.08)",
-    },
-    heroLogo: {
-      width: "100%",
-      maxWidth: "320px",
-      display: "block",
-      margin: "0 auto",
-    },
     trustStrip: {
       borderBottom: "1px solid #e3edf2",
       backgroundColor: "#fdfefe",
@@ -233,6 +238,7 @@ export default function App() {
       marginBottom: "20px",
       letterSpacing: "-0.02em",
       color: "#00305b",
+      fontFamily: "Georgia, 'Times New Roman', serif",
     },
     sectionEyebrow: {
       display: "inline-block",
@@ -380,6 +386,7 @@ export default function App() {
       color: "#00305b",
       marginBottom: "18px",
       fontWeight: 800,
+      fontFamily: "Georgia, 'Times New Roman', serif",
     },
     standaloneMissionBody: {
       fontSize: "20px",
@@ -808,13 +815,23 @@ export default function App() {
     <div style={styles.page}>
       <nav style={styles.nav}>
         <div style={styles.navInner}>
-          <div style={styles.brandText}>Blue Capital Holdings LLC</div>
+          <div style={styles.brandWrap}>
+            <img
+              src="/logo.png"
+              alt="Blue Capital Holdings logo"
+              style={styles.navLogo}
+            />
+            <div style={styles.brandText}>Blue Capital Holdings LLC</div>
+          </div>
           <div style={styles.navLinks}>
             <a href="#home" style={styles.link}>
               Home
             </a>
             <a href="#about" style={styles.link}>
               About
+            </a>
+            <a href="#mission" style={styles.missionNavBtn}>
+              Mission Statement
             </a>
             <a href="#criteria" style={styles.link}>
               Criteria
@@ -834,7 +851,7 @@ export default function App() {
 
       <section id="home" style={styles.hero}>
         <div style={styles.heroInner}>
-          <div>
+          <div style={styles.heroContent}>
             <div style={styles.heroEyebrow}>Private acquisition firm</div>
             <h1 style={styles.heroTitle}>
               Selling your business is personal. The next owner should treat it that way.
@@ -884,16 +901,6 @@ export default function App() {
               <div style={styles.reassurancePill}>Built for retirement and succession transitions</div>
             </div>
           </div>
-
-          <div style={styles.heroLogoWrap}>
-            <div style={styles.heroLogoCard}>
-              <img
-                src="/logo.png"
-                alt="Blue Capital Holdings logo"
-                style={styles.heroLogo}
-              />
-            </div>
-          </div>
         </div>
       </section>
 
@@ -939,16 +946,6 @@ export default function App() {
           and referral partners.
         </p>
 
-        <div style={styles.missionPanel}>
-          <div style={styles.missionTitle}>Mission Statement</div>
-          <p style={styles.missionText}>
-            Our mission is to give business owners a trustworthy transition path,
-            not just an exit. We acquire strong small businesses with the intent
-            to protect what makes them valuable, support the people who helped
-            build them, and grow them responsibly for the long term.
-          </p>
-        </div>
-
         <div style={styles.emotionalGrid}>
           <div style={styles.emotionalCard}>
             <div style={styles.emotionalTitle}>You built more than revenue</div>
@@ -977,7 +974,7 @@ export default function App() {
         </div>
       </section>
 
-      <section style={styles.standaloneMissionSection}>
+      <section id="mission" style={styles.standaloneMissionSection}>
         <div style={styles.standaloneMissionWrap}>
           <div style={styles.standaloneMissionCard}>
             <div style={styles.standaloneMissionLabel}>Mission For Business Owners</div>
