@@ -183,7 +183,7 @@ export default function App() {
       textDecoration: "none",
       boxShadow: "0 12px 24px rgba(0,48,91,0.16)",
       display: "inline-block",
-      transition: "transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease",
+      transition: "transform 0.2s ease, box-shadow 0.2s ease",
     },
     secondaryBtn: {
       border: "1px solid #bcd8e5",
@@ -366,28 +366,6 @@ export default function App() {
       lineHeight: 1.75,
       color: "#536879",
       marginBottom: 0,
-    },
-    missionPanel: {
-      background:
-        "linear-gradient(135deg, #f7fcfd 0%, #edf7f8 100%)",
-      border: "1px solid #d2e7ea",
-      borderRadius: "24px",
-      padding: "32px",
-      boxShadow: "0 16px 36px rgba(0,48,91,0.06)",
-      marginTop: "28px",
-    },
-    missionTitle: {
-      fontSize: "24px",
-      fontWeight: 800,
-      color: "#00305b",
-      marginBottom: "14px",
-    },
-    missionText: {
-      fontSize: "19px",
-      lineHeight: 1.85,
-      color: "#36546b",
-      margin: 0,
-      maxWidth: "860px",
     },
     emotionalGrid: {
       display: "grid",
@@ -908,7 +886,7 @@ export default function App() {
       resetForm();
       setSubmitted(true);
       window.scrollTo({ top: 0, behavior: "smooth" });
-    } catch (error) {
+    } catch {
       setErrorMessage(
         "Something went wrong while submitting the form. Please try again."
       );
@@ -954,6 +932,7 @@ export default function App() {
             />
             <div style={styles.brandText}>Blue Capital Holdings LLC</div>
           </div>
+
           <div style={styles.navLinks}>
             <a
               href="#home"
@@ -1054,6 +1033,7 @@ export default function App() {
               explore your options with a serious buyer, we aim to make that first
               conversation clear, respectful, and pressure-free.
             </p>
+
             <div style={styles.buttonRow}>
               <a
                 href="#contact"
@@ -1080,6 +1060,7 @@ export default function App() {
                 See How the Process Works
               </a>
             </div>
+
             <div style={styles.heroStats}>
               <div style={styles.statCard}>
                 <div style={styles.statValue}>Direct Buyer</div>
@@ -1100,6 +1081,7 @@ export default function App() {
                 </div>
               </div>
             </div>
+
             <div style={styles.reassuranceRow}>
               <div style={styles.reassurancePill}>Confidential conversations</div>
               <div style={styles.reassurancePill}>Legacy-minded ownership</div>
@@ -1127,6 +1109,7 @@ export default function App() {
               Built around stewardship, continuity, and patient growth.
             </div>
           </div>
+
           <div
             style={{
               ...styles.trustBadge,
@@ -1143,6 +1126,7 @@ export default function App() {
               A private firm focused on direct, thoughtful conversations.
             </div>
           </div>
+
           <div
             style={{
               ...styles.trustBadge,
@@ -1159,6 +1143,7 @@ export default function App() {
               Focused on established businesses with durable fundamentals.
             </div>
           </div>
+
           <div
             style={{
               ...styles.trustBadge,
@@ -1380,6 +1365,7 @@ export default function App() {
             succession, our goal is to offer a steady hand, a direct process, and
             a transition path that respects everything you have put into the business.
           </p>
+
           <div style={styles.twoCol}>
             <div style={styles.card}>
               <div style={styles.cardTitle}>Why Owners Work With Us</div>
@@ -1458,84 +1444,87 @@ export default function App() {
       <section id="founder" style={styles.founderSection}>
         <div style={styles.section}>
           <div style={styles.twoCol}>
-          <div>
-            <h2 style={styles.sectionTitle}>Founder / Operator</h2>
-            <div style={styles.founderLeadGrid}>
-              <div style={styles.founderImageFrame}>
+            <div>
+              <h2 style={styles.sectionTitle}>Founder / Operator</h2>
+
+              <div style={styles.founderLeadGrid}>
+                <div style={styles.founderImageFrame}>
                   <img
                     src="/headshot.jpg"
                     alt="Michael McMullan"
                     style={styles.founderImage}
                   />
-              </div>
-              <div style={styles.founderIntroCard}>
-                <div style={styles.founderName}>Michael McMullan</div>
-                <div style={styles.founderRole}>Founder and Operator</div>
-                <p style={styles.founderIntroText}>
-                  Michael McMullan brings an operator's mindset to acquisitions,
-                  combining finance, supply chain, and process improvement
-                  experience with a long-term commitment to building durable
-                  companies responsibly.
-                </p>
-                <div style={styles.founderHighlights}>
-                  <div style={styles.founderHighlight}>10+ years management experience</div>
-                  <div style={styles.founderHighlight}>Finance and supply chain background</div>
-                  <div style={styles.founderHighlight}>Lean Six Sigma Green Belt</div>
+                </div>
+
+                <div style={styles.founderIntroCard}>
+                  <div style={styles.founderName}>Michael McMullan</div>
+                  <div style={styles.founderRole}>Founder and Operator</div>
+                  <p style={styles.founderIntroText}>
+                    Michael McMullan brings an operator's mindset to acquisitions,
+                    combining finance, supply chain, and process improvement
+                    experience with a long-term commitment to building durable
+                    companies responsibly.
+                  </p>
+
+                  <div style={styles.founderHighlights}>
+                    <div style={styles.founderHighlight}>10+ years management experience</div>
+                    <div style={styles.founderHighlight}>Finance and supply chain background</div>
+                    <div style={styles.founderHighlight}>Lean Six Sigma Green Belt</div>
+                  </div>
                 </div>
               </div>
+
+              <p style={styles.paragraph}>
+                Michael McMullan brings over a decade of management experience
+                across operations, finance, and supply chain environments, with a
+                practical focus on execution, process improvement, and long-term
+                business performance.
+              </p>
+
+              <p style={styles.paragraph}>
+                He holds a Bachelor of Science from the Indiana University Kelley
+                School of Business, with a double major in Finance and Supply Chain
+                Management and a minor in Economics. He is also Lean Six Sigma Green
+                Belt certified.
+              </p>
+
+              <p style={styles.paragraph}>
+                Based in Avon, Indiana, Michael founded Blue Capital Holdings LLC to
+                acquire and grow quality small businesses through disciplined
+                ownership and operational stewardship.
+              </p>
+
+              <div style={styles.quoteCard}>
+                Built for owners who care about legacy, continuity, and thoughtful
+                long-term stewardship.
+              </div>
             </div>
 
-            <p style={styles.paragraph}>
-              Michael McMullan brings over a decade of management experience
-              across operations, finance, and supply chain environments, with a
-              practical focus on execution, process improvement, and long-term
-              business performance.
-            </p>
+            <div
+              style={{
+                ...styles.card,
+                ...(hoveredSurface === "founderCard" ? styles.elevatedHover : {}),
+              }}
+              onMouseEnter={() => setHoveredSurface("founderCard")}
+              onMouseLeave={() => setHoveredSurface("")}
+            >
+              <div style={styles.cardTitle}>
+                Why This Matters to Lenders, Brokers, and Sellers
+              </div>
 
-            <p style={styles.paragraph}>
-              He holds a Bachelor of Science from the Indiana University Kelley
-              School of Business, with a double major in Finance and Supply Chain
-              Management and a minor in Economics. He is also Lean Six Sigma Green
-              Belt certified.
-            </p>
+              <ul style={styles.list}>
+                <li>Over a decade of management experience</li>
+                <li>Finance, supply chain, and economics background</li>
+                <li>Lean Six Sigma Green Belt certified</li>
+                <li>Operator-oriented acquisition approach</li>
+                <li>Clear acquisition strategy and long-term ownership philosophy</li>
+              </ul>
 
-            <p style={styles.paragraph}>
-              Based in Avon, Indiana, Michael founded Blue Capital Holdings LLC to
-              acquire and grow quality small businesses through disciplined
-              ownership and operational stewardship.
-            </p>
-
-            <div style={styles.quoteCard}>
-              Built for owners who care about legacy, continuity, and thoughtful
-              long-term stewardship.
+              <p style={styles.paragraph}>
+                The firm is actively seeking acquisition opportunities.
+              </p>
             </div>
           </div>
-
-          <div
-            style={{
-              ...styles.card,
-              ...(hoveredSurface === "founderCard" ? styles.elevatedHover : {}),
-            }}
-            onMouseEnter={() => setHoveredSurface("founderCard")}
-            onMouseLeave={() => setHoveredSurface("")}
-          >
-            <div style={styles.cardTitle}>
-              Why This Matters to Lenders, Brokers, and Sellers
-            </div>
-
-            <ul style={styles.list}>
-              <li>Over a decade of management experience</li>
-              <li>Finance, supply chain, and economics background</li>
-              <li>Lean Six Sigma Green Belt certified</li>
-              <li>Operator-oriented acquisition approach</li>
-              <li>Clear acquisition strategy and long-term ownership philosophy</li>
-            </ul>
-
-            <p style={styles.paragraph}>
-              The firm is actively seeking acquisition opportunities.
-            </p>
-          </div>
-        </div>
         </div>
       </section>
 
@@ -1557,6 +1546,7 @@ export default function App() {
                 owners feel understood, reduce uncertainty, and make taking the
                 first step feel safe.
               </p>
+
               <ul style={styles.funnelList}>
                 <li style={styles.funnelItem}>
                   <span style={styles.checkmark}>+</span>
@@ -1590,6 +1580,7 @@ export default function App() {
                 The best inquiries usually come from owners who want to understand
                 their options before they are ready to make a final decision.
               </p>
+
               <a
                 href="#contact"
                 style={{
@@ -1617,6 +1608,7 @@ export default function App() {
               The more context you share, the more thoughtfully we can evaluate
               fit and respond.
             </p>
+
             <div style={styles.intakeHeader}>
               <div style={styles.intakeBadge}>Seller Intake</div>
               <p style={styles.paragraph}>
@@ -1624,6 +1616,7 @@ export default function App() {
                 confidential conversation about transition timing, legacy, and fit.
               </p>
             </div>
+
             <p style={styles.paragraph}>
               <strong>Email:</strong> info@bluecapitalholdingsllc.com
             </p>
@@ -1811,4 +1804,3 @@ export default function App() {
     </div>
   );
 }
-
