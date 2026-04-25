@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const initialFormData = {
   name: "",
@@ -25,6 +25,15 @@ export default function App() {
   const [hoveredNav, setHoveredNav] = useState("");
   const [hoveredSurface, setHoveredSurface] = useState("");
   const [formData, setFormData] = useState(initialFormData);
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.innerWidth <= 768 : false
+  );
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 768);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const styles = {
     page: {
@@ -40,33 +49,33 @@ export default function App() {
       boxShadow: "0 1px 10px rgba(0,48,91,0.05)",
       position: "sticky",
       top: 0,
-      zIndex: 10,
+      zIndex: 20,
       backdropFilter: "blur(10px)",
     },
     navInner: {
       maxWidth: "1180px",
       margin: "0 auto",
-      padding: "14px 20px",
+      padding: isMobile ? "12px 16px" : "14px 20px",
       display: "flex",
       flexDirection: "column",
       alignItems: "flex-start",
-      gap: "16px",
+      gap: isMobile ? "12px" : "16px",
     },
     brandWrap: {
       display: "flex",
       alignItems: "center",
-      gap: "12px",
+      gap: isMobile ? "10px" : "12px",
       width: "100%",
     },
     navLogo: {
-      width: "56px",
-      height: "56px",
+      width: isMobile ? "48px" : "56px",
+      height: isMobile ? "48px" : "56px",
       display: "block",
       objectFit: "contain",
       flexShrink: 0,
     },
     brandText: {
-      fontSize: "clamp(16px, 4vw, 18px)",
+      fontSize: isMobile ? "14px" : "18px",
       fontWeight: 700,
       letterSpacing: "0.01em",
       color: "#00305b",
@@ -75,8 +84,8 @@ export default function App() {
     },
     navLinks: {
       display: "flex",
-      gap: "12px",
-      fontSize: "15px",
+      gap: isMobile ? "10px" : "12px",
+      fontSize: isMobile ? "14px" : "15px",
       flexWrap: "nowrap",
       alignItems: "center",
       width: "100%",
@@ -84,12 +93,13 @@ export default function App() {
       paddingBottom: "4px",
       scrollbarWidth: "none",
       msOverflowStyle: "none",
+      WebkitOverflowScrolling: "touch",
     },
     link: {
       textDecoration: "none",
       color: "#334155",
       fontWeight: 500,
-      padding: "10px 12px",
+      padding: isMobile ? "9px 11px" : "10px 12px",
       borderRadius: "999px",
       transition: "all 0.2s ease",
       whiteSpace: "nowrap",
@@ -99,7 +109,7 @@ export default function App() {
       textDecoration: "none",
       color: "#334155",
       fontWeight: 500,
-      padding: "10px 12px",
+      padding: isMobile ? "9px 11px" : "10px 12px",
       borderRadius: "999px",
       backgroundColor: "transparent",
       transition: "all 0.2s ease",
@@ -116,7 +126,7 @@ export default function App() {
       background:
         "linear-gradient(180deg, #f8fcfd 0%, #eef7f9 52%, #fdfefe 100%)",
       color: "#00305b",
-      padding: "108px 28px 92px",
+      padding: isMobile ? "56px 20px 54px" : "108px 28px 92px",
     },
     heroInner: {
       maxWidth: "1040px",
@@ -140,7 +150,7 @@ export default function App() {
       color: "#1f7d8c",
     },
     heroTitle: {
-      fontSize: "clamp(40px, 7vw, 58px)",
+      fontSize: isMobile ? "34px" : "clamp(40px, 7vw, 58px)",
       lineHeight: 1.04,
       fontWeight: 800,
       marginBottom: "24px",
@@ -149,14 +159,14 @@ export default function App() {
       maxWidth: "900px",
     },
     heroText: {
-      fontSize: "19px",
-      lineHeight: 1.9,
+      fontSize: isMobile ? "17px" : "19px",
+      lineHeight: 1.85,
       color: "#48657a",
       marginBottom: "32px",
       maxWidth: "720px",
     },
     missionStatement: {
-      fontSize: "22px",
+      fontSize: isMobile ? "20px" : "22px",
       lineHeight: 1.8,
       color: "#21445f",
       maxWidth: "760px",
@@ -218,7 +228,9 @@ export default function App() {
     },
     heroStats: {
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+      gridTemplateColumns: isMobile
+        ? "1fr"
+        : "repeat(auto-fit, minmax(160px, 1fr))",
       gap: "14px",
       marginTop: "30px",
     },
@@ -246,9 +258,11 @@ export default function App() {
     trustInner: {
       maxWidth: "1180px",
       margin: "0 auto",
-      padding: "24px 28px",
+      padding: isMobile ? "18px 20px" : "24px 28px",
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+      gridTemplateColumns: isMobile
+        ? "1fr"
+        : "repeat(auto-fit, minmax(240px, 1fr))",
       gap: "16px",
     },
     trustBadge: {
@@ -297,17 +311,17 @@ export default function App() {
     section: {
       maxWidth: "1180px",
       margin: "0 auto",
-      padding: "clamp(68px, 8vw, 92px) 28px",
-      scrollMarginTop: "180px",
+      padding: isMobile ? "56px 20px" : "clamp(68px, 8vw, 92px) 28px",
+      scrollMarginTop: isMobile ? "120px" : "180px",
     },
     sectionGray: {
       background:
         "linear-gradient(180deg, #f7fbfc 0%, #f3f8fa 55%, #ffffff 100%)",
-      padding: "80px 0",
-      scrollMarginTop: "180px",
+      padding: isMobile ? "56px 0" : "80px 0",
+      scrollMarginTop: isMobile ? "120px" : "180px",
     },
     sectionTitle: {
-      fontSize: "clamp(30px, 5vw, 36px)",
+      fontSize: isMobile ? "26px" : "clamp(30px, 5vw, 36px)",
       fontWeight: 800,
       marginBottom: "20px",
       letterSpacing: "-0.02em",
@@ -324,14 +338,14 @@ export default function App() {
       color: "#2f8b99",
     },
     sectionLead: {
-      fontSize: "19px",
+      fontSize: isMobile ? "17px" : "19px",
       lineHeight: 1.85,
       color: "#496173",
       maxWidth: "860px",
       marginBottom: "26px",
     },
     paragraph: {
-      fontSize: "17px",
+      fontSize: isMobile ? "16px" : "17px",
       lineHeight: 1.8,
       marginBottom: "16px",
       color: "#536879",
@@ -339,14 +353,16 @@ export default function App() {
     },
     twoCol: {
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-      gap: "32px",
+      gridTemplateColumns: isMobile
+        ? "1fr"
+        : "repeat(auto-fit, minmax(320px, 1fr))",
+      gap: isMobile ? "24px" : "32px",
       alignItems: "start",
     },
     card: {
       backgroundColor: "#ffffff",
       borderRadius: "18px",
-      padding: "26px",
+      padding: isMobile ? "22px" : "26px",
       boxShadow: "0 12px 28px rgba(0,48,91,0.06)",
       border: "1px solid #e3edf3",
       transition:
@@ -372,7 +388,9 @@ export default function App() {
     },
     criteriaGrid: {
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+      gridTemplateColumns: isMobile
+        ? "1fr"
+        : "repeat(auto-fit, minmax(240px, 1fr))",
       gap: "24px",
       marginBottom: "28px",
     },
@@ -384,7 +402,9 @@ export default function App() {
     },
     emotionalGrid: {
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+      gridTemplateColumns: isMobile
+        ? "1fr"
+        : "repeat(auto-fit, minmax(240px, 1fr))",
       gap: "22px",
       marginTop: "30px",
     },
@@ -410,24 +430,26 @@ export default function App() {
     standaloneMissionSection: {
       background:
         "linear-gradient(180deg, #ffffff 0%, #f8fbfc 100%)",
-      padding: "84px 0",
+      padding: isMobile ? "56px 0" : "84px 0",
       borderTop: "1px solid #e1ebf0",
       borderBottom: "1px solid #e1ebf0",
-      scrollMarginTop: "180px",
+      scrollMarginTop: isMobile ? "120px" : "180px",
     },
     standaloneMissionWrap: {
       maxWidth: "1180px",
       margin: "0 auto",
-      padding: "0 28px",
+      padding: isMobile ? "0 20px" : "0 28px",
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+      gridTemplateColumns: isMobile
+        ? "1fr"
+        : "repeat(auto-fit, minmax(320px, 1fr))",
       gap: "32px",
       alignItems: "start",
     },
     standaloneMissionCard: {
       backgroundColor: "#ffffff",
       borderRadius: "24px",
-      padding: "34px",
+      padding: isMobile ? "24px" : "34px",
       border: "1px solid #dbe8ee",
       boxShadow: "0 16px 36px rgba(0,48,91,0.06)",
     },
@@ -440,7 +462,7 @@ export default function App() {
       marginBottom: "14px",
     },
     standaloneMissionTitle: {
-      fontSize: "clamp(30px, 4.5vw, 40px)",
+      fontSize: isMobile ? "28px" : "clamp(30px, 4.5vw, 40px)",
       lineHeight: 1.1,
       letterSpacing: "-0.03em",
       color: "#00305b",
@@ -449,7 +471,7 @@ export default function App() {
       fontFamily: "Georgia, 'Times New Roman', serif",
     },
     standaloneMissionBody: {
-      fontSize: "20px",
+      fontSize: isMobile ? "18px" : "20px",
       lineHeight: 1.85,
       color: "#436276",
       margin: 0,
@@ -480,18 +502,18 @@ export default function App() {
       background:
         "linear-gradient(135deg, #00305b 0%, #0d4b76 100%)",
       color: "#ffffff",
-      padding: "84px 0",
-      scrollMarginTop: "180px",
+      padding: isMobile ? "56px 0" : "84px 0",
+      scrollMarginTop: isMobile ? "120px" : "180px",
     },
     sellText: {
       color: "#dbeafe",
-      fontSize: "18px",
+      fontSize: isMobile ? "17px" : "18px",
       lineHeight: 1.8,
       maxWidth: "760px",
       marginBottom: "28px",
     },
     founderName: {
-      fontSize: "26px",
+      fontSize: isMobile ? "22px" : "26px",
       fontWeight: 700,
       color: "#00305b",
       marginBottom: "10px",
@@ -507,8 +529,8 @@ export default function App() {
     },
     founderLeadGrid: {
       display: "grid",
-      gridTemplateColumns: "minmax(220px, 280px) 1fr",
-      gap: "28px",
+      gridTemplateColumns: isMobile ? "1fr" : "minmax(220px, 280px) 1fr",
+      gap: isMobile ? "18px" : "28px",
       alignItems: "center",
       marginBottom: "30px",
     },
@@ -518,6 +540,8 @@ export default function App() {
       padding: "14px",
       border: "1px solid #dfe9ef",
       boxShadow: "0 18px 36px rgba(0,48,91,0.08)",
+      maxWidth: isMobile ? "280px" : "none",
+      margin: isMobile ? "0 auto" : "0",
     },
     founderImage: {
       width: "100%",
@@ -534,7 +558,7 @@ export default function App() {
       boxShadow: "0 14px 28px rgba(0,48,91,0.06)",
     },
     founderIntroText: {
-      fontSize: "18px",
+      fontSize: isMobile ? "17px" : "18px",
       lineHeight: 1.9,
       color: "#4b6678",
       margin: 0,
@@ -557,19 +581,21 @@ export default function App() {
     processSection: {
       background:
         "linear-gradient(180deg, #ffffff 0%, #f7fbfc 100%)",
-      padding: "84px 0",
-      scrollMarginTop: "180px",
+      padding: isMobile ? "56px 0" : "84px 0",
+      scrollMarginTop: isMobile ? "120px" : "180px",
     },
     founderSection: {
       background:
         "linear-gradient(180deg, #ffffff 0%, #f6fafc 100%)",
       borderTop: "1px solid #e2ebf0",
       borderBottom: "1px solid #e2ebf0",
-      scrollMarginTop: "180px",
+      scrollMarginTop: isMobile ? "120px" : "180px",
     },
     processGrid: {
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+      gridTemplateColumns: isMobile
+        ? "1fr"
+        : "repeat(auto-fit, minmax(220px, 1fr))",
       gap: "22px",
       marginTop: "28px",
     },
@@ -617,7 +643,7 @@ export default function App() {
     },
     contactSection: {
       backgroundColor: "#ffffff",
-      scrollMarginTop: "180px",
+      scrollMarginTop: isMobile ? "120px" : "180px",
     },
     funnelBand: {
       background:
@@ -628,18 +654,18 @@ export default function App() {
     funnelWrap: {
       maxWidth: "1180px",
       margin: "0 auto",
-      padding: "72px 28px",
+      padding: isMobile ? "56px 20px" : "72px 28px",
     },
     funnelGrid: {
       display: "grid",
-      gridTemplateColumns: "1.1fr 0.9fr",
+      gridTemplateColumns: isMobile ? "1fr" : "1.1fr 0.9fr",
       gap: "28px",
       alignItems: "start",
     },
     funnelChecklist: {
       backgroundColor: "#ffffff",
       borderRadius: "22px",
-      padding: "28px",
+      padding: isMobile ? "22px" : "28px",
       border: "1px solid #dfe9ef",
       boxShadow: "0 16px 34px rgba(0,48,91,0.06)",
     },
@@ -669,7 +695,7 @@ export default function App() {
         "linear-gradient(135deg, #00305b 0%, #0d4b76 100%)",
       color: "#ffffff",
       borderRadius: "24px",
-      padding: "30px",
+      padding: isMobile ? "24px" : "30px",
       boxShadow: "0 22px 44px rgba(0,48,91,0.18)",
     },
     ctaTitle: {
@@ -727,13 +753,13 @@ export default function App() {
     contactWrap: {
       maxWidth: "860px",
       margin: "0 auto",
-      padding: "80px 28px",
+      padding: isMobile ? "56px 20px" : "80px 28px",
     },
     contactPanel: {
       background:
         "linear-gradient(180deg, rgba(247,251,252,0.96) 0%, rgba(255,255,255,1) 100%)",
       borderRadius: "24px",
-      padding: "28px",
+      padding: isMobile ? "22px" : "28px",
       border: "1px solid #dfe9ef",
       boxShadow: "0 16px 36px rgba(0,48,91,0.06)",
     },
@@ -744,7 +770,9 @@ export default function App() {
     },
     inputGrid: {
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+      gridTemplateColumns: isMobile
+        ? "1fr"
+        : "repeat(auto-fit, minmax(240px, 1fr))",
       gap: "18px",
     },
     input: {
@@ -1550,12 +1578,7 @@ export default function App() {
 
       <section style={styles.funnelBand}>
         <div style={styles.funnelWrap}>
-          <div
-            style={{
-              ...styles.funnelGrid,
-              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-            }}
-          >
+          <div style={styles.funnelGrid}>
             <div style={styles.funnelChecklist}>
               <div style={styles.sectionEyebrow}>Why owners convert here</div>
               <h2 style={{ ...styles.sectionTitle, marginBottom: "12px" }}>
