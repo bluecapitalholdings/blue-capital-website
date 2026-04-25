@@ -126,7 +126,7 @@ export default function App() {
       background:
         "linear-gradient(180deg, #f8fcfd 0%, #eef7f9 52%, #fdfefe 100%)",
       color: "#00305b",
-      padding: isMobile ? "56px 20px 54px" : "108px 28px 92px",
+      padding: isMobile ? "44px 20px 42px" : "88px 28px 72px",
     },
     heroInner: {
       maxWidth: "1040px",
@@ -146,14 +146,14 @@ export default function App() {
       fontWeight: 700,
       letterSpacing: "0.05em",
       textTransform: "uppercase",
-      marginBottom: "18px",
+      marginBottom: "16px",
       color: "#1f7d8c",
     },
     heroTitle: {
       fontSize: isMobile ? "34px" : "clamp(40px, 7vw, 58px)",
       lineHeight: 1.04,
       fontWeight: 800,
-      marginBottom: "24px",
+      marginBottom: "20px",
       letterSpacing: "-0.03em",
       fontFamily: "Georgia, 'Times New Roman', serif",
       maxWidth: "900px",
@@ -162,7 +162,7 @@ export default function App() {
       fontSize: isMobile ? "17px" : "19px",
       lineHeight: 1.85,
       color: "#48657a",
-      marginBottom: "32px",
+      marginBottom: "28px",
       maxWidth: "720px",
     },
     missionStatement: {
@@ -170,7 +170,7 @@ export default function App() {
       lineHeight: 1.8,
       color: "#21445f",
       maxWidth: "760px",
-      marginBottom: "28px",
+      marginBottom: "24px",
       fontWeight: 600,
       fontFamily: "Georgia, 'Times New Roman', serif",
     },
@@ -178,7 +178,7 @@ export default function App() {
       display: "flex",
       flexWrap: "wrap",
       gap: "12px",
-      marginTop: "18px",
+      marginTop: "16px",
     },
     reassurancePill: {
       padding: "10px 14px",
@@ -191,7 +191,7 @@ export default function App() {
     },
     buttonRow: {
       display: "flex",
-      gap: "16px",
+      gap: "14px",
       flexWrap: "wrap",
     },
     primaryBtn: {
@@ -218,11 +218,11 @@ export default function App() {
         "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
     },
     buttonHoverLift: {
-      transform: "translateY(-2px)",
-      boxShadow: "0 16px 28px rgba(0,48,91,0.14)",
+      transform: "translateY(-3px)",
+      boxShadow: "0 18px 30px rgba(0,48,91,0.16)",
     },
     secondaryBtnHover: {
-      transform: "translateY(-2px)",
+      transform: "translateY(-3px)",
       boxShadow: "0 14px 26px rgba(0,48,91,0.08)",
       borderColor: "#8ac9d2",
     },
@@ -232,7 +232,7 @@ export default function App() {
         ? "1fr"
         : "repeat(auto-fit, minmax(160px, 1fr))",
       gap: "14px",
-      marginTop: "30px",
+      marginTop: "28px",
     },
     statCard: {
       backgroundColor: "#ffffff",
@@ -240,6 +240,8 @@ export default function App() {
       borderRadius: "14px",
       padding: "16px",
       boxShadow: "0 12px 24px rgba(0,48,91,0.05)",
+      transition:
+        "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
     },
     statValue: {
       fontSize: "22px",
@@ -258,7 +260,7 @@ export default function App() {
     trustInner: {
       maxWidth: "1180px",
       margin: "0 auto",
-      padding: isMobile ? "18px 20px" : "24px 28px",
+      padding: isMobile ? "18px 20px" : "20px 28px",
       display: "grid",
       gridTemplateColumns: isMobile
         ? "1fr"
@@ -275,8 +277,8 @@ export default function App() {
         "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
     },
     trustBadgeHover: {
-      transform: "translateY(-2px)",
-      boxShadow: "0 16px 28px rgba(0,48,91,0.08)",
+      transform: "translateY(-4px)",
+      boxShadow: "0 18px 30px rgba(0,48,91,0.1)",
       borderColor: "#b9d8e4",
     },
     trustBadgeTop: {
@@ -311,26 +313,26 @@ export default function App() {
     section: {
       maxWidth: "1180px",
       margin: "0 auto",
-      padding: isMobile ? "56px 20px" : "clamp(68px, 8vw, 92px) 28px",
-      scrollMarginTop: isMobile ? "120px" : "180px",
+      padding: isMobile ? "44px 20px" : "clamp(56px, 6vw, 80px) 28px",
+      scrollMarginTop: isMobile ? "120px" : "170px",
     },
     sectionGray: {
       background:
         "linear-gradient(180deg, #f7fbfc 0%, #f3f8fa 55%, #ffffff 100%)",
-      padding: isMobile ? "56px 0" : "80px 0",
-      scrollMarginTop: isMobile ? "120px" : "180px",
+      padding: isMobile ? "44px 0" : "64px 0",
+      scrollMarginTop: isMobile ? "120px" : "170px",
     },
     sectionTitle: {
       fontSize: isMobile ? "26px" : "clamp(30px, 5vw, 36px)",
       fontWeight: 800,
-      marginBottom: "20px",
+      marginBottom: "18px",
       letterSpacing: "-0.02em",
       color: "#00305b",
       fontFamily: "Georgia, 'Times New Roman', serif",
     },
     sectionEyebrow: {
       display: "inline-block",
-      marginBottom: "14px",
+      marginBottom: "12px",
       fontSize: "12px",
       fontWeight: 800,
       letterSpacing: "0.08em",
@@ -339,15 +341,15 @@ export default function App() {
     },
     sectionLead: {
       fontSize: isMobile ? "17px" : "19px",
-      lineHeight: 1.85,
+      lineHeight: 1.8,
       color: "#496173",
       maxWidth: "860px",
-      marginBottom: "26px",
+      marginBottom: "22px",
     },
     paragraph: {
       fontSize: isMobile ? "16px" : "17px",
       lineHeight: 1.8,
-      marginBottom: "16px",
+      marginBottom: "14px",
       color: "#536879",
       maxWidth: "860px",
     },
@@ -356,7 +358,7 @@ export default function App() {
       gridTemplateColumns: isMobile
         ? "1fr"
         : "repeat(auto-fit, minmax(320px, 1fr))",
-      gap: isMobile ? "24px" : "32px",
+      gap: isMobile ? "22px" : "28px",
       alignItems: "start",
     },
     card: {
@@ -369,8 +371,8 @@ export default function App() {
         "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
     },
     elevatedHover: {
-      transform: "translateY(-3px)",
-      boxShadow: "0 18px 32px rgba(0,48,91,0.1)",
+      transform: "translateY(-4px)",
+      boxShadow: "0 20px 34px rgba(0,48,91,0.1)",
       borderColor: "#c5dae4",
     },
     cardTitle: {
@@ -391,8 +393,8 @@ export default function App() {
       gridTemplateColumns: isMobile
         ? "1fr"
         : "repeat(auto-fit, minmax(240px, 1fr))",
-      gap: "24px",
-      marginBottom: "28px",
+      gap: "20px",
+      marginBottom: "24px",
     },
     metricText: {
       fontSize: "18px",
@@ -405,8 +407,8 @@ export default function App() {
       gridTemplateColumns: isMobile
         ? "1fr"
         : "repeat(auto-fit, minmax(240px, 1fr))",
-      gap: "22px",
-      marginTop: "30px",
+      gap: "20px",
+      marginTop: "24px",
     },
     emotionalCard: {
       backgroundColor: "#ffffff",
@@ -414,6 +416,8 @@ export default function App() {
       padding: "24px",
       border: "1px solid #dfe9ef",
       boxShadow: "0 12px 28px rgba(0,48,91,0.06)",
+      transition:
+        "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
     },
     emotionalTitle: {
       fontSize: "19px",
@@ -430,10 +434,10 @@ export default function App() {
     standaloneMissionSection: {
       background:
         "linear-gradient(180deg, #ffffff 0%, #f8fbfc 100%)",
-      padding: isMobile ? "56px 0" : "84px 0",
+      padding: isMobile ? "44px 0" : "68px 0",
       borderTop: "1px solid #e1ebf0",
       borderBottom: "1px solid #e1ebf0",
-      scrollMarginTop: isMobile ? "120px" : "180px",
+      scrollMarginTop: isMobile ? "120px" : "170px",
     },
     standaloneMissionWrap: {
       maxWidth: "1180px",
@@ -443,15 +447,17 @@ export default function App() {
       gridTemplateColumns: isMobile
         ? "1fr"
         : "repeat(auto-fit, minmax(320px, 1fr))",
-      gap: "32px",
+      gap: "24px",
       alignItems: "start",
     },
     standaloneMissionCard: {
       backgroundColor: "#ffffff",
       borderRadius: "24px",
-      padding: isMobile ? "24px" : "34px",
+      padding: isMobile ? "24px" : "30px",
       border: "1px solid #dbe8ee",
       boxShadow: "0 16px 36px rgba(0,48,91,0.06)",
+      transition:
+        "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
     },
     standaloneMissionLabel: {
       fontSize: "12px",
@@ -466,25 +472,27 @@ export default function App() {
       lineHeight: 1.1,
       letterSpacing: "-0.03em",
       color: "#00305b",
-      marginBottom: "18px",
+      marginBottom: "16px",
       fontWeight: 800,
       fontFamily: "Georgia, 'Times New Roman', serif",
     },
     standaloneMissionBody: {
       fontSize: isMobile ? "18px" : "20px",
-      lineHeight: 1.85,
+      lineHeight: 1.8,
       color: "#436276",
       margin: 0,
     },
     standaloneMissionSide: {
       display: "grid",
-      gap: "18px",
+      gap: "16px",
     },
     sideNoteCard: {
       backgroundColor: "#edf7f8",
       border: "1px solid #d2e7ea",
       borderRadius: "20px",
       padding: "24px",
+      transition:
+        "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
     },
     sideNoteTitle: {
       fontSize: "18px",
@@ -502,15 +510,15 @@ export default function App() {
       background:
         "linear-gradient(135deg, #00305b 0%, #0d4b76 100%)",
       color: "#ffffff",
-      padding: isMobile ? "56px 0" : "84px 0",
-      scrollMarginTop: isMobile ? "120px" : "180px",
+      padding: isMobile ? "44px 0" : "68px 0",
+      scrollMarginTop: isMobile ? "120px" : "170px",
     },
     sellText: {
       color: "#dbeafe",
       fontSize: isMobile ? "17px" : "18px",
       lineHeight: 1.8,
       maxWidth: "760px",
-      marginBottom: "28px",
+      marginBottom: "24px",
     },
     founderName: {
       fontSize: isMobile ? "22px" : "26px",
@@ -530,9 +538,9 @@ export default function App() {
     founderLeadGrid: {
       display: "grid",
       gridTemplateColumns: isMobile ? "1fr" : "minmax(220px, 280px) 1fr",
-      gap: isMobile ? "18px" : "28px",
+      gap: isMobile ? "18px" : "24px",
       alignItems: "center",
-      marginBottom: "30px",
+      marginBottom: "26px",
     },
     founderImageFrame: {
       backgroundColor: "#ffffff",
@@ -542,6 +550,8 @@ export default function App() {
       boxShadow: "0 18px 36px rgba(0,48,91,0.08)",
       maxWidth: isMobile ? "280px" : "none",
       margin: isMobile ? "0 auto" : "0",
+      transition:
+        "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
     },
     founderImage: {
       width: "100%",
@@ -556,6 +566,8 @@ export default function App() {
       borderRadius: "24px",
       padding: "28px",
       boxShadow: "0 14px 28px rgba(0,48,91,0.06)",
+      transition:
+        "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
     },
     founderIntroText: {
       fontSize: isMobile ? "17px" : "18px",
@@ -581,30 +593,32 @@ export default function App() {
     processSection: {
       background:
         "linear-gradient(180deg, #ffffff 0%, #f7fbfc 100%)",
-      padding: isMobile ? "56px 0" : "84px 0",
-      scrollMarginTop: isMobile ? "120px" : "180px",
+      padding: isMobile ? "44px 0" : "68px 0",
+      scrollMarginTop: isMobile ? "120px" : "170px",
     },
     founderSection: {
       background:
         "linear-gradient(180deg, #ffffff 0%, #f6fafc 100%)",
       borderTop: "1px solid #e2ebf0",
       borderBottom: "1px solid #e2ebf0",
-      scrollMarginTop: isMobile ? "120px" : "180px",
+      scrollMarginTop: isMobile ? "120px" : "170px",
     },
     processGrid: {
       display: "grid",
       gridTemplateColumns: isMobile
         ? "1fr"
         : "repeat(auto-fit, minmax(220px, 1fr))",
-      gap: "22px",
-      marginTop: "28px",
+      gap: "20px",
+      marginTop: "24px",
     },
     processCard: {
       backgroundColor: "#ffffff",
       borderRadius: "20px",
-      padding: "26px",
+      padding: "24px",
       border: "1px solid #dfeaf0",
       boxShadow: "0 12px 28px rgba(0,48,91,0.06)",
+      transition:
+        "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
     },
     processNumber: {
       width: "42px",
@@ -635,15 +649,15 @@ export default function App() {
       border: "1px solid #d2e7ea",
       color: "#00305b",
       borderRadius: "18px",
-      padding: "24px",
-      marginTop: "24px",
+      padding: "22px",
+      marginTop: "20px",
       fontSize: "17px",
       lineHeight: 1.8,
       fontWeight: 600,
     },
     contactSection: {
       backgroundColor: "#ffffff",
-      scrollMarginTop: isMobile ? "120px" : "180px",
+      scrollMarginTop: isMobile ? "120px" : "170px",
     },
     funnelBand: {
       background:
@@ -654,12 +668,12 @@ export default function App() {
     funnelWrap: {
       maxWidth: "1180px",
       margin: "0 auto",
-      padding: isMobile ? "56px 20px" : "72px 28px",
+      padding: isMobile ? "44px 20px" : "64px 28px",
     },
     funnelGrid: {
       display: "grid",
       gridTemplateColumns: isMobile ? "1fr" : "1.1fr 0.9fr",
-      gap: "28px",
+      gap: "24px",
       alignItems: "start",
     },
     funnelChecklist: {
@@ -668,6 +682,8 @@ export default function App() {
       padding: isMobile ? "22px" : "28px",
       border: "1px solid #dfe9ef",
       boxShadow: "0 16px 34px rgba(0,48,91,0.06)",
+      transition:
+        "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
     },
     funnelList: {
       listStyle: "none",
@@ -697,6 +713,7 @@ export default function App() {
       borderRadius: "24px",
       padding: isMobile ? "24px" : "30px",
       boxShadow: "0 22px 44px rgba(0,48,91,0.18)",
+      transition: "transform 0.2s ease, box-shadow 0.2s ease",
     },
     ctaTitle: {
       fontSize: "26px",
@@ -707,7 +724,7 @@ export default function App() {
       fontSize: "17px",
       lineHeight: 1.85,
       color: "#d9f1f4",
-      marginBottom: "20px",
+      marginBottom: "18px",
     },
     ctaButton: {
       backgroundColor: "#ffffff",
@@ -753,7 +770,7 @@ export default function App() {
     contactWrap: {
       maxWidth: "860px",
       margin: "0 auto",
-      padding: isMobile ? "56px 20px" : "80px 28px",
+      padding: isMobile ? "44px 20px" : "72px 28px",
     },
     contactPanel: {
       background:
@@ -943,14 +960,17 @@ export default function App() {
     }
   };
 
+  const hoverable = (key, base) => ({
+    ...base,
+    ...(hoveredSurface === key ? styles.elevatedHover : {}),
+  });
+
   if (submitted) {
     return (
       <div style={styles.thankYouWrap}>
         <div style={styles.thankYouCard}>
           <h1 style={styles.thankYouTitle}>Thank You</h1>
-          <p style={styles.thankYouText}>
-            Your inquiry has been submitted successfully.
-          </p>
+          <p style={styles.thankYouText}>Your inquiry has been submitted successfully.</p>
           <p style={styles.thankYouText}>
             Blue Capital Holdings LLC appreciates your interest. All inquiries are
             reviewed confidentially, and a follow-up will be made if there appears
@@ -982,83 +1002,28 @@ export default function App() {
           </div>
 
           <div style={styles.navLinks}>
-            <a
-              href="#home"
-              style={{
-                ...styles.link,
-                ...(hoveredNav === "home" ? styles.navHover : {}),
-              }}
-              onMouseEnter={() => setHoveredNav("home")}
-              onMouseLeave={() => setHoveredNav("")}
-            >
-              Home
-            </a>
-            <a
-              href="#about"
-              style={{
-                ...styles.link,
-                ...(hoveredNav === "about" ? styles.navHover : {}),
-              }}
-              onMouseEnter={() => setHoveredNav("about")}
-              onMouseLeave={() => setHoveredNav("")}
-            >
-              About
-            </a>
-            <a
-              href="#mission"
-              style={{
-                ...styles.missionNavBtn,
-                ...(hoveredNav === "mission" ? styles.navHover : {}),
-              }}
-              onMouseEnter={() => setHoveredNav("mission")}
-              onMouseLeave={() => setHoveredNav("")}
-            >
-              Mission Statement
-            </a>
-            <a
-              href="#criteria"
-              style={{
-                ...styles.link,
-                ...(hoveredNav === "criteria" ? styles.navHover : {}),
-              }}
-              onMouseEnter={() => setHoveredNav("criteria")}
-              onMouseLeave={() => setHoveredNav("")}
-            >
-              Criteria
-            </a>
-            <a
-              href="#sell"
-              style={{
-                ...styles.link,
-                ...(hoveredNav === "sell" ? styles.navHover : {}),
-              }}
-              onMouseEnter={() => setHoveredNav("sell")}
-              onMouseLeave={() => setHoveredNav("")}
-            >
-              Sell Your Business
-            </a>
-            <a
-              href="#founder"
-              style={{
-                ...styles.link,
-                ...(hoveredNav === "founder" ? styles.navHover : {}),
-              }}
-              onMouseEnter={() => setHoveredNav("founder")}
-              onMouseLeave={() => setHoveredNav("")}
-            >
-              Founder
-            </a>
-            <a
-              href="#contact"
-              style={{
-                ...styles.link,
-                ...(hoveredNav === "contact" ? styles.navHover : {}),
-              }}
-              onMouseEnter={() => setHoveredNav("contact")}
-              onMouseLeave={() => setHoveredNav("")}
-            >
-              Contact
-            </a>
+            {[
+              ["home", "Home"],
+              ["about", "About"],
+              ["mission", "Mission Statement"],
+              ["criteria", "Criteria"],
+              ["sell", "Sell Your Business"],
+              ["founder", "Founder"],
+              ["contact", "Contact"],
+            ].map(([id, label]) => (
+              <a
+                key={id}
+                href={`#${id}`}
+                style={{
+                  ...(id === "mission" ? styles.missionNavBtn : styles.link),
+                  ...(hoveredNav === id ? styles.navHover : {}),
+                }}
+                onMouseEnter={() => setHoveredNav(id)}
+                onMouseLeave={() => setHoveredNav("")}
+              >
+                {label}
+              </a>
+            ))}
           </div>
         </div>
       </nav>
@@ -1110,24 +1075,21 @@ export default function App() {
             </div>
 
             <div style={styles.heroStats}>
-              <div style={styles.statCard}>
-                <div style={styles.statValue}>Direct Buyer</div>
-                <div style={styles.statLabel}>
-                  Thoughtful conversations without broad market exposure
+              {[
+                ["Direct Buyer", "Thoughtful conversations without broad market exposure"],
+                ["Confidential", "A process designed to protect employees, customers, and reputation"],
+                ["Long-term", "Ownership built around stewardship, continuity, and growth"],
+              ].map(([title, text], index) => (
+                <div
+                  key={title}
+                  style={hoverable(`stat${index}`, styles.statCard)}
+                  onMouseEnter={() => setHoveredSurface(`stat${index}`)}
+                  onMouseLeave={() => setHoveredSurface("")}
+                >
+                  <div style={styles.statValue}>{title}</div>
+                  <div style={styles.statLabel}>{text}</div>
                 </div>
-              </div>
-              <div style={styles.statCard}>
-                <div style={styles.statValue}>Confidential</div>
-                <div style={styles.statLabel}>
-                  A process designed to protect employees, customers, and reputation
-                </div>
-              </div>
-              <div style={styles.statCard}>
-                <div style={styles.statValue}>Long-term</div>
-                <div style={styles.statLabel}>
-                  Ownership built around stewardship, continuity, and growth
-                </div>
-              </div>
+              ))}
             </div>
 
             <div style={styles.reassuranceRow}>
@@ -1141,73 +1103,28 @@ export default function App() {
 
       <section style={styles.trustStrip}>
         <div style={styles.trustInner}>
-          <div
-            style={{
-              ...styles.trustBadge,
-              ...(hoveredSurface === "trust1" ? styles.trustBadgeHover : {}),
-            }}
-            onMouseEnter={() => setHoveredSurface("trust1")}
-            onMouseLeave={() => setHoveredSurface("")}
-          >
-            <div style={styles.trustBadgeTop}>
-              <div style={styles.trustIcon}>LT</div>
-              <div style={styles.trustTitle}>Long-term ownership</div>
+          {[
+            ["LT", "Long-term ownership", "Built around stewardship, continuity, and patient growth."],
+            ["DB", "Direct buyer", "A private firm focused on direct, thoughtful conversations."],
+            ["US", "U.S. small businesses", "Focused on established businesses with durable fundamentals."],
+            ["CF", "Confidential process", "Designed to protect owners, teams, and customer relationships."],
+          ].map(([icon, title, text], index) => (
+            <div
+              key={title}
+              style={{
+                ...styles.trustBadge,
+                ...(hoveredSurface === `trust${index}` ? styles.trustBadgeHover : {}),
+              }}
+              onMouseEnter={() => setHoveredSurface(`trust${index}`)}
+              onMouseLeave={() => setHoveredSurface("")}
+            >
+              <div style={styles.trustBadgeTop}>
+                <div style={styles.trustIcon}>{icon}</div>
+                <div style={styles.trustTitle}>{title}</div>
+              </div>
+              <div style={styles.trustText}>{text}</div>
             </div>
-            <div style={styles.trustText}>
-              Built around stewardship, continuity, and patient growth.
-            </div>
-          </div>
-
-          <div
-            style={{
-              ...styles.trustBadge,
-              ...(hoveredSurface === "trust2" ? styles.trustBadgeHover : {}),
-            }}
-            onMouseEnter={() => setHoveredSurface("trust2")}
-            onMouseLeave={() => setHoveredSurface("")}
-          >
-            <div style={styles.trustBadgeTop}>
-              <div style={styles.trustIcon}>DB</div>
-              <div style={styles.trustTitle}>Direct buyer</div>
-            </div>
-            <div style={styles.trustText}>
-              A private firm focused on direct, thoughtful conversations.
-            </div>
-          </div>
-
-          <div
-            style={{
-              ...styles.trustBadge,
-              ...(hoveredSurface === "trust3" ? styles.trustBadgeHover : {}),
-            }}
-            onMouseEnter={() => setHoveredSurface("trust3")}
-            onMouseLeave={() => setHoveredSurface("")}
-          >
-            <div style={styles.trustBadgeTop}>
-              <div style={styles.trustIcon}>US</div>
-              <div style={styles.trustTitle}>U.S. small businesses</div>
-            </div>
-            <div style={styles.trustText}>
-              Focused on established businesses with durable fundamentals.
-            </div>
-          </div>
-
-          <div
-            style={{
-              ...styles.trustBadge,
-              ...(hoveredSurface === "trust4" ? styles.trustBadgeHover : {}),
-            }}
-            onMouseEnter={() => setHoveredSurface("trust4")}
-            onMouseLeave={() => setHoveredSurface("")}
-          >
-            <div style={styles.trustBadgeTop}>
-              <div style={styles.trustIcon}>CF</div>
-              <div style={styles.trustTitle}>Confidential process</div>
-            </div>
-            <div style={styles.trustText}>
-              Designed to protect owners, teams, and customer relationships.
-            </div>
-          </div>
+          ))}
         </div>
       </section>
 
@@ -1220,61 +1137,45 @@ export default function App() {
           takes care of the team, preserves the customer relationships, and
           carries the business forward with discipline.
         </p>
-
         <p style={styles.paragraph}>
           Blue Capital Holdings LLC is a private investment firm focused on
           acquiring and operating established small to mid-sized businesses.
         </p>
-
         <p style={styles.paragraph}>
           We pursue long-term ownership through operational improvement,
-          disciplined growth, and responsible stewardship. Rather than short-term
-          resale, we focus on preserving what works, strengthening operations, and
-          building durable enterprise value over time.
+          disciplined growth, and responsible stewardship.
         </p>
-
         <p style={styles.paragraph}>
           We partner with business owners navigating retirement, succession, or
           transition who value a thoughtful, capable, and long-term buyer.
         </p>
 
-        <p style={styles.paragraph}>
-          Blue Capital Holdings LLC is actively seeking acquisition opportunities
-          and welcomes confidential conversations with business owners, brokers,
-          and referral partners.
-        </p>
-
         <div style={styles.emotionalGrid}>
-          <div style={styles.emotionalCard}>
-            <div style={styles.emotionalTitle}>You built more than revenue</div>
-            <p style={styles.emotionalText}>
-              For many owners, the business represents decades of sacrifice,
-              reputation, customer trust, and responsibility to employees. That
-              deserves more than a generic buyer.
-            </p>
-          </div>
-          <div style={styles.emotionalCard}>
-            <div style={styles.emotionalTitle}>Retirement should feel clear</div>
-            <p style={styles.emotionalText}>
-              Owners nearing retirement often want confidence that the business
-              will continue responsibly, not uncertainty about what happens after
-              closing.
-            </p>
-          </div>
-          <div style={styles.emotionalCard}>
-            <div style={styles.emotionalTitle}>The right fit matters</div>
-            <p style={styles.emotionalText}>
-              A strong transition is about alignment on values, timing, and
-              continuity, not just valuation. That is where thoughtful conversations
-              make the difference.
-            </p>
-          </div>
+          {[
+            ["You built more than revenue", "For many owners, the business represents decades of sacrifice, reputation, customer trust, and responsibility to employees."],
+            ["Retirement should feel clear", "Owners nearing retirement often want confidence that the business will continue responsibly, not uncertainty after closing."],
+            ["The right fit matters", "A strong transition is about alignment on values, timing, and continuity, not just valuation."],
+          ].map(([title, text], index) => (
+            <div
+              key={title}
+              style={hoverable(`emotion${index}`, styles.emotionalCard)}
+              onMouseEnter={() => setHoveredSurface(`emotion${index}`)}
+              onMouseLeave={() => setHoveredSurface("")}
+            >
+              <div style={styles.emotionalTitle}>{title}</div>
+              <p style={styles.emotionalText}>{text}</p>
+            </div>
+          ))}
         </div>
       </section>
 
       <section id="mission" style={styles.standaloneMissionSection}>
         <div style={styles.standaloneMissionWrap}>
-          <div style={styles.standaloneMissionCard}>
+          <div
+            style={hoverable("missionMain", styles.standaloneMissionCard)}
+            onMouseEnter={() => setHoveredSurface("missionMain")}
+            onMouseLeave={() => setHoveredSurface("")}
+          >
             <div style={styles.standaloneMissionLabel}>Mission For Business Owners</div>
             <h2 style={styles.standaloneMissionTitle}>
               We help owners transition with confidence, clarity, and dignity.
@@ -1284,28 +1185,24 @@ export default function App() {
               transition when the time is right. We believe the sale of a company
               should protect the legacy you built, respect the people who helped
               build it, and create continuity for the customers who depend on it.
-              We are not looking for a quick flip. We are looking to become the
-              right next steward of a strong business.
             </p>
           </div>
 
           <div style={styles.standaloneMissionSide}>
-            <div style={styles.sideNoteCard}>
-              <div style={styles.sideNoteTitle}>Why this speaks to owners</div>
-              <p style={styles.sideNoteText}>
-                Owners want confidence that the next chapter will honor the team,
-                protect relationships, and preserve the reputation they spent
-                years earning.
-              </p>
-            </div>
-            <div style={styles.sideNoteCard}>
-              <div style={styles.sideNoteTitle}>Why it helps you stand out</div>
-              <p style={styles.sideNoteText}>
-                This positions Blue Capital as a long-term operator focused on
-                stewardship and continuity, not a generic acquisition firm chasing
-                transactions.
-              </p>
-            </div>
+            {[
+              ["Why this speaks to owners", "Owners want confidence that the next chapter will honor the team, protect relationships, and preserve the reputation they spent years earning."],
+              ["Why it helps you stand out", "This positions Blue Capital as a long-term operator focused on stewardship and continuity, not a generic acquisition firm chasing transactions."],
+            ].map(([title, text], index) => (
+              <div
+                key={title}
+                style={hoverable(`missionSide${index}`, styles.sideNoteCard)}
+                onMouseEnter={() => setHoveredSurface(`missionSide${index}`)}
+                onMouseLeave={() => setHoveredSurface("")}
+              >
+                <div style={styles.sideNoteTitle}>{title}</div>
+                <p style={styles.sideNoteText}>{text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -1315,52 +1212,27 @@ export default function App() {
           <h2 style={styles.sectionTitle}>Acquisition Criteria</h2>
 
           <div style={styles.criteriaGrid}>
-            <div
-              style={{
-                ...styles.card,
-                ...(hoveredSurface === "criteria1" ? styles.elevatedHover : {}),
-              }}
-              onMouseEnter={() => setHoveredSurface("criteria1")}
-              onMouseLeave={() => setHoveredSurface("")}
-            >
-              <div style={styles.cardTitle}>Revenue</div>
-              <p style={styles.metricText}>$500,000 to $5,000,000 annually</p>
-            </div>
-
-            <div
-              style={{
-                ...styles.card,
-                ...(hoveredSurface === "criteria2" ? styles.elevatedHover : {}),
-              }}
-              onMouseEnter={() => setHoveredSurface("criteria2")}
-              onMouseLeave={() => setHoveredSurface("")}
-            >
-              <div style={styles.cardTitle}>Profitability</div>
-              <p style={styles.metricText}>
-                Consistent positive cash flow and stable operations
-              </p>
-            </div>
-
-            <div
-              style={{
-                ...styles.card,
-                ...(hoveredSurface === "criteria3" ? styles.elevatedHover : {}),
-              }}
-              onMouseEnter={() => setHoveredSurface("criteria3")}
-              onMouseLeave={() => setHoveredSurface("")}
-            >
-              <div style={styles.cardTitle}>Geography</div>
-              <p style={styles.metricText}>United States based businesses</p>
-            </div>
+            {[
+              ["Revenue", "$500,000 to $5,000,000 annually"],
+              ["Profitability", "Consistent positive cash flow and stable operations"],
+              ["Geography", "United States based businesses"],
+            ].map(([title, text], index) => (
+              <div
+                key={title}
+                style={hoverable(`criteria${index}`, styles.card)}
+                onMouseEnter={() => setHoveredSurface(`criteria${index}`)}
+                onMouseLeave={() => setHoveredSurface("")}
+              >
+                <div style={styles.cardTitle}>{title}</div>
+                <p style={styles.metricText}>{text}</p>
+              </div>
+            ))}
           </div>
 
           <div style={styles.twoCol}>
             <div
-              style={{
-                ...styles.card,
-                ...(hoveredSurface === "criteria4" ? styles.elevatedHover : {}),
-              }}
-              onMouseEnter={() => setHoveredSurface("criteria4")}
+              style={hoverable("criteriaLeft", styles.card)}
+              onMouseEnter={() => setHoveredSurface("criteriaLeft")}
               onMouseLeave={() => setHoveredSurface("")}
             >
               <div style={styles.cardTitle}>Industries of Interest</div>
@@ -1374,11 +1246,8 @@ export default function App() {
             </div>
 
             <div
-              style={{
-                ...styles.card,
-                ...(hoveredSurface === "criteria5" ? styles.elevatedHover : {}),
-              }}
-              onMouseEnter={() => setHoveredSurface("criteria5")}
+              style={hoverable("criteriaRight", styles.card)}
+              onMouseEnter={() => setHoveredSurface("criteriaRight")}
               onMouseLeave={() => setHoveredSurface("")}
             >
               <div style={styles.cardTitle}>Preferred Characteristics</div>
@@ -1405,27 +1274,33 @@ export default function App() {
           <p style={styles.sellText}>
             You may only sell your business once. That decision affects your
             family, your employees, your customers, and the reputation you have
-            built over years. We work directly with owners who want a buyer that
-            understands the weight of that decision and approaches it with care.
+            built over years.
           </p>
           <p style={styles.sellText}>
             If you are approaching retirement or thinking seriously about
-            succession, our goal is to offer a steady hand, a direct process, and
-            a transition path that respects everything you have put into the business.
+            succession, our goal is to offer a steady hand and a direct process.
           </p>
 
           <div style={styles.twoCol}>
-            <div style={styles.card}>
+            <div
+              style={hoverable("sell1", styles.card)}
+              onMouseEnter={() => setHoveredSurface("sell1")}
+              onMouseLeave={() => setHoveredSurface("")}
+            >
               <div style={styles.cardTitle}>Why Owners Work With Us</div>
               <ul style={styles.list}>
-                <li>Confidential, direct conversations without unnecessary noise</li>
-                <li>Respect for your legacy, team, and customer relationships</li>
-                <li>Flexible structures shaped around real transition needs</li>
+                <li>Confidential, direct conversations</li>
+                <li>Respect for your legacy and team</li>
+                <li>Flexible structures around real transition needs</li>
                 <li>Long-term ownership rather than short-term flipping</li>
               </ul>
             </div>
 
-            <div style={styles.card}>
+            <div
+              style={hoverable("sell2", styles.card)}
+              onMouseEnter={() => setHoveredSurface("sell2")}
+              onMouseLeave={() => setHoveredSurface("")}
+            >
               <div style={styles.cardTitle}>What You Can Expect</div>
               <ul style={styles.list}>
                 <li>A straightforward, pressure-free first conversation</li>
@@ -1444,47 +1319,27 @@ export default function App() {
           <h2 style={styles.sectionTitle}>A Clear Process for Serious Owners</h2>
           <p style={styles.sectionLead}>
             The site should answer the question every owner is quietly asking:
-            "What happens if I reach out?" This process is designed to lower
-            friction, build trust quickly, and move the right conversations
-            forward.
+            "What happens if I reach out?"
           </p>
 
           <div style={styles.processGrid}>
-            <div style={styles.processCard}>
-              <div style={styles.processNumber}>1</div>
-              <div style={styles.processTitle}>Private Introduction</div>
-              <p style={styles.processText}>
-                You share a few basics about your business and what kind of
-                transition you are considering.
-              </p>
-            </div>
-
-            <div style={styles.processCard}>
-              <div style={styles.processNumber}>2</div>
-              <div style={styles.processTitle}>Initial Fit Review</div>
-              <p style={styles.processText}>
-                We review the opportunity carefully and respond directly if there
-                appears to be a strong fit.
-              </p>
-            </div>
-
-            <div style={styles.processCard}>
-              <div style={styles.processNumber}>3</div>
-              <div style={styles.processTitle}>Owner Conversation</div>
-              <p style={styles.processText}>
-                We discuss your goals, timing, legacy concerns, and transition
-                preferences in a confidential conversation.
-              </p>
-            </div>
-
-            <div style={styles.processCard}>
-              <div style={styles.processNumber}>4</div>
-              <div style={styles.processTitle}>Thoughtful Next Steps</div>
-              <p style={styles.processText}>
-                If there is alignment, we move forward with clarity and respect
-                for the business you have built.
-              </p>
-            </div>
+            {[
+              ["1", "Private Introduction", "You share a few basics about your business and the transition you are considering."],
+              ["2", "Initial Fit Review", "We review the opportunity carefully and respond directly if there appears to be a strong fit."],
+              ["3", "Owner Conversation", "We discuss your goals, timing, legacy concerns, and transition preferences."],
+              ["4", "Thoughtful Next Steps", "If there is alignment, we move forward with clarity and respect."],
+            ].map(([num, title, text], index) => (
+              <div
+                key={title}
+                style={hoverable(`process${index}`, styles.processCard)}
+                onMouseEnter={() => setHoveredSurface(`process${index}`)}
+                onMouseLeave={() => setHoveredSurface("")}
+              >
+                <div style={styles.processNumber}>{num}</div>
+                <div style={styles.processTitle}>{title}</div>
+                <p style={styles.processText}>{text}</p>
+              </div>
+            ))}
           </div>
         </div>
       </section>
@@ -1496,7 +1351,11 @@ export default function App() {
               <h2 style={styles.sectionTitle}>Founder / Operator</h2>
 
               <div style={styles.founderLeadGrid}>
-                <div style={styles.founderImageFrame}>
+                <div
+                  style={hoverable("founderImage", styles.founderImageFrame)}
+                  onMouseEnter={() => setHoveredSurface("founderImage")}
+                  onMouseLeave={() => setHoveredSurface("")}
+                >
                   <img
                     src="/headshot.jpg"
                     alt="Michael McMullan"
@@ -1504,7 +1363,11 @@ export default function App() {
                   />
                 </div>
 
-                <div style={styles.founderIntroCard}>
+                <div
+                  style={hoverable("founderIntro", styles.founderIntroCard)}
+                  onMouseEnter={() => setHoveredSurface("founderIntro")}
+                  onMouseLeave={() => setHoveredSurface("")}
+                >
                   <div style={styles.founderName}>Michael McMullan</div>
                   <div style={styles.founderRole}>Founder and Operator</div>
                   <p style={styles.founderIntroText}>
@@ -1524,18 +1387,13 @@ export default function App() {
 
               <p style={styles.paragraph}>
                 Michael McMullan brings over a decade of management experience
-                across operations, finance, and supply chain environments, with a
-                practical focus on execution, process improvement, and long-term
-                business performance.
+                across operations, finance, and supply chain environments.
               </p>
-
               <p style={styles.paragraph}>
                 He holds a Bachelor of Science from the Indiana University Kelley
                 School of Business, with a double major in Finance and Supply Chain
-                Management and a minor in Economics. He is also Lean Six Sigma Green
-                Belt certified.
+                Management and a minor in Economics.
               </p>
-
               <p style={styles.paragraph}>
                 Based in Avon, Indiana, Michael founded Blue Capital Holdings LLC to
                 acquire and grow quality small businesses through disciplined
@@ -1549,17 +1407,13 @@ export default function App() {
             </div>
 
             <div
-              style={{
-                ...styles.card,
-                ...(hoveredSurface === "founderCard" ? styles.elevatedHover : {}),
-              }}
+              style={hoverable("founderCard", styles.card)}
               onMouseEnter={() => setHoveredSurface("founderCard")}
               onMouseLeave={() => setHoveredSurface("")}
             >
               <div style={styles.cardTitle}>
                 Why This Matters to Lenders, Brokers, and Sellers
               </div>
-
               <ul style={styles.list}>
                 <li>Over a decade of management experience</li>
                 <li>Finance, supply chain, and economics background</li>
@@ -1567,7 +1421,6 @@ export default function App() {
                 <li>Operator-oriented acquisition approach</li>
                 <li>Clear acquisition strategy and long-term ownership philosophy</li>
               </ul>
-
               <p style={styles.paragraph}>
                 The firm is actively seeking acquisition opportunities.
               </p>
@@ -1579,7 +1432,11 @@ export default function App() {
       <section style={styles.funnelBand}>
         <div style={styles.funnelWrap}>
           <div style={styles.funnelGrid}>
-            <div style={styles.funnelChecklist}>
+            <div
+              style={hoverable("funnelChecklist", styles.funnelChecklist)}
+              onMouseEnter={() => setHoveredSurface("funnelChecklist")}
+              onMouseLeave={() => setHoveredSurface("")}
+            >
               <div style={styles.sectionEyebrow}>Why owners convert here</div>
               <h2 style={{ ...styles.sectionTitle, marginBottom: "12px" }}>
                 Built to Turn Interest Into Real Conversations
@@ -1593,31 +1450,31 @@ export default function App() {
               <ul style={styles.funnelList}>
                 <li style={styles.funnelItem}>
                   <span style={styles.checkmark}>+</span>
-                  Owner-centered messaging that speaks to legacy, trust, and
-                  continuity instead of generic acquisition language.
+                  Owner-centered messaging that speaks to legacy, trust, and continuity.
                 </li>
                 <li style={styles.funnelItem}>
                   <span style={styles.checkmark}>+</span>
-                  A clear process that removes mystery and lowers resistance to
-                  reaching out.
+                  A clear process that removes mystery and lowers resistance.
                 </li>
                 <li style={styles.funnelItem}>
                   <span style={styles.checkmark}>+</span>
-                  Stronger calls to action that frame contact as a confidential
-                  conversation rather than a hard commitment.
+                  Calls to action framed as confidential conversation.
                 </li>
               </ul>
             </div>
 
-            <div style={styles.ctaPanel}>
-              <div style={styles.ctaTitle}>
-                Explore a transition without pressure
-              </div>
+            <div
+              style={{
+                ...styles.ctaPanel,
+                ...(hoveredSurface === "ctaPanel" ? styles.buttonHoverLift : {}),
+              }}
+              onMouseEnter={() => setHoveredSurface("ctaPanel")}
+              onMouseLeave={() => setHoveredSurface("")}
+            >
+              <div style={styles.ctaTitle}>Explore a transition without pressure</div>
               <p style={styles.ctaText}>
                 If you are considering retirement, succession, or a sale in the
-                next 6 to 36 months, the first step is simply a private
-                conversation. No broad process. No obligation. Just a thoughtful
-                discussion about fit.
+                next 6 to 36 months, the first step is simply a private conversation.
               </p>
               <p style={styles.ctaText}>
                 The best inquiries usually come from owners who want to understand
@@ -1648,8 +1505,6 @@ export default function App() {
             <p style={styles.sectionLead}>
               If you are a business owner, broker, or advisor exploring a
               transition, use the form below to begin a confidential conversation.
-              The more context you share, the more thoughtfully we can evaluate
-              fit and respond.
             </p>
 
             <div style={styles.intakeHeader}>
@@ -1678,125 +1533,33 @@ export default function App() {
               />
 
               <div style={styles.inputGrid}>
-                <input
-                  name="name"
-                  type="text"
-                  placeholder="Your Name"
-                  style={styles.input}
-                  value={formData.name}
-                  onChange={handleChange}
-                  autoComplete="name"
-                  required
-                />
-                <input
-                  name="company"
-                  type="text"
-                  placeholder="Company Name"
-                  style={styles.input}
-                  value={formData.company}
-                  onChange={handleChange}
-                  autoComplete="organization"
-                />
-                <input
-                  name="revenue"
-                  type="text"
-                  placeholder="Annual Revenue Range"
-                  style={styles.input}
-                  value={formData.revenue}
-                  onChange={handleChange}
-                />
-                <input
-                  name="location"
-                  type="text"
-                  placeholder="Location"
-                  style={styles.input}
-                  value={formData.location}
-                  onChange={handleChange}
-                  autoComplete="address-level2"
-                />
-                <input
-                  name="email"
-                  type="email"
-                  placeholder="Email"
-                  style={styles.input}
-                  value={formData.email}
-                  onChange={handleChange}
-                  autoComplete="email"
-                  required
-                />
-                <input
-                  name="phone"
-                  type="tel"
-                  placeholder="Phone"
-                  style={styles.input}
-                  value={formData.phone}
-                  onChange={handleChange}
-                  autoComplete="tel"
-                />
-                <input
-                  name="industry"
-                  type="text"
-                  placeholder="Industry"
-                  style={styles.input}
-                  value={formData.industry}
-                  onChange={handleChange}
-                />
-                <input
-                  name="cashflow"
-                  type="text"
-                  placeholder="Annual EBITDA / Seller Discretionary Earnings"
-                  style={styles.input}
-                  value={formData.cashflow}
-                  onChange={handleChange}
-                />
-                <input
-                  name="askingPrice"
-                  type="text"
-                  placeholder="Asking Price"
-                  style={styles.input}
-                  value={formData.askingPrice}
-                  onChange={handleChange}
-                />
-                <input
-                  name="yearsInBusiness"
-                  type="text"
-                  placeholder="Years in Business"
-                  style={styles.input}
-                  value={formData.yearsInBusiness}
-                  onChange={handleChange}
-                />
-                <input
-                  name="employees"
-                  type="text"
-                  placeholder="Number of Employees"
-                  style={styles.input}
-                  value={formData.employees}
-                  onChange={handleChange}
-                />
-                <input
-                  name="reasonForSelling"
-                  type="text"
-                  placeholder="Reason for Selling / Retirement / Succession"
-                  style={styles.input}
-                  value={formData.reasonForSelling}
-                  onChange={handleChange}
-                />
-                <input
-                  name="timeline"
-                  type="text"
-                  placeholder="Desired Timeline to Transition"
-                  style={styles.input}
-                  value={formData.timeline}
-                  onChange={handleChange}
-                />
-                <input
-                  name="sellerFinancing"
-                  type="text"
-                  placeholder="Is Seller Financing Available?"
-                  style={styles.input}
-                  value={formData.sellerFinancing}
-                  onChange={handleChange}
-                />
+                {[
+                  ["name", "Your Name", "text", true],
+                  ["company", "Company Name", "text", false],
+                  ["revenue", "Annual Revenue Range", "text", false],
+                  ["location", "Location", "text", false],
+                  ["email", "Email", "email", true],
+                  ["phone", "Phone", "tel", false],
+                  ["industry", "Industry", "text", false],
+                  ["cashflow", "Annual EBITDA / Seller Discretionary Earnings", "text", false],
+                  ["askingPrice", "Asking Price", "text", false],
+                  ["yearsInBusiness", "Years in Business", "text", false],
+                  ["employees", "Number of Employees", "text", false],
+                  ["reasonForSelling", "Reason for Selling / Retirement / Succession", "text", false],
+                  ["timeline", "Desired Timeline to Transition", "text", false],
+                  ["sellerFinancing", "Is Seller Financing Available?", "text", false],
+                ].map(([name, placeholder, type, required]) => (
+                  <input
+                    key={name}
+                    name={name}
+                    type={type}
+                    placeholder={placeholder}
+                    style={styles.input}
+                    value={formData[name]}
+                    onChange={handleChange}
+                    required={required}
+                  />
+                ))}
               </div>
 
               <p style={styles.fieldHint}>
@@ -1807,6 +1570,7 @@ export default function App() {
               <div style={styles.textAreaLabel}>
                 Tell us about the business and the kind of transition you are considering
               </div>
+
               <textarea
                 name="message"
                 placeholder="Share anything helpful: what the company does, who it serves, whether this is a retirement or succession conversation, and what matters most to you in the next owner."
@@ -1816,13 +1580,11 @@ export default function App() {
               />
 
               <p style={styles.note}>
-                Please include revenue, cash flow, timeline, and reason for
-                selling when possible. All inquiries are reviewed confidentially.
+                Please include revenue, cash flow, timeline, and reason for selling
+                when possible. All inquiries are reviewed confidentially.
               </p>
 
-              {errorMessage ? (
-                <div style={styles.errorBox}>{errorMessage}</div>
-              ) : null}
+              {errorMessage ? <div style={styles.errorBox}>{errorMessage}</div> : null}
 
               <button
                 type="submit"
