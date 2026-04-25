@@ -22,6 +22,7 @@ export default function App() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
+  const [hoveredNav, setHoveredNav] = useState("");
   const [formData, setFormData] = useState(initialFormData);
 
   const styles = {
@@ -82,6 +83,8 @@ export default function App() {
       color: "#334155",
       fontWeight: 600,
       padding: "8px 0",
+      borderRadius: "999px",
+      transition: "all 0.2s ease",
     },
     missionNavBtn: {
       textDecoration: "none",
@@ -89,8 +92,12 @@ export default function App() {
       fontWeight: 700,
       padding: "9px 14px",
       borderRadius: "999px",
+      backgroundColor: "transparent",
+      transition: "all 0.2s ease",
+    },
+    navHover: {
       backgroundColor: "#e8f6f7",
-      border: "1px solid #bde7eb",
+      boxShadow: "inset 0 0 0 1px #bde7eb",
     },
     hero: {
       background:
@@ -824,25 +831,81 @@ export default function App() {
             <div style={styles.brandText}>Blue Capital Holdings LLC</div>
           </div>
           <div style={styles.navLinks}>
-            <a href="#home" style={styles.link}>
+            <a
+              href="#home"
+              style={{
+                ...styles.link,
+                ...(hoveredNav === "home" ? styles.navHover : {}),
+              }}
+              onMouseEnter={() => setHoveredNav("home")}
+              onMouseLeave={() => setHoveredNav("")}
+            >
               Home
             </a>
-            <a href="#about" style={styles.link}>
+            <a
+              href="#about"
+              style={{
+                ...styles.link,
+                ...(hoveredNav === "about" ? styles.navHover : {}),
+              }}
+              onMouseEnter={() => setHoveredNav("about")}
+              onMouseLeave={() => setHoveredNav("")}
+            >
               About
             </a>
-            <a href="#mission" style={styles.missionNavBtn}>
+            <a
+              href="#mission"
+              style={{
+                ...styles.missionNavBtn,
+                ...(hoveredNav === "mission" ? styles.navHover : {}),
+              }}
+              onMouseEnter={() => setHoveredNav("mission")}
+              onMouseLeave={() => setHoveredNav("")}
+            >
               Mission Statement
             </a>
-            <a href="#criteria" style={styles.link}>
+            <a
+              href="#criteria"
+              style={{
+                ...styles.link,
+                ...(hoveredNav === "criteria" ? styles.navHover : {}),
+              }}
+              onMouseEnter={() => setHoveredNav("criteria")}
+              onMouseLeave={() => setHoveredNav("")}
+            >
               Criteria
             </a>
-            <a href="#sell" style={styles.link}>
+            <a
+              href="#sell"
+              style={{
+                ...styles.link,
+                ...(hoveredNav === "sell" ? styles.navHover : {}),
+              }}
+              onMouseEnter={() => setHoveredNav("sell")}
+              onMouseLeave={() => setHoveredNav("")}
+            >
               Sell Your Business
             </a>
-            <a href="#founder" style={styles.link}>
+            <a
+              href="#founder"
+              style={{
+                ...styles.link,
+                ...(hoveredNav === "founder" ? styles.navHover : {}),
+              }}
+              onMouseEnter={() => setHoveredNav("founder")}
+              onMouseLeave={() => setHoveredNav("")}
+            >
               Founder
             </a>
-            <a href="#contact" style={styles.link}>
+            <a
+              href="#contact"
+              style={{
+                ...styles.link,
+                ...(hoveredNav === "contact" ? styles.navHover : {}),
+              }}
+              onMouseEnter={() => setHoveredNav("contact")}
+              onMouseLeave={() => setHoveredNav("")}
+            >
               Contact
             </a>
           </div>
