@@ -1,27 +1,28 @@
 import React, { useState } from "react";
 
+const initialFormData = {
+  name: "",
+  company: "",
+  revenue: "",
+  location: "",
+  email: "",
+  phone: "",
+  industry: "",
+  cashflow: "",
+  askingPrice: "",
+  yearsInBusiness: "",
+  employees: "",
+  reasonForSelling: "",
+  timeline: "",
+  sellerFinancing: "",
+  message: "",
+};
+
 export default function App() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
-
-  const [formData, setFormData] = useState({
-    name: "",
-    company: "",
-    revenue: "",
-    location: "",
-    email: "",
-    phone: "",
-    industry: "",
-    cashflow: "",
-    askingPrice: "",
-    yearsInBusiness: "",
-    employees: "",
-    reasonForSelling: "",
-    timeline: "",
-    sellerFinancing: "",
-    message: "",
-  });
+  const [formData, setFormData] = useState(initialFormData);
 
   const styles = {
     page: {
@@ -32,12 +33,13 @@ export default function App() {
       padding: 0,
     },
     nav: {
-      borderBottom: "1px solid #e5e7eb",
-      backgroundColor: "#ffffff",
-      boxShadow: "0 1px 8px rgba(0,0,0,0.04)",
+      borderBottom: "1px solid #dbe4f0",
+      backgroundColor: "rgba(255,255,255,0.96)",
+      boxShadow: "0 1px 12px rgba(15,45,92,0.06)",
       position: "sticky",
       top: 0,
       zIndex: 10,
+      backdropFilter: "blur(10px)",
     },
     navInner: {
       maxWidth: "1180px",
@@ -57,7 +59,7 @@ export default function App() {
     },
     navLinks: {
       display: "flex",
-      gap: "28px",
+      gap: "22px",
       fontSize: "15px",
       color: "#374151",
       flexWrap: "wrap",
@@ -69,7 +71,8 @@ export default function App() {
       fontWeight: 500,
     },
     hero: {
-      background: "linear-gradient(135deg, #0f2d5c 0%, #173f7a 55%, #123364 100%)",
+      background:
+        "radial-gradient(circle at top right, rgba(96,165,250,0.18), transparent 28%), linear-gradient(135deg, #0f2d5c 0%, #173f7a 52%, #10284d 100%)",
       color: "#ffffff",
       padding: "96px 28px 88px",
     },
@@ -77,23 +80,58 @@ export default function App() {
       maxWidth: "1180px",
       margin: "0 auto",
       display: "grid",
-      gridTemplateColumns: "1.2fr 0.8fr",
+      gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
       gap: "56px",
       alignItems: "center",
     },
+    heroEyebrow: {
+      display: "inline-block",
+      padding: "8px 12px",
+      borderRadius: "999px",
+      backgroundColor: "rgba(255,255,255,0.12)",
+      border: "1px solid rgba(255,255,255,0.16)",
+      fontSize: "13px",
+      fontWeight: 700,
+      letterSpacing: "0.05em",
+      textTransform: "uppercase",
+      marginBottom: "18px",
+    },
     heroTitle: {
-      fontSize: "58px",
-      lineHeight: 1.05,
+      fontSize: "clamp(40px, 7vw, 58px)",
+      lineHeight: 1.04,
       fontWeight: 800,
       marginBottom: "24px",
       letterSpacing: "-0.03em",
     },
     heroText: {
-      fontSize: "20px",
-      lineHeight: 1.7,
+      fontSize: "18px",
+      lineHeight: 1.8,
       color: "#dbeafe",
       marginBottom: "32px",
       maxWidth: "720px",
+    },
+    missionStatement: {
+      fontSize: "20px",
+      lineHeight: 1.75,
+      color: "#ffffff",
+      maxWidth: "760px",
+      marginBottom: "28px",
+      fontWeight: 600,
+    },
+    reassuranceRow: {
+      display: "flex",
+      flexWrap: "wrap",
+      gap: "12px",
+      marginTop: "18px",
+    },
+    reassurancePill: {
+      padding: "10px 14px",
+      borderRadius: "999px",
+      backgroundColor: "rgba(255,255,255,0.08)",
+      border: "1px solid rgba(255,255,255,0.14)",
+      fontSize: "14px",
+      color: "#e0ecff",
+      fontWeight: 600,
     },
     buttonRow: {
       display: "flex",
@@ -107,7 +145,7 @@ export default function App() {
       borderRadius: "10px",
       fontWeight: 700,
       textDecoration: "none",
-      boxShadow: "0 8px 24px rgba(0,0,0,0.16)",
+      boxShadow: "0 10px 28px rgba(0,0,0,0.18)",
       display: "inline-block",
     },
     secondaryBtn: {
@@ -117,18 +155,50 @@ export default function App() {
       borderRadius: "10px",
       fontWeight: 600,
       textDecoration: "none",
-      backgroundColor: "rgba(255,255,255,0.04)",
+      backgroundColor: "rgba(255,255,255,0.05)",
       display: "inline-block",
+    },
+    heroStats: {
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+      gap: "14px",
+      marginTop: "30px",
+    },
+    statCard: {
+      backgroundColor: "rgba(255,255,255,0.08)",
+      border: "1px solid rgba(255,255,255,0.12)",
+      borderRadius: "14px",
+      padding: "16px",
+    },
+    statValue: {
+      fontSize: "22px",
+      fontWeight: 800,
+      marginBottom: "6px",
+    },
+    statLabel: {
+      color: "#dbeafe",
+      fontSize: "14px",
+      lineHeight: 1.6,
     },
     heroLogoWrap: {
       display: "flex",
       justifyContent: "center",
       alignItems: "center",
     },
+    heroLogoCard: {
+      width: "100%",
+      maxWidth: "380px",
+      backgroundColor: "rgba(255,255,255,0.08)",
+      border: "1px solid rgba(255,255,255,0.14)",
+      borderRadius: "28px",
+      padding: "28px",
+      boxShadow: "0 20px 55px rgba(0,0,0,0.22)",
+    },
     heroLogo: {
       width: "100%",
-      maxWidth: "340px",
+      maxWidth: "320px",
       display: "block",
+      margin: "0 auto",
     },
     trustStrip: {
       borderBottom: "1px solid #e5e7eb",
@@ -151,15 +221,32 @@ export default function App() {
       padding: "80px 28px",
     },
     sectionGray: {
-      backgroundColor: "#f8fafc",
+      background:
+        "linear-gradient(180deg, #f8fbff 0%, #f8fafc 55%, #ffffff 100%)",
       padding: "80px 0",
     },
     sectionTitle: {
-      fontSize: "36px",
+      fontSize: "clamp(30px, 5vw, 36px)",
       fontWeight: 800,
       marginBottom: "20px",
       letterSpacing: "-0.02em",
       color: "#111827",
+    },
+    sectionEyebrow: {
+      display: "inline-block",
+      marginBottom: "14px",
+      fontSize: "12px",
+      fontWeight: 800,
+      letterSpacing: "0.08em",
+      textTransform: "uppercase",
+      color: "#2856a3",
+    },
+    sectionLead: {
+      fontSize: "19px",
+      lineHeight: 1.85,
+      color: "#334155",
+      maxWidth: "860px",
+      marginBottom: "26px",
     },
     paragraph: {
       fontSize: "17px",
@@ -176,9 +263,9 @@ export default function App() {
     },
     card: {
       backgroundColor: "#ffffff",
-      borderRadius: "16px",
-      padding: "24px",
-      boxShadow: "0 6px 20px rgba(0,0,0,0.06)",
+      borderRadius: "18px",
+      padding: "26px",
+      boxShadow: "0 14px 36px rgba(15,45,92,0.08)",
       border: "1px solid #eef2f7",
     },
     cardTitle: {
@@ -200,8 +287,62 @@ export default function App() {
       gap: "24px",
       marginBottom: "28px",
     },
+    metricText: {
+      fontSize: "18px",
+      lineHeight: 1.75,
+      color: "#374151",
+      marginBottom: 0,
+    },
+    missionPanel: {
+      background:
+        "linear-gradient(135deg, #f8fbff 0%, #eef5ff 100%)",
+      border: "1px solid #d9e8ff",
+      borderRadius: "24px",
+      padding: "32px",
+      boxShadow: "0 18px 40px rgba(15,45,92,0.08)",
+      marginTop: "28px",
+    },
+    missionTitle: {
+      fontSize: "24px",
+      fontWeight: 800,
+      color: "#102a56",
+      marginBottom: "14px",
+    },
+    missionText: {
+      fontSize: "19px",
+      lineHeight: 1.85,
+      color: "#1e3a5f",
+      margin: 0,
+      maxWidth: "860px",
+    },
+    emotionalGrid: {
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+      gap: "22px",
+      marginTop: "30px",
+    },
+    emotionalCard: {
+      backgroundColor: "#ffffff",
+      borderRadius: "18px",
+      padding: "24px",
+      border: "1px solid #e2e8f0",
+      boxShadow: "0 14px 36px rgba(15,45,92,0.08)",
+    },
+    emotionalTitle: {
+      fontSize: "19px",
+      fontWeight: 700,
+      color: "#102a56",
+      marginBottom: "10px",
+    },
+    emotionalText: {
+      fontSize: "16px",
+      lineHeight: 1.8,
+      color: "#475569",
+      margin: 0,
+    },
     sellSection: {
-      background: "linear-gradient(135deg, #0f2d5c 0%, #143769 100%)",
+      background:
+        "radial-gradient(circle at left top, rgba(96,165,250,0.16), transparent 24%), linear-gradient(135deg, #0f2d5c 0%, #143769 100%)",
       color: "#ffffff",
       padding: "84px 0",
     },
@@ -218,15 +359,188 @@ export default function App() {
       color: "#102a56",
       marginBottom: "12px",
     },
+    processSection: {
+      background:
+        "linear-gradient(180deg, #ffffff 0%, #f8fbff 100%)",
+      padding: "84px 0",
+    },
+    processGrid: {
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+      gap: "22px",
+      marginTop: "28px",
+    },
+    processCard: {
+      backgroundColor: "#ffffff",
+      borderRadius: "20px",
+      padding: "26px",
+      border: "1px solid #e5edf7",
+      boxShadow: "0 14px 36px rgba(15,45,92,0.08)",
+    },
+    processNumber: {
+      width: "42px",
+      height: "42px",
+      borderRadius: "999px",
+      backgroundColor: "#102a56",
+      color: "#ffffff",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      fontWeight: 800,
+      marginBottom: "16px",
+    },
+    processTitle: {
+      fontSize: "20px",
+      fontWeight: 700,
+      color: "#111827",
+      marginBottom: "10px",
+    },
+    processText: {
+      fontSize: "16px",
+      lineHeight: 1.8,
+      color: "#475569",
+      margin: 0,
+    },
+    quoteCard: {
+      backgroundColor: "#edf4ff",
+      border: "1px solid #dbeafe",
+      color: "#102a56",
+      borderRadius: "18px",
+      padding: "24px",
+      marginTop: "24px",
+      fontSize: "17px",
+      lineHeight: 1.8,
+      fontWeight: 600,
+    },
+    contactSection: {
+      backgroundColor: "#ffffff",
+    },
+    funnelBand: {
+      background:
+        "linear-gradient(135deg, #eff6ff 0%, #f8fbff 55%, #ffffff 100%)",
+      borderTop: "1px solid #e5edf8",
+      borderBottom: "1px solid #e5edf8",
+    },
+    funnelWrap: {
+      maxWidth: "1180px",
+      margin: "0 auto",
+      padding: "72px 28px",
+    },
+    funnelGrid: {
+      display: "grid",
+      gridTemplateColumns: "1.1fr 0.9fr",
+      gap: "28px",
+      alignItems: "start",
+    },
+    funnelChecklist: {
+      backgroundColor: "#ffffff",
+      borderRadius: "22px",
+      padding: "28px",
+      border: "1px solid #e2e8f0",
+      boxShadow: "0 18px 40px rgba(15,45,92,0.08)",
+    },
+    funnelList: {
+      listStyle: "none",
+      padding: 0,
+      margin: "18px 0 0 0",
+      display: "grid",
+      gap: "14px",
+    },
+    funnelItem: {
+      fontSize: "16px",
+      lineHeight: 1.8,
+      color: "#334155",
+      padding: "0 0 0 34px",
+      position: "relative",
+    },
+    checkmark: {
+      position: "absolute",
+      left: 0,
+      top: 0,
+      color: "#0f766e",
+      fontWeight: 800,
+    },
+    ctaPanel: {
+      background:
+        "linear-gradient(135deg, #102a56 0%, #173f7a 100%)",
+      color: "#ffffff",
+      borderRadius: "24px",
+      padding: "30px",
+      boxShadow: "0 24px 50px rgba(16,42,86,0.2)",
+    },
+    ctaTitle: {
+      fontSize: "26px",
+      fontWeight: 800,
+      marginBottom: "12px",
+    },
+    ctaText: {
+      fontSize: "17px",
+      lineHeight: 1.85,
+      color: "#dbeafe",
+      marginBottom: "20px",
+    },
+    ctaButton: {
+      backgroundColor: "#ffffff",
+      color: "#102a56",
+      textDecoration: "none",
+      display: "inline-block",
+      padding: "14px 22px",
+      borderRadius: "12px",
+      fontWeight: 800,
+      boxShadow: "0 12px 24px rgba(0,0,0,0.18)",
+    },
+    intakeHeader: {
+      display: "grid",
+      gap: "12px",
+      marginBottom: "8px",
+    },
+    intakeBadge: {
+      display: "inline-block",
+      width: "fit-content",
+      padding: "8px 12px",
+      borderRadius: "999px",
+      backgroundColor: "#e8f1ff",
+      color: "#102a56",
+      fontSize: "13px",
+      fontWeight: 800,
+      letterSpacing: "0.04em",
+      textTransform: "uppercase",
+    },
+    fieldHint: {
+      fontSize: "13px",
+      lineHeight: 1.7,
+      color: "#64748b",
+      marginTop: "-8px",
+      marginBottom: "2px",
+    },
+    textAreaLabel: {
+      fontSize: "15px",
+      fontWeight: 700,
+      color: "#102a56",
+      marginBottom: "6px",
+    },
     contactWrap: {
       maxWidth: "860px",
       margin: "0 auto",
       padding: "80px 28px",
     },
+    contactPanel: {
+      background:
+        "linear-gradient(180deg, rgba(248,251,255,0.9) 0%, rgba(255,255,255,1) 100%)",
+      borderRadius: "24px",
+      padding: "28px",
+      border: "1px solid #e2e8f0",
+      boxShadow: "0 18px 40px rgba(15,45,92,0.08)",
+    },
     form: {
       display: "grid",
       gap: "18px",
       marginTop: "22px",
+    },
+    inputGrid: {
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+      gap: "18px",
     },
     input: {
       width: "100%",
@@ -259,6 +573,11 @@ export default function App() {
       cursor: "pointer",
       boxShadow: "0 10px 24px rgba(16, 42, 86, 0.18)",
     },
+    submitDisabled: {
+      backgroundColor: "#64748b",
+      cursor: "not-allowed",
+      boxShadow: "none",
+    },
     note: {
       fontSize: "14px",
       color: "#6b7280",
@@ -276,7 +595,8 @@ export default function App() {
     },
     thankYouWrap: {
       minHeight: "100vh",
-      background: "linear-gradient(135deg, #0f2d5c 0%, #173f7a 55%, #123364 100%)",
+      background:
+        "radial-gradient(circle at top right, rgba(96,165,250,0.18), transparent 28%), linear-gradient(135deg, #0f2d5c 0%, #173f7a 55%, #123364 100%)",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -340,29 +660,23 @@ export default function App() {
   };
 
   const resetForm = () => {
-    setFormData({
-      name: "",
-      company: "",
-      revenue: "",
-      location: "",
-      email: "",
-      phone: "",
-      industry: "",
-      cashflow: "",
-      askingPrice: "",
-      yearsInBusiness: "",
-      employees: "",
-      reasonForSelling: "",
-      timeline: "",
-      sellerFinancing: "",
-      message: "",
-    });
+    setFormData(initialFormData);
   };
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    setSubmitting(true);
     setErrorMessage("");
+
+    const trimmedName = formData.name.trim();
+    const trimmedEmail = formData.email.trim();
+    const trimmedMessage = formData.message.trim();
+
+    if (!trimmedName || !trimmedEmail) {
+      setErrorMessage("Please enter your name and email before submitting.");
+      return;
+    }
+
+    setSubmitting(true);
 
     try {
       const response = await fetch("https://formspree.io/f/mwvrjwnk", {
@@ -373,19 +687,24 @@ export default function App() {
         },
         body: JSON.stringify({
           ...formData,
+          name: trimmedName,
+          email: trimmedEmail,
+          message: trimmedMessage,
           _subject: "New Acquisition Inquiry - Blue Capital Holdings",
         }),
       });
 
-      if (response.ok) {
-        resetForm();
-        setSubmitted(true);
-        window.scrollTo({ top: 0, behavior: "smooth" });
-      } else {
-        setErrorMessage("Something went wrong while submitting the form. Please try again.");
+      if (!response.ok) {
+        throw new Error("Form submission failed");
       }
+
+      resetForm();
+      setSubmitted(true);
+      window.scrollTo({ top: 0, behavior: "smooth" });
     } catch (error) {
-      setErrorMessage("Something went wrong while submitting the form. Please try again.");
+      setErrorMessage(
+        "Something went wrong while submitting the form. Please try again."
+      );
     } finally {
       setSubmitting(false);
     }
@@ -422,12 +741,24 @@ export default function App() {
         <div style={styles.navInner}>
           <div style={styles.brandText}>Blue Capital Holdings LLC</div>
           <div style={styles.navLinks}>
-            <a href="#home" style={styles.link}>Home</a>
-            <a href="#about" style={styles.link}>About</a>
-            <a href="#criteria" style={styles.link}>Criteria</a>
-            <a href="#sell" style={styles.link}>Sell Your Business</a>
-            <a href="#founder" style={styles.link}>Founder</a>
-            <a href="#contact" style={styles.link}>Contact</a>
+            <a href="#home" style={styles.link}>
+              Home
+            </a>
+            <a href="#about" style={styles.link}>
+              About
+            </a>
+            <a href="#criteria" style={styles.link}>
+              Criteria
+            </a>
+            <a href="#sell" style={styles.link}>
+              Sell Your Business
+            </a>
+            <a href="#founder" style={styles.link}>
+              Founder
+            </a>
+            <a href="#contact" style={styles.link}>
+              Contact
+            </a>
           </div>
         </div>
       </nav>
@@ -435,30 +766,64 @@ export default function App() {
       <section id="home" style={styles.hero}>
         <div style={styles.heroInner}>
           <div>
+            <div style={styles.heroEyebrow}>Private acquisition firm</div>
             <h1 style={styles.heroTitle}>
-              Acquiring and Growing Profitable Small Businesses
+              Selling your business is personal. The next owner should treat it that way.
             </h1>
+            <p style={styles.missionStatement}>
+              We work with business owners who want more than a transaction. Blue
+              Capital Holdings is built to provide a confidential, direct, and
+              thoughtful path for owners who care about their people, their
+              customers, and the legacy they have spent years building.
+            </p>
             <p style={styles.heroText}>
-              Blue Capital Holdings LLC is a private investment firm focused on
-              acquiring and operating established small businesses with strong
-              fundamentals, durable cash flow, and long-term growth potential.
+              If you are thinking about retirement, succession, or simply want to
+              explore your options with a serious buyer, we aim to make that first
+              conversation clear, respectful, and pressure-free.
             </p>
             <div style={styles.buttonRow}>
               <a href="#contact" style={styles.primaryBtn}>
-                Start a Confidential Conversation
+                Request a Confidential Conversation
               </a>
-              <a href="#criteria" style={styles.secondaryBtn}>
-                View Acquisition Criteria
+              <a href="#process" style={styles.secondaryBtn}>
+                See How the Process Works
               </a>
+            </div>
+            <div style={styles.heroStats}>
+              <div style={styles.statCard}>
+                <div style={styles.statValue}>Direct Buyer</div>
+                <div style={styles.statLabel}>
+                  Thoughtful conversations without broad market exposure
+                </div>
+              </div>
+              <div style={styles.statCard}>
+                <div style={styles.statValue}>Confidential</div>
+                <div style={styles.statLabel}>
+                  A process designed to protect employees, customers, and reputation
+                </div>
+              </div>
+              <div style={styles.statCard}>
+                <div style={styles.statValue}>Long-term</div>
+                <div style={styles.statLabel}>
+                  Ownership built around stewardship, continuity, and growth
+                </div>
+              </div>
+            </div>
+            <div style={styles.reassuranceRow}>
+              <div style={styles.reassurancePill}>Confidential conversations</div>
+              <div style={styles.reassurancePill}>Legacy-minded ownership</div>
+              <div style={styles.reassurancePill}>Built for retirement and succession transitions</div>
             </div>
           </div>
 
           <div style={styles.heroLogoWrap}>
-            <img
-              src="/logo.png"
-              alt="Blue Capital Holdings logo"
-              style={styles.heroLogo}
-            />
+            <div style={styles.heroLogoCard}>
+              <img
+                src="/logo.png"
+                alt="Blue Capital Holdings logo"
+                style={styles.heroLogo}
+              />
+            </div>
           </div>
         </div>
       </section>
@@ -473,7 +838,14 @@ export default function App() {
       </section>
 
       <section id="about" style={styles.section}>
+        <div style={styles.sectionEyebrow}>Owner-first approach</div>
         <h2 style={styles.sectionTitle}>About Blue Capital Holdings</h2>
+        <p style={styles.sectionLead}>
+          Most acquisition firms lead with capital. We lead with continuity. For
+          many owners, the right outcome is not just about price. It is about who
+          takes care of the team, preserves the customer relationships, and
+          carries the business forward with discipline.
+        </p>
 
         <p style={styles.paragraph}>
           Blue Capital Holdings LLC is a private investment firm focused on
@@ -497,6 +869,43 @@ export default function App() {
           and welcomes confidential conversations with business owners, brokers,
           and referral partners.
         </p>
+
+        <div style={styles.missionPanel}>
+          <div style={styles.missionTitle}>Mission Statement</div>
+          <p style={styles.missionText}>
+            Our mission is to give business owners a trustworthy transition path,
+            not just an exit. We acquire strong small businesses with the intent
+            to protect what makes them valuable, support the people who helped
+            build them, and grow them responsibly for the long term.
+          </p>
+        </div>
+
+        <div style={styles.emotionalGrid}>
+          <div style={styles.emotionalCard}>
+            <div style={styles.emotionalTitle}>You built more than revenue</div>
+            <p style={styles.emotionalText}>
+              For many owners, the business represents decades of sacrifice,
+              reputation, customer trust, and responsibility to employees. That
+              deserves more than a generic buyer.
+            </p>
+          </div>
+          <div style={styles.emotionalCard}>
+            <div style={styles.emotionalTitle}>Retirement should feel clear</div>
+            <p style={styles.emotionalText}>
+              Owners nearing retirement often want confidence that the business
+              will continue responsibly, not uncertainty about what happens after
+              closing.
+            </p>
+          </div>
+          <div style={styles.emotionalCard}>
+            <div style={styles.emotionalTitle}>The right fit matters</div>
+            <p style={styles.emotionalText}>
+              A strong transition is about alignment on values, timing, and
+              continuity, not just valuation. That is where thoughtful conversations
+              make the difference.
+            </p>
+          </div>
+        </div>
       </section>
 
       <section id="criteria" style={styles.sectionGray}>
@@ -506,19 +915,19 @@ export default function App() {
           <div style={styles.criteriaGrid}>
             <div style={styles.card}>
               <div style={styles.cardTitle}>Revenue</div>
-              <p style={styles.paragraph}>$500,000 to $5,000,000 annually</p>
+              <p style={styles.metricText}>$500,000 to $5,000,000 annually</p>
             </div>
 
             <div style={styles.card}>
               <div style={styles.cardTitle}>Profitability</div>
-              <p style={styles.paragraph}>
+              <p style={styles.metricText}>
                 Consistent positive cash flow and stable operations
               </p>
             </div>
 
             <div style={styles.card}>
               <div style={styles.cardTitle}>Geography</div>
-              <p style={styles.paragraph}>United States based businesses</p>
+              <p style={styles.metricText}>United States based businesses</p>
             </div>
           </div>
 
@@ -550,31 +959,93 @@ export default function App() {
 
       <section id="sell" style={styles.sellSection}>
         <div style={styles.section}>
-          <h2 style={styles.sectionTitle}>Considering Selling Your Business?</h2>
+          <div style={{ ...styles.sectionEyebrow, color: "#bfdbfe" }}>
+            For owners considering a transition
+          </div>
+          <h2 style={{ ...styles.sectionTitle, color: "#ffffff" }}>
+            Considering Selling Your Business?
+          </h2>
           <p style={styles.sellText}>
-            Blue Capital Holdings works directly with business owners preparing for
-            retirement, succession, or a transition. Our approach is confidential,
-            flexible, and focused on protecting the legacy of the company while
-            supporting continuity for employees and customers.
+            You may only sell your business once. That decision affects your
+            family, your employees, your customers, and the reputation you have
+            built over years. We work directly with owners who want a buyer that
+            understands the weight of that decision and approaches it with care.
+          </p>
+          <p style={styles.sellText}>
+            If you are approaching retirement or thinking seriously about
+            succession, our goal is to offer a steady hand, a direct process, and
+            a transition path that respects everything you have put into the business.
           </p>
           <div style={styles.twoCol}>
             <div style={styles.card}>
               <div style={styles.cardTitle}>Why Owners Work With Us</div>
               <ul style={styles.list}>
-                <li>Confidential acquisition process</li>
-                <li>Flexible deal structures</li>
-                <li>Long-term ownership approach</li>
-                <li>Commitment to employees and customers</li>
+                <li>Confidential, direct conversations without unnecessary noise</li>
+                <li>Respect for your legacy, team, and customer relationships</li>
+                <li>Flexible structures shaped around real transition needs</li>
+                <li>Long-term ownership rather than short-term flipping</li>
               </ul>
             </div>
 
             <div style={styles.card}>
-              <div style={styles.cardTitle}>Transition Approach</div>
+              <div style={styles.cardTitle}>What You Can Expect</div>
               <ul style={styles.list}>
-                <li>Full acquisitions</li>
-                <li>Seller financing arrangements</li>
-                <li>Gradual ownership transitions where appropriate</li>
+                <li>A straightforward, pressure-free first conversation</li>
+                <li>Honest feedback on fit, timing, and next steps</li>
+                <li>Transition options including seller financing when appropriate</li>
+                <li>A buyer focused on operating and growing the business</li>
               </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="process" style={styles.processSection}>
+        <div style={styles.section}>
+          <div style={styles.sectionEyebrow}>Simple and credible</div>
+          <h2 style={styles.sectionTitle}>A Clear Process for Serious Owners</h2>
+          <p style={styles.sectionLead}>
+            The site should answer the question every owner is quietly asking:
+            “What happens if I reach out?” This process is designed to lower
+            friction, build trust quickly, and move the right conversations
+            forward.
+          </p>
+
+          <div style={styles.processGrid}>
+            <div style={styles.processCard}>
+              <div style={styles.processNumber}>1</div>
+              <div style={styles.processTitle}>Private Introduction</div>
+              <p style={styles.processText}>
+                You share a few basics about your business and what kind of
+                transition you are considering.
+              </p>
+            </div>
+
+            <div style={styles.processCard}>
+              <div style={styles.processNumber}>2</div>
+              <div style={styles.processTitle}>Initial Fit Review</div>
+              <p style={styles.processText}>
+                We review the opportunity carefully and respond directly if there
+                appears to be a strong fit.
+              </p>
+            </div>
+
+            <div style={styles.processCard}>
+              <div style={styles.processNumber}>3</div>
+              <div style={styles.processTitle}>Owner Conversation</div>
+              <p style={styles.processText}>
+                We discuss your goals, timing, legacy concerns, and transition
+                preferences in a confidential conversation.
+              </p>
+            </div>
+
+            <div style={styles.processCard}>
+              <div style={styles.processNumber}>4</div>
+              <div style={styles.processTitle}>Thoughtful Next Steps</div>
+              <p style={styles.processText}>
+                If there is alignment, we move forward with clarity and respect
+                for the business you have built.
+              </p>
             </div>
           </div>
         </div>
@@ -605,6 +1076,11 @@ export default function App() {
               acquire and grow quality small businesses through disciplined
               ownership and operational stewardship.
             </p>
+
+            <div style={styles.quoteCard}>
+              Built for owners who care about legacy, continuity, and thoughtful
+              long-term stewardship.
+            </div>
           </div>
 
           <div style={styles.card}>
@@ -627,150 +1103,260 @@ export default function App() {
         </div>
       </section>
 
-      <section id="contact" style={styles.contactWrap}>
-        <h2 style={styles.sectionTitle}>Contact</h2>
-        <p style={styles.paragraph}>
-          Blue Capital Holdings LLC welcomes confidential conversations with
-          business owners, brokers, and referral partners.
-        </p>
-        <p style={styles.paragraph}>
-          <strong>Email:</strong> info@bluecapitalholdingsllc.com
-        </p>
-        <p style={styles.paragraph}>
-          <strong>Phone:</strong> 812-312-1910
-        </p>
-        <p style={styles.paragraph}>
-          <strong>Location:</strong> Avon, Indiana
-        </p>
+      <section style={styles.funnelBand}>
+        <div style={styles.funnelWrap}>
+          <div
+            style={{
+              ...styles.funnelGrid,
+              gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+            }}
+          >
+            <div style={styles.funnelChecklist}>
+              <div style={styles.sectionEyebrow}>Why owners convert here</div>
+              <h2 style={{ ...styles.sectionTitle, marginBottom: "12px" }}>
+                Built to Turn Interest Into Real Conversations
+              </h2>
+              <p style={{ ...styles.paragraph, maxWidth: "100%" }}>
+                Your website should not just describe what you buy. It should help
+                owners feel understood, reduce uncertainty, and make taking the
+                first step feel safe.
+              </p>
+              <ul style={styles.funnelList}>
+                <li style={styles.funnelItem}>
+                  <span style={styles.checkmark}>✓</span>
+                  Owner-centered messaging that speaks to legacy, trust, and
+                  continuity instead of generic acquisition language.
+                </li>
+                <li style={styles.funnelItem}>
+                  <span style={styles.checkmark}>✓</span>
+                  A clear process that removes mystery and lowers resistance to
+                  reaching out.
+                </li>
+                <li style={styles.funnelItem}>
+                  <span style={styles.checkmark}>✓</span>
+                  Stronger calls to action that frame contact as a confidential
+                  conversation rather than a hard commitment.
+                </li>
+              </ul>
+            </div>
 
-        <form onSubmit={handleSubmit} style={styles.form}>
-          <input
-            type="hidden"
-            name="_subject"
-            value="New Acquisition Inquiry - Blue Capital Holdings"
-          />
+            <div style={styles.ctaPanel}>
+            <div style={styles.ctaTitle}>
+              Explore a transition without pressure
+            </div>
+            <p style={styles.ctaText}>
+              If you are considering retirement, succession, or a sale in the
+              next 6 to 36 months, the first step is simply a private
+              conversation. No broad process. No obligation. Just a thoughtful
+              discussion about fit.
+            </p>
+            <p style={styles.ctaText}>
+              The best inquiries usually come from owners who want to understand
+              their options before they are ready to make a final decision.
+            </p>
+            <a href="#contact" style={styles.ctaButton}>
+              Start the Conversation
+            </a>
+            </div>
+          </div>
+        </div>
+      </section>
 
-          <input
-            name="name"
-            placeholder="Your Name"
-            style={styles.input}
-            value={formData.name}
-            onChange={handleChange}
-            required
-          />
-          <input
-            name="company"
-            placeholder="Company Name"
-            style={styles.input}
-            value={formData.company}
-            onChange={handleChange}
-          />
-          <input
-            name="revenue"
-            placeholder="Annual Revenue"
-            style={styles.input}
-            value={formData.revenue}
-            onChange={handleChange}
-          />
-          <input
-            name="location"
-            placeholder="Location"
-            style={styles.input}
-            value={formData.location}
-            onChange={handleChange}
-          />
-          <input
-            name="email"
-            placeholder="Email"
-            style={styles.input}
-            value={formData.email}
-            onChange={handleChange}
-            required
-          />
-          <input
-            name="phone"
-            placeholder="Phone"
-            style={styles.input}
-            value={formData.phone}
-            onChange={handleChange}
-          />
-          <input
-            name="industry"
-            placeholder="Industry"
-            style={styles.input}
-            value={formData.industry}
-            onChange={handleChange}
-          />
-          <input
-            name="cashflow"
-            placeholder="Annual EBITDA / Owner Cash Flow"
-            style={styles.input}
-            value={formData.cashflow}
-            onChange={handleChange}
-          />
-          <input
-            name="askingPrice"
-            placeholder="Asking Price"
-            style={styles.input}
-            value={formData.askingPrice}
-            onChange={handleChange}
-          />
-          <input
-            name="yearsInBusiness"
-            placeholder="Years in Business"
-            style={styles.input}
-            value={formData.yearsInBusiness}
-            onChange={handleChange}
-          />
-          <input
-            name="employees"
-            placeholder="Number of Employees"
-            style={styles.input}
-            value={formData.employees}
-            onChange={handleChange}
-          />
-          <input
-            name="reasonForSelling"
-            placeholder="Reason for Selling"
-            style={styles.input}
-            value={formData.reasonForSelling}
-            onChange={handleChange}
-          />
-          <input
-            name="timeline"
-            placeholder="Desired Timeline to Sell"
-            style={styles.input}
-            value={formData.timeline}
-            onChange={handleChange}
-          />
-          <input
-            name="sellerFinancing"
-            placeholder="Is Seller Financing Available?"
-            style={styles.input}
-            value={formData.sellerFinancing}
-            onChange={handleChange}
-          />
-          <textarea
-            name="message"
-            placeholder="Tell us about the business"
-            style={styles.textarea}
-            value={formData.message}
-            onChange={handleChange}
-          ></textarea>
+      <section id="contact" style={styles.contactSection}>
+        <div style={styles.contactWrap}>
+          <div style={styles.contactPanel}>
+            <div style={styles.sectionEyebrow}>Confidential inquiry</div>
+            <h2 style={styles.sectionTitle}>Contact</h2>
+            <p style={styles.sectionLead}>
+              If you are a business owner, broker, or advisor exploring a
+              transition, use the form below to begin a confidential conversation.
+              The more context you share, the more thoughtfully we can evaluate
+              fit and respond.
+            </p>
+            <div style={styles.intakeHeader}>
+              <div style={styles.intakeBadge}>Seller Intake</div>
+              <p style={styles.paragraph}>
+                This form is designed for business owners who want an initial
+                confidential conversation about transition timing, legacy, and fit.
+              </p>
+            </div>
+            <p style={styles.paragraph}>
+              <strong>Email:</strong> info@bluecapitalholdingsllc.com
+            </p>
+            <p style={styles.paragraph}>
+              <strong>Phone:</strong> 812-312-1910
+            </p>
+            <p style={styles.paragraph}>
+              <strong>Location:</strong> Avon, Indiana
+            </p>
 
-          <p style={styles.note}>
-            Please include revenue, cash flow, and reason for selling. All
-            inquiries are strictly confidential.
-          </p>
+            <form onSubmit={handleSubmit} style={styles.form}>
+              <input
+                type="hidden"
+                name="_subject"
+                value="New Acquisition Inquiry - Blue Capital Holdings"
+              />
 
-          {errorMessage ? (
-            <div style={styles.errorBox}>{errorMessage}</div>
-          ) : null}
+              <div style={styles.inputGrid}>
+                <input
+                  name="name"
+                  type="text"
+                  placeholder="Your Name"
+                  style={styles.input}
+                  value={formData.name}
+                  onChange={handleChange}
+                  autoComplete="name"
+                  required
+                />
+                <input
+                  name="company"
+                  type="text"
+                  placeholder="Company Name"
+                  style={styles.input}
+                  value={formData.company}
+                  onChange={handleChange}
+                  autoComplete="organization"
+                />
+                <input
+                  name="revenue"
+                  type="text"
+                  placeholder="Annual Revenue Range"
+                  style={styles.input}
+                  value={formData.revenue}
+                  onChange={handleChange}
+                />
+                <input
+                  name="location"
+                  type="text"
+                  placeholder="Location"
+                  style={styles.input}
+                  value={formData.location}
+                  onChange={handleChange}
+                  autoComplete="address-level2"
+                />
+                <input
+                  name="email"
+                  type="email"
+                  placeholder="Email"
+                  style={styles.input}
+                  value={formData.email}
+                  onChange={handleChange}
+                  autoComplete="email"
+                  required
+                />
+                <input
+                  name="phone"
+                  type="tel"
+                  placeholder="Phone"
+                  style={styles.input}
+                  value={formData.phone}
+                  onChange={handleChange}
+                  autoComplete="tel"
+                />
+                <input
+                  name="industry"
+                  type="text"
+                  placeholder="Industry"
+                  style={styles.input}
+                  value={formData.industry}
+                  onChange={handleChange}
+                />
+                <input
+                  name="cashflow"
+                  type="text"
+                  placeholder="Annual EBITDA / Seller Discretionary Earnings"
+                  style={styles.input}
+                  value={formData.cashflow}
+                  onChange={handleChange}
+                />
+                <input
+                  name="askingPrice"
+                  type="text"
+                  placeholder="Asking Price"
+                  style={styles.input}
+                  value={formData.askingPrice}
+                  onChange={handleChange}
+                />
+                <input
+                  name="yearsInBusiness"
+                  type="text"
+                  placeholder="Years in Business"
+                  style={styles.input}
+                  value={formData.yearsInBusiness}
+                  onChange={handleChange}
+                />
+                <input
+                  name="employees"
+                  type="text"
+                  placeholder="Number of Employees"
+                  style={styles.input}
+                  value={formData.employees}
+                  onChange={handleChange}
+                />
+                <input
+                  name="reasonForSelling"
+                  type="text"
+                  placeholder="Reason for Selling / Retirement / Succession"
+                  style={styles.input}
+                  value={formData.reasonForSelling}
+                  onChange={handleChange}
+                />
+                <input
+                  name="timeline"
+                  type="text"
+                  placeholder="Desired Timeline to Transition"
+                  style={styles.input}
+                  value={formData.timeline}
+                  onChange={handleChange}
+                />
+                <input
+                  name="sellerFinancing"
+                  type="text"
+                  placeholder="Is Seller Financing Available?"
+                  style={styles.input}
+                  value={formData.sellerFinancing}
+                  onChange={handleChange}
+                />
+              </div>
 
-          <button type="submit" style={styles.submit} disabled={submitting}>
-            {submitting ? "Submitting..." : "Submit Confidentially"}
-          </button>
-        </form>
+              <p style={styles.fieldHint}>
+                Helpful context: approximate revenue, cash flow, ownership goals,
+                desired timeline, and whether you want to stay involved during a transition.
+              </p>
+
+              <div style={styles.textAreaLabel}>
+                Tell us about the business and the kind of transition you are considering
+              </div>
+              <textarea
+                name="message"
+                placeholder="Share anything helpful: what the company does, who it serves, whether this is a retirement or succession conversation, and what matters most to you in the next owner."
+                style={styles.textarea}
+                value={formData.message}
+                onChange={handleChange}
+              />
+
+              <p style={styles.note}>
+                Please include revenue, cash flow, timeline, and reason for
+                selling when possible. All inquiries are reviewed confidentially.
+              </p>
+
+              {errorMessage ? (
+                <div style={styles.errorBox}>{errorMessage}</div>
+              ) : null}
+
+              <button
+                type="submit"
+                style={{
+                  ...styles.submit,
+                  ...(submitting ? styles.submitDisabled : {}),
+                }}
+                disabled={submitting}
+              >
+                {submitting ? "Submitting..." : "Submit Confidentially"}
+              </button>
+            </form>
+          </div>
+        </div>
       </section>
 
       <footer style={styles.footer}>
