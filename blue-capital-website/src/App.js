@@ -28,14 +28,14 @@ export default function App() {
     page: {
       fontFamily: "Arial, sans-serif",
       color: "#1f2937",
-      backgroundColor: "#ffffff",
+      backgroundColor: "#fcfdff",
       margin: 0,
       padding: 0,
     },
     nav: {
-      borderBottom: "1px solid #dbe4f0",
-      backgroundColor: "rgba(255,255,255,0.96)",
-      boxShadow: "0 1px 12px rgba(15,45,92,0.06)",
+      borderBottom: "1px solid #d8e4ec",
+      backgroundColor: "rgba(252,253,255,0.96)",
+      boxShadow: "0 1px 10px rgba(0,48,91,0.05)",
       position: "sticky",
       top: 0,
       zIndex: 10,
@@ -55,7 +55,7 @@ export default function App() {
       fontSize: "20px",
       fontWeight: 700,
       letterSpacing: "-0.02em",
-      color: "#102a56",
+      color: "#00305b",
     },
     navLinks: {
       display: "flex",
@@ -72,9 +72,9 @@ export default function App() {
     },
     hero: {
       background:
-        "radial-gradient(circle at top right, rgba(96,165,250,0.18), transparent 28%), linear-gradient(135deg, #0f2d5c 0%, #173f7a 52%, #10284d 100%)",
-      color: "#ffffff",
-      padding: "96px 28px 88px",
+        "linear-gradient(180deg, #f8fcfd 0%, #eef7f9 52%, #fdfefe 100%)",
+      color: "#00305b",
+      padding: "108px 28px 92px",
     },
     heroInner: {
       maxWidth: "1180px",
@@ -88,13 +88,14 @@ export default function App() {
       display: "inline-block",
       padding: "8px 12px",
       borderRadius: "999px",
-      backgroundColor: "rgba(255,255,255,0.12)",
-      border: "1px solid rgba(255,255,255,0.16)",
+      backgroundColor: "#e7f6f7",
+      border: "1px solid #bde7eb",
       fontSize: "13px",
       fontWeight: 700,
       letterSpacing: "0.05em",
       textTransform: "uppercase",
       marginBottom: "18px",
+      color: "#1f7d8c",
     },
     heroTitle: {
       fontSize: "clamp(40px, 7vw, 58px)",
@@ -106,14 +107,14 @@ export default function App() {
     heroText: {
       fontSize: "18px",
       lineHeight: 1.8,
-      color: "#dbeafe",
+      color: "#48657a",
       marginBottom: "32px",
       maxWidth: "720px",
     },
     missionStatement: {
       fontSize: "20px",
       lineHeight: 1.75,
-      color: "#ffffff",
+      color: "#21445f",
       maxWidth: "760px",
       marginBottom: "28px",
       fontWeight: 600,
@@ -127,10 +128,10 @@ export default function App() {
     reassurancePill: {
       padding: "10px 14px",
       borderRadius: "999px",
-      backgroundColor: "rgba(255,255,255,0.08)",
-      border: "1px solid rgba(255,255,255,0.14)",
+      backgroundColor: "#ffffff",
+      border: "1px solid #dbe7ef",
       fontSize: "14px",
-      color: "#e0ecff",
+      color: "#567082",
       fontWeight: 600,
     },
     buttonRow: {
@@ -139,23 +140,23 @@ export default function App() {
       flexWrap: "wrap",
     },
     primaryBtn: {
-      backgroundColor: "#ffffff",
-      color: "#102a56",
+      backgroundColor: "#00305b",
+      color: "#ffffff",
       padding: "14px 24px",
       borderRadius: "10px",
       fontWeight: 700,
       textDecoration: "none",
-      boxShadow: "0 10px 28px rgba(0,0,0,0.18)",
+      boxShadow: "0 12px 24px rgba(0,48,91,0.16)",
       display: "inline-block",
     },
     secondaryBtn: {
-      border: "1px solid rgba(255,255,255,0.4)",
-      color: "#ffffff",
+      border: "1px solid #bcd8e5",
+      color: "#00305b",
       padding: "14px 24px",
       borderRadius: "10px",
       fontWeight: 600,
       textDecoration: "none",
-      backgroundColor: "rgba(255,255,255,0.05)",
+      backgroundColor: "#ffffff",
       display: "inline-block",
     },
     heroStats: {
@@ -165,10 +166,11 @@ export default function App() {
       marginTop: "30px",
     },
     statCard: {
-      backgroundColor: "rgba(255,255,255,0.08)",
-      border: "1px solid rgba(255,255,255,0.12)",
+      backgroundColor: "#ffffff",
+      border: "1px solid #dbe7ef",
       borderRadius: "14px",
       padding: "16px",
+      boxShadow: "0 12px 24px rgba(0,48,91,0.05)",
     },
     statValue: {
       fontSize: "22px",
@@ -176,7 +178,7 @@ export default function App() {
       marginBottom: "6px",
     },
     statLabel: {
-      color: "#dbeafe",
+      color: "#60778a",
       fontSize: "14px",
       lineHeight: 1.6,
     },
@@ -188,11 +190,11 @@ export default function App() {
     heroLogoCard: {
       width: "100%",
       maxWidth: "380px",
-      backgroundColor: "rgba(255,255,255,0.08)",
-      border: "1px solid rgba(255,255,255,0.14)",
+      backgroundColor: "#ffffff",
+      border: "1px solid #dce8ef",
       borderRadius: "28px",
       padding: "28px",
-      boxShadow: "0 20px 55px rgba(0,0,0,0.22)",
+      boxShadow: "0 24px 52px rgba(0,48,91,0.08)",
     },
     heroLogo: {
       width: "100%",
@@ -201,8 +203,8 @@ export default function App() {
       margin: "0 auto",
     },
     trustStrip: {
-      borderBottom: "1px solid #e5e7eb",
-      backgroundColor: "#ffffff",
+      borderBottom: "1px solid #e3edf2",
+      backgroundColor: "#fdfefe",
     },
     trustInner: {
       maxWidth: "1180px",
@@ -211,7 +213,7 @@ export default function App() {
       display: "grid",
       gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
       gap: "14px",
-      color: "#4b5563",
+      color: "#5a6f81",
       fontSize: "14px",
       fontWeight: 600,
     },
@@ -222,7 +224,7 @@ export default function App() {
     },
     sectionGray: {
       background:
-        "linear-gradient(180deg, #f8fbff 0%, #f8fafc 55%, #ffffff 100%)",
+        "linear-gradient(180deg, #f7fbfc 0%, #f3f8fa 55%, #ffffff 100%)",
       padding: "80px 0",
     },
     sectionTitle: {
@@ -230,7 +232,7 @@ export default function App() {
       fontWeight: 800,
       marginBottom: "20px",
       letterSpacing: "-0.02em",
-      color: "#111827",
+      color: "#00305b",
     },
     sectionEyebrow: {
       display: "inline-block",
@@ -239,12 +241,12 @@ export default function App() {
       fontWeight: 800,
       letterSpacing: "0.08em",
       textTransform: "uppercase",
-      color: "#2856a3",
+      color: "#2f8b99",
     },
     sectionLead: {
       fontSize: "19px",
       lineHeight: 1.85,
-      color: "#334155",
+      color: "#496173",
       maxWidth: "860px",
       marginBottom: "26px",
     },
@@ -252,7 +254,7 @@ export default function App() {
       fontSize: "17px",
       lineHeight: 1.8,
       marginBottom: "16px",
-      color: "#374151",
+      color: "#536879",
       maxWidth: "860px",
     },
     twoCol: {
@@ -265,19 +267,19 @@ export default function App() {
       backgroundColor: "#ffffff",
       borderRadius: "18px",
       padding: "26px",
-      boxShadow: "0 14px 36px rgba(15,45,92,0.08)",
-      border: "1px solid #eef2f7",
+      boxShadow: "0 12px 28px rgba(0,48,91,0.06)",
+      border: "1px solid #e3edf3",
     },
     cardTitle: {
       fontSize: "22px",
       fontWeight: 700,
       marginBottom: "14px",
-      color: "#111827",
+      color: "#00305b",
     },
     list: {
       paddingLeft: "20px",
       margin: 0,
-      color: "#374151",
+      color: "#536879",
       lineHeight: 1.9,
       fontSize: "16px",
     },
@@ -290,28 +292,28 @@ export default function App() {
     metricText: {
       fontSize: "18px",
       lineHeight: 1.75,
-      color: "#374151",
+      color: "#536879",
       marginBottom: 0,
     },
     missionPanel: {
       background:
-        "linear-gradient(135deg, #f8fbff 0%, #eef5ff 100%)",
-      border: "1px solid #d9e8ff",
+        "linear-gradient(135deg, #f7fcfd 0%, #edf7f8 100%)",
+      border: "1px solid #d2e7ea",
       borderRadius: "24px",
       padding: "32px",
-      boxShadow: "0 18px 40px rgba(15,45,92,0.08)",
+      boxShadow: "0 16px 36px rgba(0,48,91,0.06)",
       marginTop: "28px",
     },
     missionTitle: {
       fontSize: "24px",
       fontWeight: 800,
-      color: "#102a56",
+      color: "#00305b",
       marginBottom: "14px",
     },
     missionText: {
       fontSize: "19px",
       lineHeight: 1.85,
-      color: "#1e3a5f",
+      color: "#36546b",
       margin: 0,
       maxWidth: "860px",
     },
@@ -325,24 +327,91 @@ export default function App() {
       backgroundColor: "#ffffff",
       borderRadius: "18px",
       padding: "24px",
-      border: "1px solid #e2e8f0",
-      boxShadow: "0 14px 36px rgba(15,45,92,0.08)",
+      border: "1px solid #dfe9ef",
+      boxShadow: "0 12px 28px rgba(0,48,91,0.06)",
     },
     emotionalTitle: {
       fontSize: "19px",
       fontWeight: 700,
-      color: "#102a56",
+      color: "#00305b",
       marginBottom: "10px",
     },
     emotionalText: {
       fontSize: "16px",
       lineHeight: 1.8,
-      color: "#475569",
+      color: "#577082",
+      margin: 0,
+    },
+    standaloneMissionSection: {
+      background:
+        "linear-gradient(180deg, #ffffff 0%, #f8fbfc 100%)",
+      padding: "84px 0",
+      borderTop: "1px solid #e1ebf0",
+      borderBottom: "1px solid #e1ebf0",
+    },
+    standaloneMissionWrap: {
+      maxWidth: "1180px",
+      margin: "0 auto",
+      padding: "0 28px",
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+      gap: "32px",
+      alignItems: "start",
+    },
+    standaloneMissionCard: {
+      backgroundColor: "#ffffff",
+      borderRadius: "24px",
+      padding: "34px",
+      border: "1px solid #dbe8ee",
+      boxShadow: "0 16px 36px rgba(0,48,91,0.06)",
+    },
+    standaloneMissionLabel: {
+      fontSize: "12px",
+      fontWeight: 800,
+      letterSpacing: "0.08em",
+      textTransform: "uppercase",
+      color: "#2f8b99",
+      marginBottom: "14px",
+    },
+    standaloneMissionTitle: {
+      fontSize: "clamp(30px, 4.5vw, 40px)",
+      lineHeight: 1.1,
+      letterSpacing: "-0.03em",
+      color: "#00305b",
+      marginBottom: "18px",
+      fontWeight: 800,
+    },
+    standaloneMissionBody: {
+      fontSize: "20px",
+      lineHeight: 1.85,
+      color: "#436276",
+      margin: 0,
+    },
+    standaloneMissionSide: {
+      display: "grid",
+      gap: "18px",
+    },
+    sideNoteCard: {
+      backgroundColor: "#edf7f8",
+      border: "1px solid #d2e7ea",
+      borderRadius: "20px",
+      padding: "24px",
+    },
+    sideNoteTitle: {
+      fontSize: "18px",
+      fontWeight: 700,
+      color: "#00305b",
+      marginBottom: "10px",
+    },
+    sideNoteText: {
+      fontSize: "16px",
+      lineHeight: 1.8,
+      color: "#4e6a7b",
       margin: 0,
     },
     sellSection: {
       background:
-        "radial-gradient(circle at left top, rgba(96,165,250,0.16), transparent 24%), linear-gradient(135deg, #0f2d5c 0%, #143769 100%)",
+        "linear-gradient(135deg, #00305b 0%, #0d4b76 100%)",
       color: "#ffffff",
       padding: "84px 0",
     },
@@ -356,12 +425,12 @@ export default function App() {
     founderName: {
       fontSize: "22px",
       fontWeight: 700,
-      color: "#102a56",
+      color: "#00305b",
       marginBottom: "12px",
     },
     processSection: {
       background:
-        "linear-gradient(180deg, #ffffff 0%, #f8fbff 100%)",
+        "linear-gradient(180deg, #ffffff 0%, #f7fbfc 100%)",
       padding: "84px 0",
     },
     processGrid: {
@@ -374,14 +443,14 @@ export default function App() {
       backgroundColor: "#ffffff",
       borderRadius: "20px",
       padding: "26px",
-      border: "1px solid #e5edf7",
-      boxShadow: "0 14px 36px rgba(15,45,92,0.08)",
+      border: "1px solid #dfeaf0",
+      boxShadow: "0 12px 28px rgba(0,48,91,0.06)",
     },
     processNumber: {
       width: "42px",
       height: "42px",
       borderRadius: "999px",
-      backgroundColor: "#102a56",
+      backgroundColor: "#41b7c4",
       color: "#ffffff",
       display: "flex",
       alignItems: "center",
@@ -392,19 +461,19 @@ export default function App() {
     processTitle: {
       fontSize: "20px",
       fontWeight: 700,
-      color: "#111827",
+      color: "#00305b",
       marginBottom: "10px",
     },
     processText: {
       fontSize: "16px",
       lineHeight: 1.8,
-      color: "#475569",
+      color: "#577082",
       margin: 0,
     },
     quoteCard: {
       backgroundColor: "#edf4ff",
       border: "1px solid #dbeafe",
-      color: "#102a56",
+      color: "#00305b",
       borderRadius: "18px",
       padding: "24px",
       marginTop: "24px",
@@ -418,8 +487,8 @@ export default function App() {
     funnelBand: {
       background:
         "linear-gradient(135deg, #eff6ff 0%, #f8fbff 55%, #ffffff 100%)",
-      borderTop: "1px solid #e5edf8",
-      borderBottom: "1px solid #e5edf8",
+      borderTop: "1px solid #e0ebf0",
+      borderBottom: "1px solid #e0ebf0",
     },
     funnelWrap: {
       maxWidth: "1180px",
@@ -436,8 +505,8 @@ export default function App() {
       backgroundColor: "#ffffff",
       borderRadius: "22px",
       padding: "28px",
-      border: "1px solid #e2e8f0",
-      boxShadow: "0 18px 40px rgba(15,45,92,0.08)",
+      border: "1px solid #dfe9ef",
+      boxShadow: "0 16px 34px rgba(0,48,91,0.06)",
     },
     funnelList: {
       listStyle: "none",
@@ -449,7 +518,7 @@ export default function App() {
     funnelItem: {
       fontSize: "16px",
       lineHeight: 1.8,
-      color: "#334155",
+      color: "#466273",
       padding: "0 0 0 34px",
       position: "relative",
     },
@@ -457,16 +526,16 @@ export default function App() {
       position: "absolute",
       left: 0,
       top: 0,
-      color: "#0f766e",
+      color: "#2f8b99",
       fontWeight: 800,
     },
     ctaPanel: {
       background:
-        "linear-gradient(135deg, #102a56 0%, #173f7a 100%)",
+        "linear-gradient(135deg, #00305b 0%, #0d4b76 100%)",
       color: "#ffffff",
       borderRadius: "24px",
       padding: "30px",
-      boxShadow: "0 24px 50px rgba(16,42,86,0.2)",
+      boxShadow: "0 22px 44px rgba(0,48,91,0.18)",
     },
     ctaTitle: {
       fontSize: "26px",
@@ -476,12 +545,12 @@ export default function App() {
     ctaText: {
       fontSize: "17px",
       lineHeight: 1.85,
-      color: "#dbeafe",
+      color: "#d9f1f4",
       marginBottom: "20px",
     },
     ctaButton: {
       backgroundColor: "#ffffff",
-      color: "#102a56",
+      color: "#00305b",
       textDecoration: "none",
       display: "inline-block",
       padding: "14px 22px",
@@ -499,8 +568,8 @@ export default function App() {
       width: "fit-content",
       padding: "8px 12px",
       borderRadius: "999px",
-      backgroundColor: "#e8f1ff",
-      color: "#102a56",
+      backgroundColor: "#e8f6f7",
+      color: "#00305b",
       fontSize: "13px",
       fontWeight: 800,
       letterSpacing: "0.04em",
@@ -516,7 +585,7 @@ export default function App() {
     textAreaLabel: {
       fontSize: "15px",
       fontWeight: 700,
-      color: "#102a56",
+      color: "#00305b",
       marginBottom: "6px",
     },
     contactWrap: {
@@ -526,11 +595,11 @@ export default function App() {
     },
     contactPanel: {
       background:
-        "linear-gradient(180deg, rgba(248,251,255,0.9) 0%, rgba(255,255,255,1) 100%)",
+        "linear-gradient(180deg, rgba(247,251,252,0.96) 0%, rgba(255,255,255,1) 100%)",
       borderRadius: "24px",
       padding: "28px",
-      border: "1px solid #e2e8f0",
-      boxShadow: "0 18px 40px rgba(15,45,92,0.08)",
+      border: "1px solid #dfe9ef",
+      boxShadow: "0 16px 36px rgba(0,48,91,0.06)",
     },
     form: {
       display: "grid",
@@ -563,7 +632,7 @@ export default function App() {
       backgroundColor: "#ffffff",
     },
     submit: {
-      backgroundColor: "#102a56",
+      backgroundColor: "#00305b",
       color: "#ffffff",
       border: "none",
       borderRadius: "12px",
@@ -571,7 +640,7 @@ export default function App() {
       fontSize: "16px",
       fontWeight: 700,
       cursor: "pointer",
-      boxShadow: "0 10px 24px rgba(16, 42, 86, 0.18)",
+      boxShadow: "0 10px 22px rgba(0, 48, 91, 0.16)",
     },
     submitDisabled: {
       backgroundColor: "#64748b",
@@ -596,7 +665,7 @@ export default function App() {
     thankYouWrap: {
       minHeight: "100vh",
       background:
-        "radial-gradient(circle at top right, rgba(96,165,250,0.18), transparent 28%), linear-gradient(135deg, #0f2d5c 0%, #173f7a 55%, #123364 100%)",
+        "linear-gradient(135deg, #00305b 0%, #0d4b76 100%)",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -614,7 +683,7 @@ export default function App() {
     thankYouTitle: {
       fontSize: "40px",
       fontWeight: 800,
-      color: "#102a56",
+      color: "#00305b",
       marginBottom: "16px",
       letterSpacing: "-0.02em",
     },
@@ -627,7 +696,7 @@ export default function App() {
     thankYouButton: {
       display: "inline-block",
       marginTop: "10px",
-      backgroundColor: "#102a56",
+      backgroundColor: "#00305b",
       color: "#ffffff",
       textDecoration: "none",
       padding: "14px 24px",
@@ -637,17 +706,17 @@ export default function App() {
       cursor: "pointer",
     },
     footer: {
-      backgroundColor: "#f3f4f6",
+      backgroundColor: "#f4f8fa",
       textAlign: "center",
       padding: "36px",
       fontSize: "14px",
       lineHeight: 1.8,
       borderTop: "1px solid #e5e7eb",
-      color: "#4b5563",
+      color: "#5b7081",
     },
     footerBrand: {
       fontWeight: 700,
-      color: "#111827",
+      color: "#00305b",
     },
   };
 
@@ -904,6 +973,44 @@ export default function App() {
               continuity, not just valuation. That is where thoughtful conversations
               make the difference.
             </p>
+          </div>
+        </div>
+      </section>
+
+      <section style={styles.standaloneMissionSection}>
+        <div style={styles.standaloneMissionWrap}>
+          <div style={styles.standaloneMissionCard}>
+            <div style={styles.standaloneMissionLabel}>Mission For Business Owners</div>
+            <h2 style={styles.standaloneMissionTitle}>
+              We help owners transition with confidence, clarity, and dignity.
+            </h2>
+            <p style={styles.standaloneMissionBody}>
+              Our mission is to give business owners a trustworthy path to
+              transition when the time is right. We believe the sale of a company
+              should protect the legacy you built, respect the people who helped
+              build it, and create continuity for the customers who depend on it.
+              We are not looking for a quick flip. We are looking to become the
+              right next steward of a strong business.
+            </p>
+          </div>
+
+          <div style={styles.standaloneMissionSide}>
+            <div style={styles.sideNoteCard}>
+              <div style={styles.sideNoteTitle}>Why this speaks to owners</div>
+              <p style={styles.sideNoteText}>
+                Owners want confidence that the next chapter will honor the team,
+                protect relationships, and preserve the reputation they spent
+                years earning.
+              </p>
+            </div>
+            <div style={styles.sideNoteCard}>
+              <div style={styles.sideNoteTitle}>Why it helps you stand out</div>
+              <p style={styles.sideNoteText}>
+                This positions Blue Capital as a long-term operator focused on
+                stewardship and continuity, not a generic acquisition firm chasing
+                transactions.
+              </p>
+            </div>
           </div>
         </div>
       </section>
