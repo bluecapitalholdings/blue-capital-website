@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import headshot from "./headshot.jpg";
 
 const initialFormData = {
   name: "",
@@ -1464,7 +1463,7 @@ export default function App() {
             <div style={styles.founderLeadGrid}>
               <div style={styles.founderImageFrame}>
                   <img
-                    src={headshot}
+                    src="/headshot.jpg"
                     alt="Michael McMullan"
                     style={styles.founderImage}
                   />
