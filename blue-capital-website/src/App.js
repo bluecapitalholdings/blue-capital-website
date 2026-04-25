@@ -46,55 +46,65 @@ export default function App() {
     navInner: {
       maxWidth: "1180px",
       margin: "0 auto",
-      padding: "16px 28px",
+      padding: "14px 20px",
       display: "flex",
-      justifyContent: "space-between",
-      alignItems: "center",
-      gap: "24px",
-      flexWrap: "wrap",
+      flexDirection: "column",
+      alignItems: "flex-start",
+      gap: "16px",
     },
     brandWrap: {
       display: "flex",
       alignItems: "center",
-      gap: "14px",
+      gap: "12px",
+      width: "100%",
     },
     navLogo: {
-      width: "68px",
-      height: "auto",
+      width: "56px",
+      height: "56px",
       display: "block",
       objectFit: "contain",
+      flexShrink: 0,
     },
     brandText: {
-      fontSize: "18px",
+      fontSize: "clamp(16px, 4vw, 18px)",
       fontWeight: 700,
       letterSpacing: "0.01em",
       color: "#00305b",
       textTransform: "uppercase",
+      lineHeight: 1.15,
     },
     navLinks: {
       display: "flex",
-      gap: "18px",
+      gap: "12px",
       fontSize: "15px",
-      color: "#374151",
-      flexWrap: "wrap",
+      flexWrap: "nowrap",
       alignItems: "center",
+      width: "100%",
+      overflowX: "auto",
+      paddingBottom: "4px",
+      scrollbarWidth: "none",
+      msOverflowStyle: "none",
     },
     link: {
       textDecoration: "none",
       color: "#334155",
       fontWeight: 500,
-      padding: "8px 0",
+      padding: "10px 12px",
       borderRadius: "999px",
       transition: "all 0.2s ease",
+      whiteSpace: "nowrap",
+      flex: "0 0 auto",
     },
     missionNavBtn: {
       textDecoration: "none",
       color: "#334155",
       fontWeight: 500,
-      padding: "9px 14px",
+      padding: "10px 12px",
       borderRadius: "999px",
       backgroundColor: "transparent",
       transition: "all 0.2s ease",
+      whiteSpace: "nowrap",
+      flex: "0 0 auto",
     },
     navHover: {
       backgroundColor: "#e8f6f7",
@@ -194,7 +204,8 @@ export default function App() {
       textDecoration: "none",
       backgroundColor: "#ffffff",
       display: "inline-block",
-      transition: "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
+      transition:
+        "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
     },
     buttonHoverLift: {
       transform: "translateY(-2px)",
@@ -246,7 +257,8 @@ export default function App() {
       borderRadius: "18px",
       padding: "18px",
       boxShadow: "0 10px 24px rgba(0,48,91,0.05)",
-      transition: "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
+      transition:
+        "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
     },
     trustBadgeHover: {
       transform: "translateY(-2px)",
@@ -286,11 +298,13 @@ export default function App() {
       maxWidth: "1180px",
       margin: "0 auto",
       padding: "clamp(68px, 8vw, 92px) 28px",
+      scrollMarginTop: "180px",
     },
     sectionGray: {
       background:
         "linear-gradient(180deg, #f7fbfc 0%, #f3f8fa 55%, #ffffff 100%)",
       padding: "80px 0",
+      scrollMarginTop: "180px",
     },
     sectionTitle: {
       fontSize: "clamp(30px, 5vw, 36px)",
@@ -335,7 +349,8 @@ export default function App() {
       padding: "26px",
       boxShadow: "0 12px 28px rgba(0,48,91,0.06)",
       border: "1px solid #e3edf3",
-      transition: "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
+      transition:
+        "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
     },
     elevatedHover: {
       transform: "translateY(-3px)",
@@ -398,6 +413,7 @@ export default function App() {
       padding: "84px 0",
       borderTop: "1px solid #e1ebf0",
       borderBottom: "1px solid #e1ebf0",
+      scrollMarginTop: "180px",
     },
     standaloneMissionWrap: {
       maxWidth: "1180px",
@@ -465,6 +481,7 @@ export default function App() {
         "linear-gradient(135deg, #00305b 0%, #0d4b76 100%)",
       color: "#ffffff",
       padding: "84px 0",
+      scrollMarginTop: "180px",
     },
     sellText: {
       color: "#dbeafe",
@@ -541,12 +558,14 @@ export default function App() {
       background:
         "linear-gradient(180deg, #ffffff 0%, #f7fbfc 100%)",
       padding: "84px 0",
+      scrollMarginTop: "180px",
     },
     founderSection: {
       background:
         "linear-gradient(180deg, #ffffff 0%, #f6fafc 100%)",
       borderTop: "1px solid #e2ebf0",
       borderBottom: "1px solid #e2ebf0",
+      scrollMarginTop: "180px",
     },
     processGrid: {
       display: "grid",
@@ -598,6 +617,7 @@ export default function App() {
     },
     contactSection: {
       backgroundColor: "#ffffff",
+      scrollMarginTop: "180px",
     },
     funnelBand: {
       background:
