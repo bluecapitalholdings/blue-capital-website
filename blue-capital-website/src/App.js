@@ -23,6 +23,7 @@ export default function App() {
   const [submitting, setSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [hoveredNav, setHoveredNav] = useState("");
+  const [hoveredSurface, setHoveredSurface] = useState("");
   const [formData, setFormData] = useState(initialFormData);
 
   const styles = {
@@ -182,6 +183,7 @@ export default function App() {
       textDecoration: "none",
       boxShadow: "0 12px 24px rgba(0,48,91,0.16)",
       display: "inline-block",
+      transition: "transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease",
     },
     secondaryBtn: {
       border: "1px solid #bcd8e5",
@@ -192,6 +194,16 @@ export default function App() {
       textDecoration: "none",
       backgroundColor: "#ffffff",
       display: "inline-block",
+      transition: "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
+    },
+    buttonHoverLift: {
+      transform: "translateY(-2px)",
+      boxShadow: "0 16px 28px rgba(0,48,91,0.14)",
+    },
+    secondaryBtnHover: {
+      transform: "translateY(-2px)",
+      boxShadow: "0 14px 26px rgba(0,48,91,0.08)",
+      borderColor: "#8ac9d2",
     },
     heroStats: {
       display: "grid",
@@ -223,18 +235,57 @@ export default function App() {
     trustInner: {
       maxWidth: "1180px",
       margin: "0 auto",
-      padding: "22px 28px",
+      padding: "24px 28px",
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
-      gap: "14px",
-      color: "#5a6f81",
+      gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+      gap: "16px",
+    },
+    trustBadge: {
+      backgroundColor: "#ffffff",
+      border: "1px solid #dfe9ef",
+      borderRadius: "18px",
+      padding: "18px",
+      boxShadow: "0 10px 24px rgba(0,48,91,0.05)",
+      transition: "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
+    },
+    trustBadgeHover: {
+      transform: "translateY(-2px)",
+      boxShadow: "0 16px 28px rgba(0,48,91,0.08)",
+      borderColor: "#b9d8e4",
+    },
+    trustBadgeTop: {
+      display: "flex",
+      alignItems: "center",
+      gap: "12px",
+      marginBottom: "8px",
+    },
+    trustIcon: {
+      width: "34px",
+      height: "34px",
+      borderRadius: "999px",
+      backgroundColor: "#e8f6f7",
+      color: "#2f8b99",
+      display: "flex",
+      alignItems: "center",
+      justifyContent: "center",
+      fontSize: "13px",
+      fontWeight: 800,
+      letterSpacing: "0.04em",
+    },
+    trustTitle: {
+      color: "#00305b",
+      fontSize: "15px",
+      fontWeight: 700,
+    },
+    trustText: {
+      color: "#60778a",
       fontSize: "14px",
-      fontWeight: 600,
+      lineHeight: 1.7,
     },
     section: {
       maxWidth: "1180px",
       margin: "0 auto",
-      padding: "80px 28px",
+      padding: "clamp(68px, 8vw, 92px) 28px",
     },
     sectionGray: {
       background:
@@ -284,6 +335,12 @@ export default function App() {
       padding: "26px",
       boxShadow: "0 12px 28px rgba(0,48,91,0.06)",
       border: "1px solid #e3edf3",
+      transition: "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
+    },
+    elevatedHover: {
+      transform: "translateY(-3px)",
+      boxShadow: "0 18px 32px rgba(0,48,91,0.1)",
+      borderColor: "#c5dae4",
     },
     cardTitle: {
       fontSize: "22px",
@@ -439,15 +496,79 @@ export default function App() {
       marginBottom: "28px",
     },
     founderName: {
-      fontSize: "22px",
+      fontSize: "26px",
       fontWeight: 700,
       color: "#00305b",
-      marginBottom: "12px",
+      marginBottom: "10px",
+      fontFamily: "Georgia, 'Times New Roman', serif",
+    },
+    founderRole: {
+      fontSize: "15px",
+      color: "#2f8b99",
+      fontWeight: 700,
+      letterSpacing: "0.06em",
+      textTransform: "uppercase",
+      marginBottom: "18px",
+    },
+    founderLeadGrid: {
+      display: "grid",
+      gridTemplateColumns: "minmax(220px, 280px) 1fr",
+      gap: "28px",
+      alignItems: "center",
+      marginBottom: "30px",
+    },
+    founderImageFrame: {
+      backgroundColor: "#ffffff",
+      borderRadius: "28px",
+      padding: "14px",
+      border: "1px solid #dfe9ef",
+      boxShadow: "0 18px 36px rgba(0,48,91,0.08)",
+    },
+    founderImage: {
+      width: "100%",
+      display: "block",
+      borderRadius: "22px",
+      objectFit: "cover",
+    },
+    founderIntroCard: {
+      background:
+        "linear-gradient(180deg, #ffffff 0%, #f6fafc 100%)",
+      border: "1px solid #dfe9ef",
+      borderRadius: "24px",
+      padding: "28px",
+      boxShadow: "0 14px 28px rgba(0,48,91,0.06)",
+    },
+    founderIntroText: {
+      fontSize: "18px",
+      lineHeight: 1.9,
+      color: "#4b6678",
+      margin: 0,
+    },
+    founderHighlights: {
+      display: "flex",
+      flexWrap: "wrap",
+      gap: "12px",
+      marginTop: "20px",
+    },
+    founderHighlight: {
+      padding: "10px 14px",
+      borderRadius: "999px",
+      backgroundColor: "#e8f6f7",
+      color: "#00305b",
+      border: "1px solid #c7e7ea",
+      fontSize: "14px",
+      fontWeight: 600,
     },
     processSection: {
       background:
         "linear-gradient(180deg, #ffffff 0%, #f7fbfc 100%)",
       padding: "84px 0",
+    },
+    founderSection: {
+      background:
+        "linear-gradient(180deg, #ffffff 0%, #f6fafc 100%)",
+      borderTop: "1px solid #e2ebf0",
+      borderBottom: "1px solid #e2ebf0",
     },
     processGrid: {
       display: "grid",
@@ -487,8 +608,8 @@ export default function App() {
       margin: 0,
     },
     quoteCard: {
-      backgroundColor: "#edf4ff",
-      border: "1px solid #dbeafe",
+      backgroundColor: "#edf7f8",
+      border: "1px solid #d2e7ea",
       color: "#00305b",
       borderRadius: "18px",
       padding: "24px",
@@ -573,6 +694,7 @@ export default function App() {
       borderRadius: "12px",
       fontWeight: 800,
       boxShadow: "0 12px 24px rgba(0,0,0,0.18)",
+      transition: "transform 0.2s ease, box-shadow 0.2s ease",
     },
     intakeHeader: {
       display: "grid",
@@ -933,10 +1055,28 @@ export default function App() {
               conversation clear, respectful, and pressure-free.
             </p>
             <div style={styles.buttonRow}>
-              <a href="#contact" style={styles.primaryBtn}>
+              <a
+                href="#contact"
+                style={{
+                  ...styles.primaryBtn,
+                  ...(hoveredSurface === "heroPrimary" ? styles.buttonHoverLift : {}),
+                }}
+                onMouseEnter={() => setHoveredSurface("heroPrimary")}
+                onMouseLeave={() => setHoveredSurface("")}
+              >
                 Request a Confidential Conversation
               </a>
-              <a href="#process" style={styles.secondaryBtn}>
+              <a
+                href="#process"
+                style={{
+                  ...styles.secondaryBtn,
+                  ...(hoveredSurface === "heroSecondary"
+                    ? styles.secondaryBtnHover
+                    : {}),
+                }}
+                onMouseEnter={() => setHoveredSurface("heroSecondary")}
+                onMouseLeave={() => setHoveredSurface("")}
+              >
                 See How the Process Works
               </a>
             </div>
@@ -971,10 +1111,70 @@ export default function App() {
 
       <section style={styles.trustStrip}>
         <div style={styles.trustInner}>
-          <div>Long-term ownership focused</div>
-          <div>Privately held acquisition firm</div>
-          <div>U.S. small business acquisitions</div>
-          <div>Confidential process for owners</div>
+          <div
+            style={{
+              ...styles.trustBadge,
+              ...(hoveredSurface === "trust1" ? styles.trustBadgeHover : {}),
+            }}
+            onMouseEnter={() => setHoveredSurface("trust1")}
+            onMouseLeave={() => setHoveredSurface("")}
+          >
+            <div style={styles.trustBadgeTop}>
+              <div style={styles.trustIcon}>LT</div>
+              <div style={styles.trustTitle}>Long-term ownership</div>
+            </div>
+            <div style={styles.trustText}>
+              Built around stewardship, continuity, and patient growth.
+            </div>
+          </div>
+          <div
+            style={{
+              ...styles.trustBadge,
+              ...(hoveredSurface === "trust2" ? styles.trustBadgeHover : {}),
+            }}
+            onMouseEnter={() => setHoveredSurface("trust2")}
+            onMouseLeave={() => setHoveredSurface("")}
+          >
+            <div style={styles.trustBadgeTop}>
+              <div style={styles.trustIcon}>DB</div>
+              <div style={styles.trustTitle}>Direct buyer</div>
+            </div>
+            <div style={styles.trustText}>
+              A private firm focused on direct, thoughtful conversations.
+            </div>
+          </div>
+          <div
+            style={{
+              ...styles.trustBadge,
+              ...(hoveredSurface === "trust3" ? styles.trustBadgeHover : {}),
+            }}
+            onMouseEnter={() => setHoveredSurface("trust3")}
+            onMouseLeave={() => setHoveredSurface("")}
+          >
+            <div style={styles.trustBadgeTop}>
+              <div style={styles.trustIcon}>US</div>
+              <div style={styles.trustTitle}>U.S. small businesses</div>
+            </div>
+            <div style={styles.trustText}>
+              Focused on established businesses with durable fundamentals.
+            </div>
+          </div>
+          <div
+            style={{
+              ...styles.trustBadge,
+              ...(hoveredSurface === "trust4" ? styles.trustBadgeHover : {}),
+            }}
+            onMouseEnter={() => setHoveredSurface("trust4")}
+            onMouseLeave={() => setHoveredSurface("")}
+          >
+            <div style={styles.trustBadgeTop}>
+              <div style={styles.trustIcon}>CF</div>
+              <div style={styles.trustTitle}>Confidential process</div>
+            </div>
+            <div style={styles.trustText}>
+              Designed to protect owners, teams, and customer relationships.
+            </div>
+          </div>
         </div>
       </section>
 
@@ -1082,26 +1282,54 @@ export default function App() {
           <h2 style={styles.sectionTitle}>Acquisition Criteria</h2>
 
           <div style={styles.criteriaGrid}>
-            <div style={styles.card}>
+            <div
+              style={{
+                ...styles.card,
+                ...(hoveredSurface === "criteria1" ? styles.elevatedHover : {}),
+              }}
+              onMouseEnter={() => setHoveredSurface("criteria1")}
+              onMouseLeave={() => setHoveredSurface("")}
+            >
               <div style={styles.cardTitle}>Revenue</div>
               <p style={styles.metricText}>$500,000 to $5,000,000 annually</p>
             </div>
 
-            <div style={styles.card}>
+            <div
+              style={{
+                ...styles.card,
+                ...(hoveredSurface === "criteria2" ? styles.elevatedHover : {}),
+              }}
+              onMouseEnter={() => setHoveredSurface("criteria2")}
+              onMouseLeave={() => setHoveredSurface("")}
+            >
               <div style={styles.cardTitle}>Profitability</div>
               <p style={styles.metricText}>
                 Consistent positive cash flow and stable operations
               </p>
             </div>
 
-            <div style={styles.card}>
+            <div
+              style={{
+                ...styles.card,
+                ...(hoveredSurface === "criteria3" ? styles.elevatedHover : {}),
+              }}
+              onMouseEnter={() => setHoveredSurface("criteria3")}
+              onMouseLeave={() => setHoveredSurface("")}
+            >
               <div style={styles.cardTitle}>Geography</div>
               <p style={styles.metricText}>United States based businesses</p>
             </div>
           </div>
 
           <div style={styles.twoCol}>
-            <div style={styles.card}>
+            <div
+              style={{
+                ...styles.card,
+                ...(hoveredSurface === "criteria4" ? styles.elevatedHover : {}),
+              }}
+              onMouseEnter={() => setHoveredSurface("criteria4")}
+              onMouseLeave={() => setHoveredSurface("")}
+            >
               <div style={styles.cardTitle}>Industries of Interest</div>
               <ul style={styles.list}>
                 <li>Service businesses</li>
@@ -1112,7 +1340,14 @@ export default function App() {
               </ul>
             </div>
 
-            <div style={styles.card}>
+            <div
+              style={{
+                ...styles.card,
+                ...(hoveredSurface === "criteria5" ? styles.elevatedHover : {}),
+              }}
+              onMouseEnter={() => setHoveredSurface("criteria5")}
+              onMouseLeave={() => setHoveredSurface("")}
+            >
               <div style={styles.cardTitle}>Preferred Characteristics</div>
               <ul style={styles.list}>
                 <li>Established customer base</li>
@@ -1175,7 +1410,7 @@ export default function App() {
           <h2 style={styles.sectionTitle}>A Clear Process for Serious Owners</h2>
           <p style={styles.sectionLead}>
             The site should answer the question every owner is quietly asking:
-            “What happens if I reach out?” This process is designed to lower
+            "What happens if I reach out?" This process is designed to lower
             friction, build trust quickly, and move the right conversations
             forward.
           </p>
@@ -1220,11 +1455,35 @@ export default function App() {
         </div>
       </section>
 
-      <section id="founder" style={styles.section}>
-        <div style={styles.twoCol}>
+      <section id="founder" style={styles.founderSection}>
+        <div style={styles.section}>
+          <div style={styles.twoCol}>
           <div>
             <h2 style={styles.sectionTitle}>Founder / Operator</h2>
-            <div style={styles.founderName}>Michael McMullan</div>
+            <div style={styles.founderLeadGrid}>
+              <div style={styles.founderImageFrame}>
+                <img
+                  src="/headshot.jpg"
+                  alt="Michael McMullan"
+                  style={styles.founderImage}
+                />
+              </div>
+              <div style={styles.founderIntroCard}>
+                <div style={styles.founderName}>Michael McMullan</div>
+                <div style={styles.founderRole}>Founder and Operator</div>
+                <p style={styles.founderIntroText}>
+                  Michael McMullan brings an operator's mindset to acquisitions,
+                  combining finance, supply chain, and process improvement
+                  experience with a long-term commitment to building durable
+                  companies responsibly.
+                </p>
+                <div style={styles.founderHighlights}>
+                  <div style={styles.founderHighlight}>10+ years management experience</div>
+                  <div style={styles.founderHighlight}>Finance and supply chain background</div>
+                  <div style={styles.founderHighlight}>Lean Six Sigma Green Belt</div>
+                </div>
+              </div>
+            </div>
 
             <p style={styles.paragraph}>
               Michael McMullan brings over a decade of management experience
@@ -1252,7 +1511,14 @@ export default function App() {
             </div>
           </div>
 
-          <div style={styles.card}>
+          <div
+            style={{
+              ...styles.card,
+              ...(hoveredSurface === "founderCard" ? styles.elevatedHover : {}),
+            }}
+            onMouseEnter={() => setHoveredSurface("founderCard")}
+            onMouseLeave={() => setHoveredSurface("")}
+          >
             <div style={styles.cardTitle}>
               Why This Matters to Lenders, Brokers, and Sellers
             </div>
@@ -1269,6 +1535,7 @@ export default function App() {
               The firm is actively seeking acquisition opportunities.
             </p>
           </div>
+        </div>
         </div>
       </section>
 
@@ -1292,17 +1559,17 @@ export default function App() {
               </p>
               <ul style={styles.funnelList}>
                 <li style={styles.funnelItem}>
-                  <span style={styles.checkmark}>✓</span>
+                  <span style={styles.checkmark}>+</span>
                   Owner-centered messaging that speaks to legacy, trust, and
                   continuity instead of generic acquisition language.
                 </li>
                 <li style={styles.funnelItem}>
-                  <span style={styles.checkmark}>✓</span>
+                  <span style={styles.checkmark}>+</span>
                   A clear process that removes mystery and lowers resistance to
                   reaching out.
                 </li>
                 <li style={styles.funnelItem}>
-                  <span style={styles.checkmark}>✓</span>
+                  <span style={styles.checkmark}>+</span>
                   Stronger calls to action that frame contact as a confidential
                   conversation rather than a hard commitment.
                 </li>
@@ -1310,22 +1577,30 @@ export default function App() {
             </div>
 
             <div style={styles.ctaPanel}>
-            <div style={styles.ctaTitle}>
-              Explore a transition without pressure
-            </div>
-            <p style={styles.ctaText}>
-              If you are considering retirement, succession, or a sale in the
-              next 6 to 36 months, the first step is simply a private
-              conversation. No broad process. No obligation. Just a thoughtful
-              discussion about fit.
-            </p>
-            <p style={styles.ctaText}>
-              The best inquiries usually come from owners who want to understand
-              their options before they are ready to make a final decision.
-            </p>
-            <a href="#contact" style={styles.ctaButton}>
-              Start the Conversation
-            </a>
+              <div style={styles.ctaTitle}>
+                Explore a transition without pressure
+              </div>
+              <p style={styles.ctaText}>
+                If you are considering retirement, succession, or a sale in the
+                next 6 to 36 months, the first step is simply a private
+                conversation. No broad process. No obligation. Just a thoughtful
+                discussion about fit.
+              </p>
+              <p style={styles.ctaText}>
+                The best inquiries usually come from owners who want to understand
+                their options before they are ready to make a final decision.
+              </p>
+              <a
+                href="#contact"
+                style={{
+                  ...styles.ctaButton,
+                  ...(hoveredSurface === "ctaButton" ? styles.buttonHoverLift : {}),
+                }}
+                onMouseEnter={() => setHoveredSurface("ctaButton")}
+                onMouseLeave={() => setHoveredSurface("")}
+              >
+                Start the Conversation
+              </a>
             </div>
           </div>
         </div>
@@ -1536,3 +1811,4 @@ export default function App() {
     </div>
   );
 }
+
