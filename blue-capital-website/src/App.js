@@ -81,15 +81,15 @@ export default function App() {
     link: {
       textDecoration: "none",
       color: "#334155",
-      fontWeight: 600,
+      fontWeight: 500,
       padding: "8px 0",
       borderRadius: "999px",
       transition: "all 0.2s ease",
     },
     missionNavBtn: {
       textDecoration: "none",
-      color: "#00305b",
-      fontWeight: 700,
+      color: "#334155",
+      fontWeight: 500,
       padding: "9px 14px",
       borderRadius: "999px",
       backgroundColor: "transparent",
@@ -98,6 +98,8 @@ export default function App() {
     navHover: {
       backgroundColor: "#e8f6f7",
       boxShadow: "inset 0 0 0 1px #bde7eb",
+      color: "#00305b",
+      fontWeight: 700,
     },
     hero: {
       background:
