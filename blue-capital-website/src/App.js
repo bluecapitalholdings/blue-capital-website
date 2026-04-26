@@ -163,10 +163,11 @@ export default function App() {
       fontFamily: "Georgia, 'Times New Roman', serif",
     },
     reassuranceRow: {
-      display: "flex",
-      flexWrap: "wrap",
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(220px, max-content))",
       gap: "12px",
       marginTop: "18px",
+      alignItems: "start",
     },
     reassurancePill: {
       padding: "10px 14px",
@@ -176,6 +177,8 @@ export default function App() {
       fontSize: "14px",
       color: "#567082",
       fontWeight: 600,
+      width: "fit-content",
+      whiteSpace: "nowrap",
     },
     heroSpotlightCard: {
       background:
