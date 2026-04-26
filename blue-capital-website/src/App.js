@@ -114,7 +114,7 @@ export default function App() {
       display: "grid",
       gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
       gap: "32px",
-      alignItems: "center",
+      alignItems: "start",
     },
     heroContent: {
       maxWidth: "820px",
@@ -122,6 +122,7 @@ export default function App() {
     heroAside: {
       display: "grid",
       gap: "18px",
+      paddingTop: "14px",
     },
     heroEyebrow: {
       display: "inline-block",
