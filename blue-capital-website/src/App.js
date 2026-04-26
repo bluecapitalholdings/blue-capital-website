@@ -1132,7 +1132,7 @@ export default function App() {
     footer: {
       backgroundColor: "#f4f8fa",
       textAlign: "center",
-      padding: "36px",
+      padding: isPhone ? "28px 16px" : "36px",
       fontSize: "14px",
       lineHeight: 1.8,
       borderTop: "1px solid #e5e7eb",
@@ -1141,6 +1141,25 @@ export default function App() {
     footerBrand: {
       fontWeight: 700,
       color: "#00305b",
+    },
+    footerMeta: {
+      display: "flex",
+      justifyContent: "center",
+      alignItems: "center",
+      gap: isPhone ? "8px" : "10px",
+      flexWrap: "wrap",
+      marginTop: "4px",
+    },
+    footerDivider: {
+      color: "#8aa0b1",
+      display: isPhone ? "none" : "inline",
+    },
+    footerLink: {
+      color: "#5b7081",
+      textDecoration: "none",
+      fontWeight: 500,
+      overflowWrap: "anywhere",
+      wordBreak: "break-word",
     },
   };
 
@@ -2297,7 +2316,20 @@ export default function App() {
       <footer style={styles.footer}>
         <div style={styles.footerBrand}>Blue Capital Holdings LLC</div>
         <div>Business Acquisition & Investment Firm</div>
-        <div>Avon, Indiana | info@bluecapitalholdingsllc.com | 812-312-1910</div>
+        <div style={styles.footerMeta}>
+          <span>Avon, Indiana</span>
+          <span style={styles.footerDivider}>|</span>
+          <a
+            href="mailto:info@bluecapitalholdingsllc.com"
+            style={styles.footerLink}
+          >
+            info@bluecapitalholdingsllc.com
+          </a>
+          <span style={styles.footerDivider}>|</span>
+          <a href="tel:8123121910" style={styles.footerLink}>
+            812-312-1910
+          </a>
+        </div>
       </footer>
     </div>
   );
