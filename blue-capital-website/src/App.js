@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 
 const initialFormData = {
   name: "",
@@ -25,6 +25,15 @@ export default function App() {
   const [hoveredNav, setHoveredNav] = useState("");
   const [hoveredSurface, setHoveredSurface] = useState("");
   const [formData, setFormData] = useState(initialFormData);
+  const [isMobile, setIsMobile] = useState(
+    typeof window !== "undefined" ? window.innerWidth <= 900 : false
+  );
+
+  useEffect(() => {
+    const handleResize = () => setIsMobile(window.innerWidth <= 900);
+    window.addEventListener("resize", handleResize);
+    return () => window.removeEventListener("resize", handleResize);
+  }, []);
 
   const styles = {
     page: {
@@ -592,11 +601,12 @@ export default function App() {
       marginBottom: "24px",
     },
     founderName: {
-      fontSize: "26px",
+      fontSize: isMobile ? "22px" : "26px",
       fontWeight: 700,
       color: "#00305b",
       marginBottom: "10px",
       fontFamily: "Georgia, 'Times New Roman', serif",
+      lineHeight: 1.15,
     },
     founderRole: {
       fontSize: "15px",
@@ -608,10 +618,16 @@ export default function App() {
     },
     founderLeadGrid: {
       display: "grid",
-      gridTemplateColumns: "minmax(220px, 280px) 1fr",
-      gap: "24px",
-      alignItems: "center",
-      marginBottom: "26px",
+      gridTemplateColumns: isMobile ? "1fr" : "220px 1fr",
+      gap: isMobile ? "18px" : "24px",
+      alignItems: "start",
+      marginBottom: "22px",
+    },
+    founderCardsGrid: {
+      display: "grid",
+      gridTemplateColumns: isMobile ? "1fr" : "repeat(2, minmax(0, 1fr))",
+      gap: "28px",
+      alignItems: "stretch",
     },
     founderImageFrame: {
       backgroundColor: "#ffffff",
@@ -620,6 +636,8 @@ export default function App() {
       border: "1px solid #dfe9ef",
       boxShadow: "0 18px 36px rgba(0,48,91,0.08)",
       transition: "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
+      maxWidth: isMobile ? "260px" : "100%",
+      margin: isMobile ? "0 auto" : "0",
     },
     founderImage: {
       width: "100%",
@@ -635,12 +653,17 @@ export default function App() {
       padding: "28px",
       boxShadow: "0 14px 28px rgba(0,48,91,0.06)",
       transition: "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
+      height: "100%",
+      boxSizing: "border-box",
+      overflow: "hidden",
     },
     founderIntroText: {
-      fontSize: "18px",
-      lineHeight: 1.9,
+      fontSize: isMobile ? "16px" : "18px",
+      lineHeight: 1.8,
       color: "#4b6678",
       margin: 0,
+      overflowWrap: "anywhere",
+      wordBreak: "break-word",
     },
     founderHighlights: {
       display: "flex",
@@ -722,6 +745,8 @@ export default function App() {
       lineHeight: 1.8,
       color: "#577082",
       margin: "18px 0 0 0",
+      overflowWrap: "anywhere",
+      wordBreak: "break-word",
     },
     contactSection: {
       backgroundColor: "#ffffff",
@@ -1816,7 +1841,7 @@ export default function App() {
             resonates with owners planning a thoughtful transition.
           </p>
 
-          <div style={styles.twoCol}>
+          <div style={styles.founderCardsGrid}>
             <div
               style={{
                 ...styles.founderIntroCard,
@@ -1863,6 +1888,8 @@ export default function App() {
             <div
               style={{
                 ...styles.card,
+                height: "100%",
+                boxSizing: "border-box",
                 ...(hoveredSurface === "founderCard" ? styles.elevatedHover : {}),
               }}
               onMouseEnter={() => setHoveredSurface("founderCard")}
