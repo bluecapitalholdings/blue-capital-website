@@ -584,6 +584,13 @@ export default function App() {
       maxWidth: "760px",
       marginBottom: "24px",
     },
+    founderText: {
+      color: "#dbeafe",
+      fontSize: "18px",
+      lineHeight: 1.85,
+      maxWidth: "860px",
+      marginBottom: "24px",
+    },
     founderName: {
       fontSize: "26px",
       fontWeight: 700,
@@ -657,9 +664,9 @@ export default function App() {
     },
     founderSection: {
       background:
-        "linear-gradient(180deg, #ffffff 0%, #f6fafc 100%)",
-      borderTop: "1px solid #e2ebf0",
-      borderBottom: "1px solid #e2ebf0",
+        "linear-gradient(135deg, #0a3f6d 0%, #0d4b76 100%)",
+      color: "#ffffff",
+      padding: "68px 0",
     },
     processGrid: {
       display: "grid",
@@ -709,6 +716,12 @@ export default function App() {
       fontSize: "17px",
       lineHeight: 1.8,
       fontWeight: 600,
+    },
+    founderCardNote: {
+      fontSize: "16px",
+      lineHeight: 1.8,
+      color: "#577082",
+      margin: "18px 0 0 0",
     },
     contactSection: {
       backgroundColor: "#ffffff",
@@ -1784,10 +1797,35 @@ export default function App() {
 
       <section id="founder" style={styles.founderSection}>
         <div style={styles.section}>
+          <div style={{ ...styles.sectionEyebrow, color: "#bfdbfe" }}>
+            Founder / operator
+          </div>
+          <h2 style={{ ...styles.sectionTitle, color: "#ffffff" }}>
+            Meet Michael McMullan
+          </h2>
+          <p style={styles.founderText}>
+            Michael McMullan brings an operator&apos;s mindset to acquisitions,
+            combining finance, supply chain, and process improvement experience
+            with a long-term commitment to building durable companies
+            responsibly.
+          </p>
+          <p style={styles.founderText}>
+            Based in Avon, Indiana, he founded Blue Capital Holdings LLC to
+            acquire and grow quality small businesses through disciplined
+            ownership, operational stewardship, and a direct working style that
+            resonates with owners planning a thoughtful transition.
+          </p>
+
           <div style={styles.twoCol}>
-          <div>
-            <h2 style={styles.sectionTitle}>Founder / Operator</h2>
-            <div style={styles.founderLeadGrid}>
+            <div
+              style={{
+                ...styles.founderIntroCard,
+                ...(hoveredSurface === "founderIntro" ? styles.elevatedHover : {}),
+              }}
+              onMouseEnter={() => setHoveredSurface("founderIntro")}
+              onMouseLeave={() => setHoveredSurface("")}
+            >
+              <div style={styles.founderLeadGrid}>
                 <div
                   style={{
                     ...styles.founderImageFrame,
@@ -1801,84 +1839,54 @@ export default function App() {
                     alt="Michael McMullan"
                     style={styles.founderImage}
                   />
-              </div>
-                <div
-                  style={{
-                    ...styles.founderIntroCard,
-                    ...(hoveredSurface === "founderIntro" ? styles.elevatedHover : {}),
-                  }}
-                  onMouseEnter={() => setHoveredSurface("founderIntro")}
-                  onMouseLeave={() => setHoveredSurface("")}
-                >
+                </div>
+                <div>
                   <div style={styles.founderName}>Michael McMullan</div>
                   <div style={styles.founderRole}>Founder and Operator</div>
                   <p style={styles.founderIntroText}>
-                  Michael McMullan brings an operator's mindset to acquisitions,
-                  combining finance, supply chain, and process improvement
-                  experience with a long-term commitment to building durable
-                  companies responsibly.
-                </p>
-                <div style={styles.founderHighlights}>
-                  <div style={styles.founderHighlight}>10+ years management experience</div>
-                  <div style={styles.founderHighlight}>Finance and supply chain background</div>
-                  <div style={styles.founderHighlight}>Lean Six Sigma Green Belt</div>
-                  <div style={styles.founderHighlight}>Bloomberg Market Concepts certified</div>
+                    Over a decade of management experience across operations,
+                    finance, and supply chain, with a practical focus on
+                    execution, process improvement, and long-term business
+                    performance.
+                  </p>
                 </div>
+              </div>
+
+              <div style={styles.founderHighlights}>
+                <div style={styles.founderHighlight}>10+ years management experience</div>
+                <div style={styles.founderHighlight}>Finance and supply chain background</div>
+                <div style={styles.founderHighlight}>Lean Six Sigma Green Belt</div>
+                <div style={styles.founderHighlight}>Bloomberg Market Concepts certified</div>
               </div>
             </div>
 
-            <p style={styles.paragraph}>
-              Michael McMullan brings over a decade of management experience
-              across operations, finance, and supply chain environments, with a
-              practical focus on execution, process improvement, and long-term
-              business performance.
-            </p>
+            <div
+              style={{
+                ...styles.card,
+                ...(hoveredSurface === "founderCard" ? styles.elevatedHover : {}),
+              }}
+              onMouseEnter={() => setHoveredSurface("founderCard")}
+              onMouseLeave={() => setHoveredSurface("")}
+            >
+              <div style={styles.cardTitle}>
+                Credentials and Operating Lens
+              </div>
 
-            <p style={styles.paragraph}>
-              He holds a Bachelor of Science from the Indiana University Kelley
-              School of Business, with a double major in Finance and Supply Chain
-              Management and a minor in Economics. He is also Lean Six Sigma Green
-              Belt certified and certified in Bloomberg Market Concepts.
-            </p>
+              <ul style={styles.list}>
+                <li>Bachelor of Science from Indiana University Kelley School of Business</li>
+                <li>Double major in Finance and Supply Chain Management</li>
+                <li>Minor in Economics</li>
+                <li>Lean Six Sigma Green Belt certified</li>
+                <li>Bloomberg Market Concepts certified</li>
+                <li>Operator-oriented acquisition approach and long-term ownership philosophy</li>
+              </ul>
 
-            <p style={styles.paragraph}>
-              Based in Avon, Indiana, Michael founded Blue Capital Holdings LLC to
-              acquire and grow quality small businesses through disciplined
-              ownership and operational stewardship.
-            </p>
-
-            <div style={styles.quoteCard}>
-              Built for owners who care about legacy, continuity, and thoughtful
-              long-term stewardship.
+              <p style={styles.founderCardNote}>
+                Built for owners who care about legacy, continuity, and
+                thoughtful long-term stewardship.
+              </p>
             </div>
           </div>
-
-          <div
-            style={{
-              ...styles.card,
-              ...(hoveredSurface === "founderCard" ? styles.elevatedHover : {}),
-            }}
-            onMouseEnter={() => setHoveredSurface("founderCard")}
-            onMouseLeave={() => setHoveredSurface("")}
-          >
-            <div style={styles.cardTitle}>
-              Why This Matters to Lenders, Brokers, and Sellers
-            </div>
-
-            <ul style={styles.list}>
-              <li>Over a decade of management experience</li>
-              <li>Finance, supply chain, and economics background</li>
-              <li>Lean Six Sigma Green Belt certified</li>
-              <li>Bloomberg Market Concepts certified</li>
-              <li>Operator-oriented acquisition approach</li>
-              <li>Clear acquisition strategy and long-term ownership philosophy</li>
-            </ul>
-
-            <p style={styles.paragraph}>
-              The firm is actively seeking acquisition opportunities.
-            </p>
-          </div>
-        </div>
         </div>
       </section>
 
