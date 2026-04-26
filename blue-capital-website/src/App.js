@@ -121,7 +121,7 @@ export default function App() {
     },
     heroAside: {
       display: "grid",
-      gap: "18px",
+      gap: "14px",
       paddingTop: "14px",
     },
     heroEyebrow: {
@@ -291,7 +291,7 @@ export default function App() {
       display: "grid",
       gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
       gap: "14px",
-      marginTop: "30px",
+      marginTop: "6px",
     },
     statCard: {
       backgroundColor: "#ffffff",
@@ -1202,47 +1202,6 @@ export default function App() {
                 See How the Process Works
               </a>
             </div>
-            <div style={styles.heroStats}>
-              <div
-                style={{
-                  ...styles.statCard,
-                  ...(hoveredSurface === "stat1" ? styles.elevatedHover : {}),
-                }}
-                onMouseEnter={() => setHoveredSurface("stat1")}
-                onMouseLeave={() => setHoveredSurface("")}
-              >
-                <div style={styles.statValue}>Direct Buyer</div>
-                <div style={styles.statLabel}>
-                  Thoughtful conversations without broad market exposure
-                </div>
-              </div>
-              <div
-                style={{
-                  ...styles.statCard,
-                  ...(hoveredSurface === "stat2" ? styles.elevatedHover : {}),
-                }}
-                onMouseEnter={() => setHoveredSurface("stat2")}
-                onMouseLeave={() => setHoveredSurface("")}
-              >
-                <div style={styles.statValue}>Confidential</div>
-                <div style={styles.statLabel}>
-                  A process designed to protect employees, customers, and reputation
-                </div>
-              </div>
-              <div
-                style={{
-                  ...styles.statCard,
-                  ...(hoveredSurface === "stat3" ? styles.elevatedHover : {}),
-                }}
-                onMouseEnter={() => setHoveredSurface("stat3")}
-                onMouseLeave={() => setHoveredSurface("")}
-              >
-                <div style={styles.statValue}>Long-term</div>
-                <div style={styles.statLabel}>
-                  Ownership built around stewardship, continuity, and growth
-                </div>
-              </div>
-            </div>
             <div style={styles.reassuranceRow}>
               <div style={styles.reassurancePill}>Confidential conversations</div>
               <div style={styles.reassurancePill}>Legacy-minded ownership</div>
@@ -1327,6 +1286,48 @@ export default function App() {
               <div style={styles.heroPromiseItem}>Confidential first conversation</div>
               <div style={styles.heroPromiseItem}>No obligation to sell now</div>
               <div style={styles.heroPromiseItem}>Respect for your team and legacy</div>
+            </div>
+
+            <div style={styles.heroStats}>
+              <div
+                style={{
+                  ...styles.statCard,
+                  ...(hoveredSurface === "stat1" ? styles.elevatedHover : {}),
+                }}
+                onMouseEnter={() => setHoveredSurface("stat1")}
+                onMouseLeave={() => setHoveredSurface("")}
+              >
+                <div style={styles.statValue}>Direct Buyer</div>
+                <div style={styles.statLabel}>
+                  Thoughtful conversations without broad market exposure
+                </div>
+              </div>
+              <div
+                style={{
+                  ...styles.statCard,
+                  ...(hoveredSurface === "stat2" ? styles.elevatedHover : {}),
+                }}
+                onMouseEnter={() => setHoveredSurface("stat2")}
+                onMouseLeave={() => setHoveredSurface("")}
+              >
+                <div style={styles.statValue}>Confidential</div>
+                <div style={styles.statLabel}>
+                  A process designed to protect employees, customers, and reputation
+                </div>
+              </div>
+              <div
+                style={{
+                  ...styles.statCard,
+                  ...(hoveredSurface === "stat3" ? styles.elevatedHover : {}),
+                }}
+                onMouseEnter={() => setHoveredSurface("stat3")}
+                onMouseLeave={() => setHoveredSurface("")}
+              >
+                <div style={styles.statValue}>Long-term</div>
+                <div style={styles.statLabel}>
+                  Ownership built around stewardship, continuity, and growth
+                </div>
+              </div>
             </div>
           </div>
         </div>
