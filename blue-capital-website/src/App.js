@@ -1537,6 +1537,21 @@ export default function App() {
                 transactions.
               </p>
             </div>
+            <div
+              style={{
+                ...styles.sideNoteCard,
+                ...(hoveredSurface === "missionSide3" ? styles.elevatedHover : {}),
+              }}
+              onMouseEnter={() => setHoveredSurface("missionSide3")}
+              onMouseLeave={() => setHoveredSurface("")}
+            >
+              <div style={styles.sideNoteTitle}>Why sellers feel safer reaching out</div>
+              <p style={styles.sideNoteText}>
+                Many owners are not ready for a formal sale process. They simply
+                want a private conversation about timing, options, and whether the
+                next owner will care for the business the way they do.
+              </p>
+            </div>
           </div>
         </div>
       </section>
