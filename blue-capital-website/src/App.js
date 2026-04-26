@@ -256,7 +256,8 @@ export default function App() {
     buttonRow: {
       display: "flex",
       gap: "14px",
-      flexWrap: "wrap",
+      flexWrap: "nowrap",
+      alignItems: "center",
     },
     primaryBtn: {
       backgroundColor: "#00305b",
