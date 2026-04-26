@@ -28,12 +28,35 @@ export default function App() {
   const [isMobile, setIsMobile] = useState(
     typeof window !== "undefined" ? window.innerWidth <= 900 : false
   );
+  const [isPhone, setIsPhone] = useState(
+    typeof window !== "undefined" ? window.innerWidth <= 640 : false
+  );
 
   useEffect(() => {
-    const handleResize = () => setIsMobile(window.innerWidth <= 900);
+    const handleResize = () => {
+      setIsMobile(window.innerWidth <= 900);
+      setIsPhone(window.innerWidth <= 640);
+    };
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  const topNavItems = isPhone
+    ? [
+        ["home", "Home"],
+        ["about", "About"],
+        ["founder", "Founder"],
+        ["contact", "Contact"],
+      ]
+    : [
+        ["home", "Home"],
+        ["about", "About"],
+        ["mission", "Mission Statement"],
+        ["criteria", "Criteria"],
+        ["sell", "Sell Your Business"],
+        ["founder", "Founder"],
+        ["contact", "Contact"],
+      ];
 
   const styles = {
     page: {
@@ -56,7 +79,7 @@ export default function App() {
     navInner: {
       maxWidth: "1180px",
       margin: "0 auto",
-      padding: isMobile ? "14px 20px" : "16px 28px",
+      padding: isPhone ? "12px 16px" : isMobile ? "14px 20px" : "16px 28px",
       display: "flex",
       justifyContent: "space-between",
       alignItems: isMobile ? "flex-start" : "center",
@@ -67,26 +90,27 @@ export default function App() {
     brandWrap: {
       display: "flex",
       alignItems: "center",
-      gap: "14px",
+      gap: isPhone ? "10px" : "14px",
       width: isMobile ? "100%" : "auto",
     },
     navLogo: {
-      width: isMobile ? "56px" : "68px",
+      width: isPhone ? "44px" : isMobile ? "56px" : "68px",
       height: "auto",
       display: "block",
       objectFit: "contain",
     },
     brandText: {
-      fontSize: isMobile ? "16px" : "18px",
+      fontSize: isPhone ? "13px" : isMobile ? "16px" : "18px",
       fontWeight: 700,
       letterSpacing: "0.01em",
       color: "#00305b",
       textTransform: "uppercase",
+      lineHeight: 1.15,
     },
     navLinks: {
       display: "flex",
-      gap: isMobile ? "14px" : "18px",
-      fontSize: isMobile ? "14px" : "15px",
+      gap: isPhone ? "10px" : isMobile ? "14px" : "18px",
+      fontSize: isPhone ? "13px" : isMobile ? "14px" : "15px",
       color: "#374151",
       flexWrap: isMobile ? "nowrap" : "wrap",
       alignItems: "center",
@@ -97,11 +121,48 @@ export default function App() {
       WebkitOverflowScrolling: "touch",
       scrollbarWidth: "none",
     },
+    mobileShortcutsWrap: {
+      backgroundColor: "#ffffff",
+      borderBottom: "1px solid #e3edf2",
+      display: isPhone ? "block" : "none",
+    },
+    mobileShortcutsInner: {
+      maxWidth: "1180px",
+      margin: "0 auto",
+      padding: "10px 16px 14px",
+    },
+    mobileShortcutsLabel: {
+      fontSize: "11px",
+      fontWeight: 800,
+      letterSpacing: "0.08em",
+      textTransform: "uppercase",
+      color: "#2f8b99",
+      marginBottom: "10px",
+    },
+    mobileShortcutsRow: {
+      display: "flex",
+      gap: "10px",
+      overflowX: "auto",
+      WebkitOverflowScrolling: "touch",
+      scrollbarWidth: "none",
+    },
+    mobileShortcut: {
+      textDecoration: "none",
+      color: "#00305b",
+      border: "1px solid #d7e8ef",
+      backgroundColor: "#f8fcfd",
+      borderRadius: "999px",
+      padding: "8px 12px",
+      fontSize: "13px",
+      fontWeight: 700,
+      whiteSpace: "nowrap",
+      flex: "0 0 auto",
+    },
     link: {
       textDecoration: "none",
       color: "#334155",
       fontWeight: 500,
-      padding: isMobile ? "8px 10px" : "8px 0",
+      padding: isPhone ? "8px 8px" : isMobile ? "8px 10px" : "8px 0",
       borderRadius: "999px",
       transition: "all 0.2s ease",
       whiteSpace: "nowrap",
@@ -110,7 +171,7 @@ export default function App() {
       textDecoration: "none",
       color: "#334155",
       fontWeight: 500,
-      padding: isMobile ? "8px 10px" : "9px 14px",
+      padding: isPhone ? "8px 8px" : isMobile ? "8px 10px" : "9px 14px",
       borderRadius: "999px",
       backgroundColor: "transparent",
       transition: "all 0.2s ease",
@@ -126,7 +187,7 @@ export default function App() {
       background:
         "radial-gradient(circle at top right, rgba(71, 185, 196, 0.18), transparent 24%), linear-gradient(180deg, #f8fcfd 0%, #eef7f9 52%, #fdfefe 100%)",
       color: "#00305b",
-      padding: isMobile ? "48px 20px 44px" : "88px 28px 72px",
+      padding: isPhone ? "36px 16px 32px" : isMobile ? "48px 20px 44px" : "88px 28px 72px",
     },
     heroInner: {
       maxWidth: "1180px",
@@ -137,10 +198,10 @@ export default function App() {
       alignItems: "start",
     },
     heroContent: {
-      maxWidth: "820px",
+      maxWidth: isPhone ? "100%" : "820px",
     },
     heroAside: {
-      display: "grid",
+      display: isPhone ? "none" : "grid",
       gap: "14px",
       paddingTop: "14px",
     },
@@ -150,36 +211,36 @@ export default function App() {
       borderRadius: "999px",
       backgroundColor: "#e7f6f7",
       border: "1px solid #bde7eb",
-      fontSize: isMobile ? "12px" : "13px",
+      fontSize: isPhone ? "11px" : isMobile ? "12px" : "13px",
       fontWeight: 700,
       letterSpacing: "0.05em",
       textTransform: "uppercase",
-      marginBottom: isMobile ? "14px" : "18px",
+      marginBottom: isPhone ? "12px" : isMobile ? "14px" : "18px",
       color: "#1f7d8c",
     },
     heroTitle: {
-      fontSize: isMobile ? "clamp(24px, 7vw, 34px)" : "clamp(40px, 7vw, 58px)",
-      lineHeight: isMobile ? 1.08 : 1.04,
+      fontSize: isPhone ? "clamp(18px, 5.8vw, 26px)" : isMobile ? "clamp(24px, 7vw, 34px)" : "clamp(40px, 7vw, 58px)",
+      lineHeight: isPhone ? 1.12 : isMobile ? 1.08 : 1.04,
       fontWeight: 800,
-      marginBottom: isMobile ? "16px" : "24px",
+      marginBottom: isPhone ? "12px" : isMobile ? "16px" : "24px",
       letterSpacing: "-0.03em",
       fontFamily: "Georgia, 'Times New Roman', serif",
       maxWidth: "900px",
       overflowWrap: "anywhere",
     },
     heroText: {
-      fontSize: isMobile ? "17px" : "19px",
-      lineHeight: 1.8,
+      fontSize: isPhone ? "14px" : isMobile ? "17px" : "19px",
+      lineHeight: isPhone ? 1.65 : 1.8,
       color: "#48657a",
-      marginBottom: isMobile ? "20px" : "28px",
+      marginBottom: isPhone ? "16px" : isMobile ? "20px" : "28px",
       maxWidth: "720px",
     },
     missionStatement: {
-      fontSize: isMobile ? "16px" : "22px",
-      lineHeight: isMobile ? 1.7 : 1.8,
+      fontSize: isPhone ? "14px" : isMobile ? "16px" : "22px",
+      lineHeight: isPhone ? 1.55 : isMobile ? 1.7 : 1.8,
       color: "#21445f",
       maxWidth: "760px",
-      marginBottom: isMobile ? "18px" : "24px",
+      marginBottom: isPhone ? "14px" : isMobile ? "18px" : "24px",
       fontWeight: 600,
       fontFamily: "Georgia, 'Times New Roman', serif",
       overflowWrap: "anywhere",
@@ -278,14 +339,15 @@ export default function App() {
     },
     buttonRow: {
       display: "flex",
-      gap: "14px",
+      gap: isPhone ? "10px" : "14px",
       flexWrap: isMobile ? "wrap" : "nowrap",
       alignItems: "center",
+      width: isPhone ? "100%" : "auto",
     },
     primaryBtn: {
       backgroundColor: "#00305b",
       color: "#ffffff",
-      padding: isMobile ? "14px 18px" : "14px 24px",
+      padding: isPhone ? "12px 14px" : isMobile ? "14px 18px" : "14px 24px",
       borderRadius: "10px",
       fontWeight: 700,
       textDecoration: "none",
@@ -293,12 +355,15 @@ export default function App() {
       display: "inline-block",
       width: isMobile ? "100%" : "auto",
       textAlign: "center",
+      fontSize: isPhone ? "14px" : "inherit",
+      lineHeight: isPhone ? 1.35 : "normal",
+      whiteSpace: isPhone ? "normal" : "nowrap",
       transition: "transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease",
     },
     secondaryBtn: {
       border: "1px solid #bcd8e5",
       color: "#00305b",
-      padding: isMobile ? "14px 18px" : "14px 24px",
+      padding: isPhone ? "12px 14px" : isMobile ? "14px 18px" : "14px 24px",
       borderRadius: "10px",
       fontWeight: 600,
       textDecoration: "none",
@@ -306,6 +371,9 @@ export default function App() {
       display: "inline-block",
       width: isMobile ? "100%" : "auto",
       textAlign: "center",
+      fontSize: isPhone ? "14px" : "inherit",
+      lineHeight: isPhone ? 1.35 : "normal",
+      whiteSpace: isPhone ? "normal" : "nowrap",
       transition: "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
     },
     buttonHoverLift: {
@@ -1173,86 +1241,35 @@ export default function App() {
             <div style={styles.brandText}>Blue Capital Holdings LLC</div>
           </div>
           <div style={styles.navLinks}>
-            <a
-              href="#home"
-              style={{
-                ...styles.link,
-                ...(hoveredNav === "home" ? styles.navHover : {}),
-              }}
-              onMouseEnter={() => setHoveredNav("home")}
-              onMouseLeave={() => setHoveredNav("")}
-            >
-              Home
-            </a>
-            <a
-              href="#about"
-              style={{
-                ...styles.link,
-                ...(hoveredNav === "about" ? styles.navHover : {}),
-              }}
-              onMouseEnter={() => setHoveredNav("about")}
-              onMouseLeave={() => setHoveredNav("")}
-            >
-              About
-            </a>
-            <a
-              href="#mission"
-              style={{
-                ...styles.missionNavBtn,
-                ...(hoveredNav === "mission" ? styles.navHover : {}),
-              }}
-              onMouseEnter={() => setHoveredNav("mission")}
-              onMouseLeave={() => setHoveredNav("")}
-            >
-              Mission Statement
-            </a>
-            <a
-              href="#criteria"
-              style={{
-                ...styles.link,
-                ...(hoveredNav === "criteria" ? styles.navHover : {}),
-              }}
-              onMouseEnter={() => setHoveredNav("criteria")}
-              onMouseLeave={() => setHoveredNav("")}
-            >
-              Criteria
-            </a>
-            <a
-              href="#sell"
-              style={{
-                ...styles.link,
-                ...(hoveredNav === "sell" ? styles.navHover : {}),
-              }}
-              onMouseEnter={() => setHoveredNav("sell")}
-              onMouseLeave={() => setHoveredNav("")}
-            >
-              Sell Your Business
-            </a>
-            <a
-              href="#founder"
-              style={{
-                ...styles.link,
-                ...(hoveredNav === "founder" ? styles.navHover : {}),
-              }}
-              onMouseEnter={() => setHoveredNav("founder")}
-              onMouseLeave={() => setHoveredNav("")}
-            >
-              Founder
-            </a>
-            <a
-              href="#contact"
-              style={{
-                ...styles.link,
-                ...(hoveredNav === "contact" ? styles.navHover : {}),
-              }}
-              onMouseEnter={() => setHoveredNav("contact")}
-              onMouseLeave={() => setHoveredNav("")}
-            >
-              Contact
-            </a>
+            {topNavItems.map(([id, label]) => (
+              <a
+                key={id}
+                href={`#${id}`}
+                style={{
+                  ...(id === "mission" ? styles.missionNavBtn : styles.link),
+                  ...(hoveredNav === id ? styles.navHover : {}),
+                }}
+                onMouseEnter={() => setHoveredNav(id)}
+                onMouseLeave={() => setHoveredNav("")}
+              >
+                {label}
+              </a>
+            ))}
           </div>
         </div>
       </nav>
+
+      <div style={styles.mobileShortcutsWrap}>
+        <div style={styles.mobileShortcutsInner}>
+          <div style={styles.mobileShortcutsLabel}>More sections</div>
+          <div style={styles.mobileShortcutsRow}>
+            <a href="#mission" style={styles.mobileShortcut}>Mission</a>
+            <a href="#criteria" style={styles.mobileShortcut}>Criteria</a>
+            <a href="#sell" style={styles.mobileShortcut}>Sell Your Business</a>
+            <a href="#process" style={styles.mobileShortcut}>Process</a>
+          </div>
+        </div>
+      </div>
 
       <section id="home" style={styles.hero}>
         <div style={styles.heroInner}>
