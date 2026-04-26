@@ -104,17 +104,24 @@ export default function App() {
     },
     hero: {
       background:
-        "linear-gradient(180deg, #f8fcfd 0%, #eef7f9 52%, #fdfefe 100%)",
+        "radial-gradient(circle at top right, rgba(71, 185, 196, 0.18), transparent 24%), linear-gradient(180deg, #f8fcfd 0%, #eef7f9 52%, #fdfefe 100%)",
       color: "#00305b",
       padding: "88px 28px 72px",
     },
     heroInner: {
-      maxWidth: "1040px",
+      maxWidth: "1180px",
       margin: "0 auto",
-      display: "block",
+      display: "grid",
+      gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+      gap: "32px",
+      alignItems: "center",
     },
     heroContent: {
       maxWidth: "820px",
+    },
+    heroAside: {
+      display: "grid",
+      gap: "18px",
     },
     heroEyebrow: {
       display: "inline-block",
@@ -168,6 +175,80 @@ export default function App() {
       fontSize: "14px",
       color: "#567082",
       fontWeight: 600,
+    },
+    heroSpotlightCard: {
+      background:
+        "linear-gradient(160deg, rgba(255,255,255,0.98) 0%, rgba(240,248,250,0.98) 100%)",
+      border: "1px solid #d7e8ef",
+      borderRadius: "26px",
+      padding: "28px",
+      boxShadow: "0 22px 44px rgba(0,48,91,0.08)",
+      transition: "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
+    },
+    heroSpotlightLabel: {
+      display: "inline-block",
+      marginBottom: "14px",
+      padding: "8px 12px",
+      borderRadius: "999px",
+      backgroundColor: "#e8f6f7",
+      color: "#1f7d8c",
+      fontSize: "12px",
+      fontWeight: 800,
+      letterSpacing: "0.08em",
+      textTransform: "uppercase",
+    },
+    heroSpotlightTitle: {
+      fontSize: "28px",
+      lineHeight: 1.15,
+      color: "#00305b",
+      fontWeight: 800,
+      marginBottom: "12px",
+      fontFamily: "Georgia, 'Times New Roman', serif",
+    },
+    heroSpotlightText: {
+      fontSize: "16px",
+      lineHeight: 1.8,
+      color: "#537082",
+      marginBottom: "18px",
+    },
+    heroSignalGrid: {
+      display: "grid",
+      gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+      gap: "12px",
+    },
+    heroSignalCard: {
+      backgroundColor: "#ffffff",
+      border: "1px solid #deebf1",
+      borderRadius: "18px",
+      padding: "16px",
+      boxShadow: "0 10px 20px rgba(0,48,91,0.05)",
+      transition: "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
+    },
+    heroSignalValue: {
+      fontSize: "20px",
+      fontWeight: 800,
+      color: "#00305b",
+      marginBottom: "4px",
+    },
+    heroSignalLabel: {
+      fontSize: "13px",
+      lineHeight: 1.6,
+      color: "#60778a",
+    },
+    heroPromiseBar: {
+      display: "flex",
+      flexWrap: "wrap",
+      gap: "10px",
+      padding: "14px 16px",
+      borderRadius: "18px",
+      backgroundColor: "#00305b",
+      color: "#ffffff",
+      boxShadow: "0 16px 30px rgba(0,48,91,0.14)",
+    },
+    heroPromiseItem: {
+      fontSize: "14px",
+      fontWeight: 700,
+      letterSpacing: "0.01em",
     },
     buttonRow: {
       display: "flex",
@@ -676,12 +757,27 @@ export default function App() {
     },
     ctaPanel: {
       background:
-        "linear-gradient(135deg, #00305b 0%, #0d4b76 100%)",
+        "linear-gradient(145deg, #002b52 0%, #0d4b76 58%, #15708a 100%)",
       color: "#ffffff",
       borderRadius: "24px",
       padding: "30px",
       boxShadow: "0 22px 44px rgba(0,48,91,0.18)",
       transition: "transform 0.2s ease, box-shadow 0.2s ease",
+      border: "1px solid rgba(191, 219, 254, 0.22)",
+      position: "relative",
+      overflow: "hidden",
+    },
+    ctaEyebrow: {
+      display: "inline-block",
+      marginBottom: "12px",
+      padding: "8px 12px",
+      borderRadius: "999px",
+      backgroundColor: "rgba(255,255,255,0.12)",
+      color: "#d9f1f4",
+      fontSize: "12px",
+      fontWeight: 800,
+      letterSpacing: "0.08em",
+      textTransform: "uppercase",
     },
     ctaTitle: {
       fontSize: "26px",
@@ -693,6 +789,22 @@ export default function App() {
       lineHeight: 1.85,
       color: "#d9f1f4",
       marginBottom: "20px",
+    },
+    ctaDivider: {
+      height: "1px",
+      backgroundColor: "rgba(255,255,255,0.18)",
+      margin: "18px 0",
+    },
+    ctaPoints: {
+      display: "grid",
+      gap: "10px",
+      marginBottom: "22px",
+    },
+    ctaPoint: {
+      fontSize: "15px",
+      lineHeight: 1.7,
+      color: "#f2fbfc",
+      fontWeight: 600,
     },
     ctaButton: {
       backgroundColor: "#ffffff",
@@ -1134,6 +1246,86 @@ export default function App() {
               <div style={styles.reassurancePill}>Confidential conversations</div>
               <div style={styles.reassurancePill}>Legacy-minded ownership</div>
               <div style={styles.reassurancePill}>Built for retirement and succession transitions</div>
+            </div>
+          </div>
+          <div style={styles.heroAside}>
+            <div
+              style={{
+                ...styles.heroSpotlightCard,
+                ...(hoveredSurface === "heroSpotlight" ? styles.elevatedHover : {}),
+              }}
+              onMouseEnter={() => setHoveredSurface("heroSpotlight")}
+              onMouseLeave={() => setHoveredSurface("")}
+            >
+              <div style={styles.heroSpotlightLabel}>Owner Transition Focus</div>
+              <div style={styles.heroSpotlightTitle}>
+                A private, steady path for owners planning the next chapter.
+              </div>
+              <p style={styles.heroSpotlightText}>
+                We are best suited for owners who care about discretion,
+                continuity, and finding the right long-term steward rather than
+                simply launching a broad process.
+              </p>
+              <div style={styles.heroSignalGrid}>
+                <div
+                  style={{
+                    ...styles.heroSignalCard,
+                    ...(hoveredSurface === "heroSignal1" ? styles.elevatedHover : {}),
+                  }}
+                  onMouseEnter={() => setHoveredSurface("heroSignal1")}
+                  onMouseLeave={() => setHoveredSurface("")}
+                >
+                  <div style={styles.heroSignalValue}>6-36 Months</div>
+                  <div style={styles.heroSignalLabel}>
+                    Typical planning window for thoughtful transitions
+                  </div>
+                </div>
+                <div
+                  style={{
+                    ...styles.heroSignalCard,
+                    ...(hoveredSurface === "heroSignal2" ? styles.elevatedHover : {}),
+                  }}
+                  onMouseEnter={() => setHoveredSurface("heroSignal2")}
+                  onMouseLeave={() => setHoveredSurface("")}
+                >
+                  <div style={styles.heroSignalValue}>Direct Contact</div>
+                  <div style={styles.heroSignalLabel}>
+                    Conversations with a buyer, not a crowded process
+                  </div>
+                </div>
+                <div
+                  style={{
+                    ...styles.heroSignalCard,
+                    ...(hoveredSurface === "heroSignal3" ? styles.elevatedHover : {}),
+                  }}
+                  onMouseEnter={() => setHoveredSurface("heroSignal3")}
+                  onMouseLeave={() => setHoveredSurface("")}
+                >
+                  <div style={styles.heroSignalValue}>Legacy First</div>
+                  <div style={styles.heroSignalLabel}>
+                    Built for owners weighing employees, customers, and reputation
+                  </div>
+                </div>
+                <div
+                  style={{
+                    ...styles.heroSignalCard,
+                    ...(hoveredSurface === "heroSignal4" ? styles.elevatedHover : {}),
+                  }}
+                  onMouseEnter={() => setHoveredSurface("heroSignal4")}
+                  onMouseLeave={() => setHoveredSurface("")}
+                >
+                  <div style={styles.heroSignalValue}>Long-Term Hold</div>
+                  <div style={styles.heroSignalLabel}>
+                    Growth and stewardship over short-term flipping
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <div style={styles.heroPromiseBar}>
+              <div style={styles.heroPromiseItem}>Confidential first conversation</div>
+              <div style={styles.heroPromiseItem}>No obligation to sell now</div>
+              <div style={styles.heroPromiseItem}>Respect for your team and legacy</div>
             </div>
           </div>
         </div>
@@ -1609,6 +1801,7 @@ export default function App() {
                   <div style={styles.founderHighlight}>10+ years management experience</div>
                   <div style={styles.founderHighlight}>Finance and supply chain background</div>
                   <div style={styles.founderHighlight}>Lean Six Sigma Green Belt</div>
+                  <div style={styles.founderHighlight}>Bloomberg Market Concepts certified</div>
                 </div>
               </div>
             </div>
@@ -1624,7 +1817,7 @@ export default function App() {
               He holds a Bachelor of Science from the Indiana University Kelley
               School of Business, with a double major in Finance and Supply Chain
               Management and a minor in Economics. He is also Lean Six Sigma Green
-              Belt certified.
+              Belt certified and certified in Bloomberg Market Concepts.
             </p>
 
             <p style={styles.paragraph}>
@@ -1655,6 +1848,7 @@ export default function App() {
               <li>Over a decade of management experience</li>
               <li>Finance, supply chain, and economics background</li>
               <li>Lean Six Sigma Green Belt certified</li>
+              <li>Bloomberg Market Concepts certified</li>
               <li>Operator-oriented acquisition approach</li>
               <li>Clear acquisition strategy and long-term ownership philosophy</li>
             </ul>
@@ -1719,8 +1913,9 @@ export default function App() {
               onMouseEnter={() => setHoveredSurface("ctaPanel")}
               onMouseLeave={() => setHoveredSurface("")}
             >
+              <div style={styles.ctaEyebrow}>Confidential next step</div>
               <div style={styles.ctaTitle}>
-                Explore a transition without pressure
+                Start the right conversation before you feel forced into a process
               </div>
               <p style={styles.ctaText}>
                 If you are considering retirement, succession, or a sale in the
@@ -1732,6 +1927,18 @@ export default function App() {
                 The best inquiries usually come from owners who want to understand
                 their options before they are ready to make a final decision.
               </p>
+              <div style={styles.ctaDivider} />
+              <div style={styles.ctaPoints}>
+                <div style={styles.ctaPoint}>
+                  Built for owners who want clarity before they want a transaction.
+                </div>
+                <div style={styles.ctaPoint}>
+                  Designed to protect confidentiality, relationships, and reputation.
+                </div>
+                <div style={styles.ctaPoint}>
+                  Best fit for transitions where legacy and continuity matter as much as price.
+                </div>
+              </div>
               <a
                 href="#contact"
                 style={{
