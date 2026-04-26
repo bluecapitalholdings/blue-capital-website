@@ -163,11 +163,11 @@ export default function App() {
       fontFamily: "Georgia, 'Times New Roman', serif",
     },
     reassuranceRow: {
-      display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(220px, max-content))",
+      display: "flex",
+      flexWrap: "nowrap",
       gap: "12px",
-      marginTop: "18px",
-      alignItems: "start",
+      marginTop: "10px",
+      alignItems: "center",
     },
     reassurancePill: {
       padding: "10px 14px",
@@ -177,7 +177,6 @@ export default function App() {
       fontSize: "14px",
       color: "#567082",
       fontWeight: 600,
-      width: "fit-content",
       whiteSpace: "nowrap",
     },
     heroSpotlightCard: {
@@ -1205,11 +1204,6 @@ export default function App() {
                 See How the Process Works
               </a>
             </div>
-            <div style={styles.reassuranceRow}>
-              <div style={styles.reassurancePill}>Confidential conversations</div>
-              <div style={styles.reassurancePill}>Legacy-minded ownership</div>
-              <div style={styles.reassurancePill}>Built for retirement and succession transitions</div>
-            </div>
           </div>
           <div style={styles.heroAside}>
             <div
@@ -1331,6 +1325,12 @@ export default function App() {
                   Ownership built around stewardship, continuity, and growth
                 </div>
               </div>
+            </div>
+
+            <div style={styles.reassuranceRow}>
+              <div style={styles.reassurancePill}>Confidential conversations</div>
+              <div style={styles.reassurancePill}>Legacy-minded ownership</div>
+              <div style={styles.reassurancePill}>Built for retirement and succession transitions</div>
             </div>
           </div>
         </div>
