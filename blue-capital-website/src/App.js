@@ -42,6 +42,7 @@ export default function App() {
       backgroundColor: "#fcfdff",
       margin: 0,
       padding: 0,
+      overflowX: "hidden",
     },
     nav: {
       borderBottom: "1px solid #d8e4ec",
@@ -55,7 +56,7 @@ export default function App() {
     navInner: {
       maxWidth: "1180px",
       margin: "0 auto",
-      padding: "16px 28px",
+      padding: isMobile ? "14px 20px" : "16px 28px",
       display: "flex",
       justifyContent: "space-between",
       alignItems: "center",
@@ -82,11 +83,12 @@ export default function App() {
     },
     navLinks: {
       display: "flex",
-      gap: "18px",
+      gap: isMobile ? "14px" : "18px",
       fontSize: "15px",
       color: "#374151",
       flexWrap: "wrap",
       alignItems: "center",
+      maxWidth: "100%",
     },
     link: {
       textDecoration: "none",
@@ -121,8 +123,8 @@ export default function App() {
       maxWidth: "1180px",
       margin: "0 auto",
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
-      gap: "32px",
+      gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(320px, 1fr))",
+      gap: isMobile ? "24px" : "32px",
       alignItems: "start",
     },
     heroContent: {
@@ -225,7 +227,7 @@ export default function App() {
     },
     heroSignalGrid: {
       display: "grid",
-      gridTemplateColumns: "repeat(2, minmax(0, 1fr))",
+      gridTemplateColumns: isMobile ? "1fr" : "repeat(2, minmax(0, 1fr))",
       gap: "12px",
     },
     heroSignalCard: {
@@ -380,7 +382,7 @@ export default function App() {
     section: {
       maxWidth: "1180px",
       margin: "0 auto",
-      padding: "clamp(56px, 6vw, 80px) 28px",
+      padding: isMobile ? "44px 20px" : "clamp(56px, 6vw, 80px) 28px",
     },
     sectionGray: {
       background:
@@ -420,7 +422,7 @@ export default function App() {
     },
     twoCol: {
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+      gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(320px, 1fr))",
       gap: "28px",
       alignItems: "start",
     },
@@ -452,7 +454,7 @@ export default function App() {
     },
     criteriaGrid: {
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+      gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(240px, 1fr))",
       gap: "20px",
       marginBottom: "24px",
     },
@@ -520,9 +522,9 @@ export default function App() {
     standaloneMissionWrap: {
       maxWidth: "1180px",
       margin: "0 auto",
-      padding: "0 28px",
+      padding: isMobile ? "0 20px" : "0 28px",
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(320px, 1fr))",
+      gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(320px, 1fr))",
       gap: "24px",
       alignItems: "start",
     },
@@ -623,6 +625,12 @@ export default function App() {
       alignItems: "start",
       marginBottom: "22px",
     },
+    founderImageColumn: {
+      display: "grid",
+      gap: "14px",
+      alignContent: "start",
+      justifyItems: isMobile ? "center" : "start",
+    },
     founderCardsGrid: {
       display: "grid",
       gridTemplateColumns: isMobile ? "1fr" : "repeat(2, minmax(0, 1fr))",
@@ -630,14 +638,11 @@ export default function App() {
       alignItems: "stretch",
     },
     founderImageFrame: {
-      backgroundColor: "#ffffff",
-      borderRadius: "28px",
-      padding: "14px",
-      border: "1px solid #dfe9ef",
-      boxShadow: "0 18px 36px rgba(0,48,91,0.08)",
-      transition: "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
+      borderRadius: "22px",
+      transition: "transform 0.2s ease",
       maxWidth: isMobile ? "260px" : "100%",
       margin: isMobile ? "0 auto" : "0",
+      overflow: "hidden",
     },
     founderImage: {
       width: "100%",
@@ -679,6 +684,25 @@ export default function App() {
       border: "1px solid #c7e7ea",
       fontSize: "14px",
       fontWeight: 600,
+      width: "fit-content",
+    },
+    founderExtraText: {
+      fontSize: "16px",
+      lineHeight: 1.8,
+      color: "#5a7486",
+      marginTop: "16px",
+      marginBottom: 0,
+      overflowWrap: "anywhere",
+      wordBreak: "break-word",
+    },
+    founderList: {
+      paddingLeft: "20px",
+      margin: 0,
+      color: "#536879",
+      lineHeight: 1.9,
+      fontSize: isMobile ? "15px" : "16px",
+      overflowWrap: "anywhere",
+      wordBreak: "break-word",
     },
     processSection: {
       background:
@@ -693,7 +717,7 @@ export default function App() {
     },
     processGrid: {
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(220px, 1fr))",
+      gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(220px, 1fr))",
       gap: "20px",
       marginTop: "24px",
     },
@@ -760,11 +784,11 @@ export default function App() {
     funnelWrap: {
       maxWidth: "1180px",
       margin: "0 auto",
-      padding: "64px 28px",
+      padding: isMobile ? "44px 20px" : "64px 28px",
     },
     funnelGrid: {
       display: "grid",
-      gridTemplateColumns: "1.1fr 0.9fr",
+      gridTemplateColumns: isMobile ? "1fr" : "1.1fr 0.9fr",
       gap: "24px",
       alignItems: "start",
     },
@@ -892,7 +916,7 @@ export default function App() {
     contactWrap: {
       maxWidth: "860px",
       margin: "0 auto",
-      padding: "72px 28px",
+      padding: isMobile ? "44px 20px" : "72px 28px",
     },
     contactPanel: {
       background:
@@ -909,7 +933,7 @@ export default function App() {
     },
     inputGrid: {
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(240px, 1fr))",
+      gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(240px, 1fr))",
       gap: "18px",
     },
     input: {
@@ -1851,19 +1875,22 @@ export default function App() {
               onMouseLeave={() => setHoveredSurface("")}
             >
               <div style={styles.founderLeadGrid}>
-                <div
-                  style={{
-                    ...styles.founderImageFrame,
-                    ...(hoveredSurface === "founderImage" ? styles.elevatedHover : {}),
-                  }}
-                  onMouseEnter={() => setHoveredSurface("founderImage")}
-                  onMouseLeave={() => setHoveredSurface("")}
-                >
-                  <img
-                    src="/headshot.jpg"
-                    alt="Michael McMullan"
-                    style={styles.founderImage}
-                  />
+                <div style={styles.founderImageColumn}>
+                  <div
+                    style={{
+                      ...styles.founderImageFrame,
+                      ...(hoveredSurface === "founderImage" ? styles.elevatedHover : {}),
+                    }}
+                    onMouseEnter={() => setHoveredSurface("founderImage")}
+                    onMouseLeave={() => setHoveredSurface("")}
+                  >
+                    <img
+                      src="/headshot.jpg"
+                      alt="Michael McMullan"
+                      style={styles.founderImage}
+                    />
+                  </div>
+                  <div style={styles.founderHighlight}>Lean Six Sigma Green Belt</div>
                 </div>
                 <div>
                   <div style={styles.founderName}>Michael McMullan</div>
@@ -1874,14 +1901,19 @@ export default function App() {
                     execution, process improvement, and long-term business
                     performance.
                   </p>
+                  <p style={styles.founderExtraText}>
+                    Owners often want to know whether the next steward can make
+                    practical decisions, communicate directly, and improve the
+                    business without losing what made it valuable in the first place.
+                  </p>
                 </div>
               </div>
 
               <div style={styles.founderHighlights}>
                 <div style={styles.founderHighlight}>10+ years management experience</div>
                 <div style={styles.founderHighlight}>Finance and supply chain background</div>
-                <div style={styles.founderHighlight}>Lean Six Sigma Green Belt</div>
                 <div style={styles.founderHighlight}>Bloomberg Market Concepts certified</div>
+                <div style={styles.founderHighlight}>Based in Avon, Indiana</div>
               </div>
             </div>
 
@@ -1899,7 +1931,7 @@ export default function App() {
                 Credentials and Operating Lens
               </div>
 
-              <ul style={styles.list}>
+              <ul style={styles.founderList}>
                 <li>Bachelor of Science from Indiana University Kelley School of Business</li>
                 <li>Double major in Finance and Supply Chain Management</li>
                 <li>Minor in Economics</li>
@@ -1908,9 +1940,16 @@ export default function App() {
                 <li>Operator-oriented acquisition approach and long-term ownership philosophy</li>
               </ul>
 
+              <p style={styles.founderExtraText}>
+                Blue Capital Holdings is built around steady ownership, operational
+                discipline, and the kind of direct communication owners usually
+                hope to find before beginning a broader transition process.
+              </p>
+
               <p style={styles.founderCardNote}>
-                Built for owners who care about legacy, continuity, and
-                thoughtful long-term stewardship.
+                <span style={styles.founderHighlight}>
+                  Built for owners who care about legacy, continuity, and thoughtful long-term stewardship.
+                </span>
               </p>
             </div>
           </div>
