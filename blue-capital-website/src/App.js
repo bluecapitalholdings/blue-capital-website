@@ -467,12 +467,12 @@ export default function App() {
     section: {
       maxWidth: "1180px",
       margin: "0 auto",
-      padding: isMobile ? "44px 20px" : "clamp(56px, 6vw, 80px) 28px",
+      padding: isPhone ? "28px 16px" : isMobile ? "34px 20px" : "clamp(32px, 4vw, 52px) 28px",
     },
     sectionGray: {
       background:
         "linear-gradient(180deg, #f7fbfc 0%, #f3f8fa 55%, #ffffff 100%)",
-      padding: "64px 0",
+      padding: isPhone ? "28px 0" : isMobile ? "40px 0" : "44px 0",
     },
     sectionTitle: {
       fontSize: isMobile ? "clamp(28px, 8vw, 34px)" : "clamp(30px, 5vw, 36px)",
@@ -600,7 +600,7 @@ export default function App() {
     standaloneMissionSection: {
       background:
         "linear-gradient(180deg, #ffffff 0%, #f8fbfc 100%)",
-      padding: "68px 0",
+      padding: isPhone ? "32px 0" : isMobile ? "42px 0" : "48px 0",
       borderTop: "1px solid #e1ebf0",
       borderBottom: "1px solid #e1ebf0",
     },
@@ -671,7 +671,7 @@ export default function App() {
       background:
         "linear-gradient(135deg, #00305b 0%, #0d4b76 100%)",
       color: "#ffffff",
-      padding: "68px 0",
+      padding: isPhone ? "32px 0" : isMobile ? "42px 0" : "48px 0",
     },
     sellText: {
       color: "#dbeafe",
@@ -805,13 +805,13 @@ export default function App() {
     processSection: {
       background:
         "linear-gradient(180deg, #ffffff 0%, #f7fbfc 100%)",
-      padding: "68px 0",
+      padding: isPhone ? "32px 0" : isMobile ? "42px 0" : "48px 0",
     },
     founderSection: {
       background:
         "linear-gradient(135deg, #0a3f6d 0%, #0d4b76 100%)",
       color: "#ffffff",
-      padding: isMobile ? "48px 0" : "68px 0",
+      padding: isPhone ? "24px 0" : isMobile ? "36px 0" : "44px 0",
     },
     processGrid: {
       display: "grid",
@@ -883,7 +883,7 @@ export default function App() {
     funnelWrap: {
       maxWidth: "1180px",
       margin: "0 auto",
-      padding: isMobile ? "44px 20px" : "64px 28px",
+      padding: isPhone ? "28px 16px" : isMobile ? "36px 20px" : "44px 28px",
     },
     funnelGrid: {
       display: "grid",
@@ -1015,7 +1015,7 @@ export default function App() {
     contactWrap: {
       maxWidth: "860px",
       margin: "0 auto",
-      padding: isMobile ? "44px 20px" : "72px 28px",
+      padding: isPhone ? "28px 16px" : isMobile ? "36px 20px" : "46px 28px",
     },
     contactPanel: {
       background:
