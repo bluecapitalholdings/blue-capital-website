@@ -337,6 +337,11 @@ export default function App() {
       fontWeight: 700,
       letterSpacing: "0.01em",
     },
+    heroPromiseDivider: {
+      fontSize: "14px",
+      fontWeight: 700,
+      color: "rgba(255,255,255,0.72)",
+    },
     buttonRow: {
       display: "flex",
       gap: isPhone ? "10px" : "14px",
@@ -870,6 +875,8 @@ export default function App() {
       overflowWrap: "anywhere",
       wordBreak: "break-word",
       display: "flex",
+      flexWrap: "wrap",
+      gap: "12px",
     },
     contactSection: {
       backgroundColor: "#ffffff",
@@ -1415,7 +1422,9 @@ export default function App() {
 
             <div style={styles.heroPromiseBar}>
               <div style={styles.heroPromiseItem}>Confidential first conversation</div>
+              <div style={styles.heroPromiseDivider}>|</div>
               <div style={styles.heroPromiseItem}>No obligation to sell now</div>
+              <div style={styles.heroPromiseDivider}>|</div>
               <div style={styles.heroPromiseItem}>Respect for your team and legacy</div>
             </div>
 
@@ -2016,9 +2025,18 @@ export default function App() {
                 hope to find before beginning a broader transition process.
               </p>
 
+              <p style={styles.founderExtraText}>
+                For many sellers, the best first step is not launching an auction.
+                It is finding a serious buyer who understands timing, confidentiality,
+                and the personal weight behind a transition.
+              </p>
+
               <p style={styles.founderCardNote}>
                 <span style={{ ...styles.founderHighlight, whiteSpace: "normal" }}>
                   Built for owners who care about legacy, continuity, and thoughtful long-term stewardship.
+                </span>
+                <span style={{ ...styles.founderHighlight, whiteSpace: "normal" }}>
+                  A good fit for owners who want a calm, direct conversation before entering a broader sale process.
                 </span>
               </p>
             </div>
