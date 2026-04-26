@@ -467,7 +467,7 @@ export default function App() {
     section: {
       maxWidth: "1180px",
       margin: "0 auto",
-      padding: isPhone ? "28px 16px" : isMobile ? "34px 20px" : "clamp(32px, 4vw, 52px) 28px",
+      padding: isPhone ? "24px 16px" : isMobile ? "28px 20px" : "clamp(24px, 3vw, 40px) 28px",
     },
     sectionGray: {
       background:
@@ -484,7 +484,7 @@ export default function App() {
     },
     sectionEyebrow: {
       display: "inline-block",
-      marginBottom: "14px",
+      marginBottom: "10px",
       fontSize: "12px",
       fontWeight: 800,
       letterSpacing: "0.08em",
@@ -496,12 +496,12 @@ export default function App() {
       lineHeight: 1.85,
       color: "#496173",
       maxWidth: "860px",
-      marginBottom: "22px",
+      marginBottom: "18px",
     },
     paragraph: {
       fontSize: isMobile ? "16px" : "17px",
       lineHeight: 1.8,
-      marginBottom: "14px",
+      marginBottom: "12px",
       color: "#536879",
       maxWidth: "860px",
     },
@@ -671,7 +671,7 @@ export default function App() {
       background:
         "linear-gradient(135deg, #00305b 0%, #0d4b76 100%)",
       color: "#ffffff",
-      padding: isPhone ? "32px 0" : isMobile ? "42px 0" : "48px 0",
+      padding: isPhone ? "24px 0" : isMobile ? "32px 0" : "38px 0",
     },
     sellText: {
       color: "#dbeafe",
@@ -811,7 +811,7 @@ export default function App() {
       background:
         "linear-gradient(135deg, #0a3f6d 0%, #0d4b76 100%)",
       color: "#ffffff",
-      padding: isPhone ? "24px 0" : isMobile ? "36px 0" : "44px 0",
+      padding: isPhone ? "18px 0" : isMobile ? "26px 0" : "34px 0",
     },
     processGrid: {
       display: "grid",
