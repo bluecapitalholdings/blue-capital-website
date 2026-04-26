@@ -631,6 +631,13 @@ export default function App() {
       alignContent: "start",
       justifyItems: isMobile ? "center" : "start",
     },
+    founderBadgeStack: {
+      display: "flex",
+      flexDirection: "column",
+      gap: "12px",
+      alignItems: isMobile ? "center" : "flex-start",
+      marginTop: "4px",
+    },
     founderCardsGrid: {
       display: "grid",
       gridTemplateColumns: isMobile ? "1fr" : "repeat(2, minmax(0, 1fr))",
@@ -685,6 +692,9 @@ export default function App() {
       fontSize: "14px",
       fontWeight: 600,
       width: "fit-content",
+      maxWidth: "100%",
+      overflowWrap: "anywhere",
+      wordBreak: "break-word",
     },
     founderExtraText: {
       fontSize: "16px",
@@ -771,6 +781,7 @@ export default function App() {
       margin: "18px 0 0 0",
       overflowWrap: "anywhere",
       wordBreak: "break-word",
+      display: "flex",
     },
     contactSection: {
       backgroundColor: "#ffffff",
@@ -1883,14 +1894,20 @@ export default function App() {
                     }}
                     onMouseEnter={() => setHoveredSurface("founderImage")}
                     onMouseLeave={() => setHoveredSurface("")}
-                  >
-                    <img
-                      src="/headshot.jpg"
-                      alt="Michael McMullan"
-                      style={styles.founderImage}
-                    />
+                    >
+                      <img
+                        src="/headshot.jpg"
+                        alt="Michael McMullan"
+                        style={styles.founderImage}
+                      />
+                    </div>
+                  <div style={styles.founderBadgeStack}>
+                    <div style={styles.founderHighlight}>Lean Six Sigma Green Belt</div>
+                    <div style={styles.founderHighlight}>10+ years management experience</div>
+                    <div style={styles.founderHighlight}>Finance and supply chain background</div>
+                    <div style={styles.founderHighlight}>Bloomberg Market Concepts certified</div>
+                    <div style={styles.founderHighlight}>Based in Avon, Indiana</div>
                   </div>
-                  <div style={styles.founderHighlight}>Lean Six Sigma Green Belt</div>
                 </div>
                 <div>
                   <div style={styles.founderName}>Michael McMullan</div>
@@ -1907,13 +1924,6 @@ export default function App() {
                     business without losing what made it valuable in the first place.
                   </p>
                 </div>
-              </div>
-
-              <div style={styles.founderHighlights}>
-                <div style={styles.founderHighlight}>10+ years management experience</div>
-                <div style={styles.founderHighlight}>Finance and supply chain background</div>
-                <div style={styles.founderHighlight}>Bloomberg Market Concepts certified</div>
-                <div style={styles.founderHighlight}>Based in Avon, Indiana</div>
               </div>
             </div>
 
@@ -1947,7 +1957,7 @@ export default function App() {
               </p>
 
               <p style={styles.founderCardNote}>
-                <span style={styles.founderHighlight}>
+                <span style={{ ...styles.founderHighlight, whiteSpace: "normal" }}>
                   Built for owners who care about legacy, continuity, and thoughtful long-term stewardship.
                 </span>
               </p>
