@@ -889,7 +889,7 @@ export default function App() {
       display: "grid",
       gridTemplateColumns: isMobile ? "1fr" : "1.1fr 0.9fr",
       gap: "24px",
-      alignItems: "start",
+      alignItems: "stretch",
     },
     funnelChecklist: {
       backgroundColor: "#ffffff",
@@ -898,6 +898,8 @@ export default function App() {
       border: "1px solid #dfe9ef",
       boxShadow: "0 16px 34px rgba(0,48,91,0.06)",
       transition: "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
+      height: "100%",
+      boxSizing: "border-box",
     },
     funnelList: {
       listStyle: "none",
@@ -931,14 +933,16 @@ export default function App() {
       border: "1px solid rgba(191, 219, 254, 0.22)",
       position: "relative",
       overflow: "hidden",
+      height: "100%",
+      boxSizing: "border-box",
     },
     ctaEyebrow: {
-      display: "inline-block",
+      display: "block",
       marginBottom: "12px",
-      padding: "8px 12px",
-      borderRadius: "999px",
-      backgroundColor: "rgba(255,255,255,0.12)",
-      color: "#d9f1f4",
+      padding: 0,
+      borderRadius: 0,
+      backgroundColor: "transparent",
+      color: "#c7eaf0",
       fontSize: "12px",
       fontWeight: 800,
       letterSpacing: "0.08em",
@@ -2062,6 +2066,16 @@ export default function App() {
                   <span style={styles.checkmark}>+</span>
                   Stronger calls to action that frame contact as a confidential
                   conversation rather than a hard commitment.
+                </li>
+                <li style={styles.funnelItem}>
+                  <span style={styles.checkmark}>+</span>
+                  Messaging that reassures owners they can explore options before
+                  they are ready to formally sell.
+                </li>
+                <li style={styles.funnelItem}>
+                  <span style={styles.checkmark}>+</span>
+                  Clear signals that legacy, employees, and customer
+                  relationships will be taken seriously.
                 </li>
               </ul>
             </div>
