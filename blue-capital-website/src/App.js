@@ -59,23 +59,25 @@ export default function App() {
       padding: isMobile ? "14px 20px" : "16px 28px",
       display: "flex",
       justifyContent: "space-between",
-      alignItems: "center",
+      alignItems: isMobile ? "flex-start" : "center",
+      flexDirection: isMobile ? "column" : "row",
       gap: "24px",
-      flexWrap: "wrap",
+      flexWrap: isMobile ? "nowrap" : "wrap",
     },
     brandWrap: {
       display: "flex",
       alignItems: "center",
       gap: "14px",
+      width: isMobile ? "100%" : "auto",
     },
     navLogo: {
-      width: "68px",
+      width: isMobile ? "56px" : "68px",
       height: "auto",
       display: "block",
       objectFit: "contain",
     },
     brandText: {
-      fontSize: "18px",
+      fontSize: isMobile ? "16px" : "18px",
       fontWeight: 700,
       letterSpacing: "0.01em",
       color: "#00305b",
@@ -84,28 +86,33 @@ export default function App() {
     navLinks: {
       display: "flex",
       gap: isMobile ? "14px" : "18px",
-      fontSize: "15px",
+      fontSize: isMobile ? "14px" : "15px",
       color: "#374151",
-      flexWrap: "wrap",
+      flexWrap: isMobile ? "nowrap" : "wrap",
       alignItems: "center",
       maxWidth: "100%",
+      width: isMobile ? "100%" : "auto",
+      overflowX: isMobile ? "auto" : "visible",
+      paddingBottom: isMobile ? "4px" : 0,
     },
     link: {
       textDecoration: "none",
       color: "#334155",
       fontWeight: 500,
-      padding: "8px 0",
+      padding: isMobile ? "8px 10px" : "8px 0",
       borderRadius: "999px",
       transition: "all 0.2s ease",
+      whiteSpace: "nowrap",
     },
     missionNavBtn: {
       textDecoration: "none",
       color: "#334155",
       fontWeight: 500,
-      padding: "9px 14px",
+      padding: isMobile ? "8px 10px" : "9px 14px",
       borderRadius: "999px",
       backgroundColor: "transparent",
       transition: "all 0.2s ease",
+      whiteSpace: "nowrap",
     },
     navHover: {
       backgroundColor: "#e8f6f7",
@@ -117,7 +124,7 @@ export default function App() {
       background:
         "radial-gradient(circle at top right, rgba(71, 185, 196, 0.18), transparent 24%), linear-gradient(180deg, #f8fcfd 0%, #eef7f9 52%, #fdfefe 100%)",
       color: "#00305b",
-      padding: "88px 28px 72px",
+      padding: isMobile ? "48px 20px 44px" : "88px 28px 72px",
     },
     heroInner: {
       maxWidth: "1180px",
@@ -149,7 +156,7 @@ export default function App() {
       color: "#1f7d8c",
     },
     heroTitle: {
-      fontSize: "clamp(40px, 7vw, 58px)",
+      fontSize: isMobile ? "clamp(32px, 9vw, 42px)" : "clamp(40px, 7vw, 58px)",
       lineHeight: 1.04,
       fontWeight: 800,
       marginBottom: "24px",
@@ -158,14 +165,14 @@ export default function App() {
       maxWidth: "900px",
     },
     heroText: {
-      fontSize: "19px",
-      lineHeight: 1.9,
+      fontSize: isMobile ? "17px" : "19px",
+      lineHeight: 1.8,
       color: "#48657a",
       marginBottom: "28px",
       maxWidth: "720px",
     },
     missionStatement: {
-      fontSize: "22px",
+      fontSize: isMobile ? "19px" : "22px",
       lineHeight: 1.8,
       color: "#21445f",
       maxWidth: "760px",
@@ -267,7 +274,7 @@ export default function App() {
     buttonRow: {
       display: "flex",
       gap: "14px",
-      flexWrap: "nowrap",
+      flexWrap: isMobile ? "wrap" : "nowrap",
       alignItems: "center",
     },
     primaryBtn: {
@@ -303,9 +310,10 @@ export default function App() {
     },
     heroStats: {
       display: "grid",
-      gridTemplateColumns: "repeat(auto-fit, minmax(160px, 1fr))",
+      gridTemplateColumns: isMobile ? "1fr" : "repeat(auto-fit, minmax(160px, 1fr))",
       gap: "14px",
       marginTop: "6px",
+      width: "100%",
     },
     statCard: {
       backgroundColor: "#ffffff",
@@ -390,7 +398,7 @@ export default function App() {
       padding: "64px 0",
     },
     sectionTitle: {
-      fontSize: "clamp(30px, 5vw, 36px)",
+      fontSize: isMobile ? "clamp(28px, 8vw, 34px)" : "clamp(30px, 5vw, 36px)",
       fontWeight: 800,
       marginBottom: "20px",
       letterSpacing: "-0.02em",
@@ -407,14 +415,14 @@ export default function App() {
       color: "#2f8b99",
     },
     sectionLead: {
-      fontSize: "19px",
+      fontSize: isMobile ? "17px" : "19px",
       lineHeight: 1.85,
       color: "#496173",
       maxWidth: "860px",
       marginBottom: "22px",
     },
     paragraph: {
-      fontSize: "17px",
+      fontSize: isMobile ? "16px" : "17px",
       lineHeight: 1.8,
       marginBottom: "14px",
       color: "#536879",
@@ -597,7 +605,7 @@ export default function App() {
     },
     founderText: {
       color: "#dbeafe",
-      fontSize: "18px",
+      fontSize: isMobile ? "16px" : "18px",
       lineHeight: 1.85,
       maxWidth: "860px",
       marginBottom: "24px",
@@ -637,6 +645,7 @@ export default function App() {
       gap: "12px",
       alignItems: isMobile ? "center" : "flex-start",
       marginTop: "4px",
+      width: isMobile ? "100%" : "auto",
     },
     founderCardsGrid: {
       display: "grid",
@@ -691,10 +700,12 @@ export default function App() {
       border: "1px solid #c7e7ea",
       fontSize: "14px",
       fontWeight: 600,
-      width: "fit-content",
+      width: isMobile ? "100%" : "fit-content",
       maxWidth: "100%",
       overflowWrap: "anywhere",
       wordBreak: "break-word",
+      boxSizing: "border-box",
+      textAlign: isMobile ? "center" : "left",
     },
     founderExtraText: {
       fontSize: "16px",
@@ -723,7 +734,7 @@ export default function App() {
       background:
         "linear-gradient(135deg, #0a3f6d 0%, #0d4b76 100%)",
       color: "#ffffff",
-      padding: "68px 0",
+      padding: isMobile ? "48px 0" : "68px 0",
     },
     processGrid: {
       display: "grid",
@@ -806,7 +817,7 @@ export default function App() {
     funnelChecklist: {
       backgroundColor: "#ffffff",
       borderRadius: "22px",
-      padding: "28px",
+      padding: isMobile ? "22px" : "28px",
       border: "1px solid #dfe9ef",
       boxShadow: "0 16px 34px rgba(0,48,91,0.06)",
       transition: "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
@@ -1900,11 +1911,11 @@ export default function App() {
                         alt="Michael McMullan"
                         style={styles.founderImage}
                       />
-                    </div>
+                  </div>
                   <div style={styles.founderBadgeStack}>
-                    <div style={styles.founderHighlight}>Lean Six Sigma Green Belt</div>
                     <div style={styles.founderHighlight}>10+ years management experience</div>
                     <div style={styles.founderHighlight}>Finance and supply chain background</div>
+                    <div style={styles.founderHighlight}>Lean Six Sigma Green Belt certified</div>
                     <div style={styles.founderHighlight}>Bloomberg Market Concepts certified</div>
                     <div style={styles.founderHighlight}>Based in Avon, Indiana</div>
                   </div>
