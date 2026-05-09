@@ -46,7 +46,6 @@ export default function App() {
         ["home", "Home"],
         ["about", "About"],
         ["founder", "Founder"],
-        ["faq", "FAQ"],
         ["contact", "Contact"],
       ]
     : [
@@ -55,9 +54,7 @@ export default function App() {
         ["mission", "Mission Statement"],
         ["criteria", "Criteria"],
         ["sell", "Sell Your Business"],
-        ["process", "Process"],
         ["founder", "Founder"],
-        ["faq", "FAQ"],
         ["contact", "Contact"],
       ];
 
@@ -881,91 +878,6 @@ export default function App() {
       flexWrap: "wrap",
       gap: "12px",
     },
-
-    heroBrandVisual: {
-      backgroundColor: "#ffffff",
-      border: "1px solid #dbe8ee",
-      borderRadius: "24px",
-      overflow: "hidden",
-      boxShadow: "0 22px 44px rgba(0,48,91,0.10)",
-      transition: "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
-    },
-    heroBrandImage: {
-      width: "100%",
-      display: "block",
-      objectFit: "cover",
-      minHeight: isMobile ? "180px" : "220px",
-      maxHeight: isMobile ? "220px" : "270px",
-    },
-    heroBrandCaption: {
-      padding: "16px 18px",
-      background: "linear-gradient(90deg, #002b52 0%, #0d4b76 100%)",
-      color: "#ffffff",
-      fontSize: "14px",
-      fontWeight: 800,
-      letterSpacing: "0.08em",
-      textTransform: "uppercase",
-      display: "flex",
-      justifyContent: "space-between",
-      gap: "12px",
-      flexWrap: "wrap",
-    },
-    credibilitySection: {
-      background: "linear-gradient(180deg, #ffffff 0%, #f7fbfc 100%)",
-      padding: isPhone ? "20px 0 30px" : isMobile ? "28px 0 36px" : "30px 0 46px",
-      borderTop: "1px solid #e1ebf0",
-      borderBottom: "1px solid #e1ebf0",
-    },
-    credibilityGrid: {
-      display: "grid",
-      gridTemplateColumns: isMobile ? "1fr" : "repeat(3, minmax(0, 1fr))",
-      gap: "20px",
-      marginTop: "22px",
-    },
-    credibilityCard: {
-      backgroundColor: "#ffffff",
-      borderRadius: "22px",
-      padding: "24px",
-      border: "1px solid #dfe9ef",
-      boxShadow: "0 14px 30px rgba(0,48,91,0.06)",
-      transition: "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
-      height: "100%",
-      boxSizing: "border-box",
-    },
-    credibilityKicker: {
-      fontSize: "12px",
-      fontWeight: 800,
-      letterSpacing: "0.08em",
-      textTransform: "uppercase",
-      color: "#2f8b99",
-      marginBottom: "10px",
-    },
-    faqGrid: {
-      display: "grid",
-      gridTemplateColumns: isMobile ? "1fr" : "repeat(2, minmax(0, 1fr))",
-      gap: "18px",
-      marginTop: "22px",
-    },
-    faqItem: {
-      backgroundColor: "#ffffff",
-      border: "1px solid #dfe9ef",
-      borderRadius: "18px",
-      padding: "22px",
-      boxShadow: "0 12px 26px rgba(0,48,91,0.05)",
-      transition: "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
-    },
-    faqQuestion: {
-      fontSize: "18px",
-      fontWeight: 800,
-      color: "#00305b",
-      marginBottom: "8px",
-    },
-    faqAnswer: {
-      fontSize: "16px",
-      lineHeight: 1.8,
-      color: "#536879",
-      margin: 0,
-    },
     contactSection: {
       backgroundColor: "#ffffff",
     },
@@ -1385,7 +1297,6 @@ export default function App() {
             <a href="#criteria" style={styles.mobileShortcut}>Criteria</a>
             <a href="#sell" style={styles.mobileShortcut}>Sell Your Business</a>
             <a href="#process" style={styles.mobileShortcut}>Process</a>
-            <a href="#faq" style={styles.mobileShortcut}>FAQ</a>
           </div>
         </div>
       </div>
@@ -1436,26 +1347,6 @@ export default function App() {
             </div>
           </div>
           <div style={styles.heroAside}>
-            <div
-              style={{
-                ...styles.heroBrandVisual,
-                ...(hoveredSurface === "heroBrandVisual" ? styles.elevatedHover : {}),
-              }}
-              onMouseEnter={() => setHoveredSurface("heroBrandVisual")}
-              onMouseLeave={() => setHoveredSurface("")}
-            >
-              <img
-                src="/website-hero.png"
-                alt="Blue Capital Holdings acquisition and operations banner"
-                style={styles.heroBrandImage}
-              />
-              <div style={styles.heroBrandCaption}>
-                <span>Disciplined Acquisitions</span>
-                <span>Operational Excellence</span>
-                <span>Long-Term Ownership</span>
-              </div>
-            </div>
-
             <div
               style={{
                 ...styles.heroSpotlightCard,
@@ -1827,7 +1718,7 @@ export default function App() {
               onMouseLeave={() => setHoveredSurface("")}
             >
               <div style={styles.cardTitle}>Revenue</div>
-              <p style={styles.metricText}>$500,000 to $2,000,000 annually</p>
+              <p style={styles.metricText}>$500,000 to $5,000,000 annually</p>
             </div>
 
             <div
@@ -2027,149 +1918,6 @@ export default function App() {
               <p style={styles.processText}>
                 If there is alignment, we move forward with clarity and respect
                 for the business you have built.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="credibility" style={styles.credibilitySection}>
-        <div style={styles.section}>
-          <div style={styles.sectionEyebrow}>Credibility and structure</div>
-          <h2 style={styles.sectionTitle}>Built for Serious, Practical Transactions</h2>
-          <p style={styles.sectionLead}>
-            A successful transition requires more than interest. It requires a buyer
-            who understands cash flow, financing, operations, and the human side of
-            succession. Blue Capital Holdings is focused on practical acquisition
-            structures that can support owners, lenders, brokers, and employees.
-          </p>
-
-          <div style={styles.credibilityGrid}>
-            <div
-              style={{
-                ...styles.credibilityCard,
-                ...(hoveredSurface === "credit1" ? styles.elevatedHover : {}),
-              }}
-              onMouseEnter={() => setHoveredSurface("credit1")}
-              onMouseLeave={() => setHoveredSurface("")}
-            >
-              <div style={styles.credibilityKicker}>Financing Readiness</div>
-              <div style={styles.cardTitle}>Multiple Deal Structures</div>
-              <p style={styles.processText}>
-                We evaluate opportunities with a practical view of SBA financing,
-                seller financing, conventional debt, and transition structures that
-                can align incentives between buyer and seller.
-              </p>
-            </div>
-
-            <div
-              style={{
-                ...styles.credibilityCard,
-                ...(hoveredSurface === "credit2" ? styles.elevatedHover : {}),
-              }}
-              onMouseEnter={() => setHoveredSurface("credit2")}
-              onMouseLeave={() => setHoveredSurface("")}
-            >
-              <div style={styles.credibilityKicker}>Broker and Advisor Friendly</div>
-              <div style={styles.cardTitle}>Clear Criteria, Direct Follow-Up</div>
-              <p style={styles.processText}>
-                We welcome quality introductions from brokers, accountants, lenders,
-                attorneys, and referral partners representing established service
-                businesses with stable cash flow.
-              </p>
-            </div>
-
-            <div
-              style={{
-                ...styles.credibilityCard,
-                ...(hoveredSurface === "credit3" ? styles.elevatedHover : {}),
-              }}
-              onMouseEnter={() => setHoveredSurface("credit3")}
-              onMouseLeave={() => setHoveredSurface("")}
-            >
-              <div style={styles.credibilityKicker}>Operational Stewardship</div>
-              <div style={styles.cardTitle}>Post-Close Execution</div>
-              <p style={styles.processText}>
-                Our focus is not financial engineering alone. We look for businesses
-                where disciplined operations, KPI visibility, leadership, and process
-                improvement can protect and grow long-term value.
-              </p>
-            </div>
-          </div>
-        </div>
-      </section>
-
-      <section id="faq" style={styles.sectionGray}>
-        <div style={styles.section}>
-          <div style={styles.sectionEyebrow}>Common owner questions</div>
-          <h2 style={styles.sectionTitle}>Seller FAQ</h2>
-          <p style={styles.sectionLead}>
-            Many owners are not ready to start a formal sale process. These questions
-            help clarify what a confidential first conversation can look like.
-          </p>
-
-          <div style={styles.faqGrid}>
-            <div
-              style={{
-                ...styles.faqItem,
-                ...(hoveredSurface === "faq1" ? styles.elevatedHover : {}),
-              }}
-              onMouseEnter={() => setHoveredSurface("faq1")}
-              onMouseLeave={() => setHoveredSurface("")}
-            >
-              <div style={styles.faqQuestion}>Do I need to be ready to sell immediately?</div>
-              <p style={styles.faqAnswer}>
-                No. Some of the best conversations begin 6 to 36 months before an
-                owner is ready. The first step can simply be a private discussion
-                about goals, timing, and fit.
-              </p>
-            </div>
-
-            <div
-              style={{
-                ...styles.faqItem,
-                ...(hoveredSurface === "faq2" ? styles.elevatedHover : {}),
-              }}
-              onMouseEnter={() => setHoveredSurface("faq2")}
-              onMouseLeave={() => setHoveredSurface("")}
-            >
-              <div style={styles.faqQuestion}>Will employees or customers find out?</div>
-              <p style={styles.faqAnswer}>
-                Confidentiality is central to our approach. Early conversations are
-                handled privately and respectfully to protect employees, customers,
-                and the reputation of the business.
-              </p>
-            </div>
-
-            <div
-              style={{
-                ...styles.faqItem,
-                ...(hoveredSurface === "faq3" ? styles.elevatedHover : {}),
-              }}
-              onMouseEnter={() => setHoveredSurface("faq3")}
-              onMouseLeave={() => setHoveredSurface("")}
-            >
-              <div style={styles.faqQuestion}>What types of businesses are the best fit?</div>
-              <p style={styles.faqAnswer}>
-                We are most interested in established service-based businesses with
-                stable cash flow, a proven customer base, experienced employees, and
-                opportunities for operational improvement.
-              </p>
-            </div>
-
-            <div
-              style={{
-                ...styles.faqItem,
-                ...(hoveredSurface === "faq4" ? styles.elevatedHover : {}),
-              }}
-              onMouseEnter={() => setHoveredSurface("faq4")}
-              onMouseLeave={() => setHoveredSurface("")}
-            >
-              <div style={styles.faqQuestion}>Can seller financing be part of the structure?</div>
-              <p style={styles.faqAnswer}>
-                Yes, when appropriate. Seller financing can help align incentives,
-                support a smoother transition, and create flexibility around timing,
-                valuation, and continuity.
               </p>
             </div>
           </div>
@@ -2618,3 +2366,4 @@ export default function App() {
     </div>
   );
 }
+
