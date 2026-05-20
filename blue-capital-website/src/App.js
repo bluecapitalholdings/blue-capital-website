@@ -273,21 +273,22 @@ export default function App() {
       overflow: "hidden",
     },
     heroInner: {
-      maxWidth: "1180px",
+      maxWidth: "1280px",
       margin: "0 auto",
       display: "grid",
-      gridTemplateColumns: isMobile ? "1fr" : "1.05fr 0.95fr",
-      gap: isMobile ? "30px" : "56px",
+      gridTemplateColumns: "1fr",
+      gap: isMobile ? "26px" : "34px",
       alignItems: "center",
     },
     heroContent: {
-      maxWidth: "720px",
+      maxWidth: "100%",
     },
     heroAside: {
       display: "grid",
       gap: "16px",
       paddingTop: 0,
       width: "100%",
+      maxWidth: "860px",
     },
     heroEyebrow: {
       display: "inline-block",
@@ -971,8 +972,9 @@ export default function App() {
       borderRadius: "6px",
       overflow: "hidden",
       boxShadow: "0 32px 64px rgba(0,0,0,0.24)",
-      transition: "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
+      transition: "opacity 0.75s ease, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1)",
       width: "100%",
+      marginBottom: isPhone ? "24px" : "34px",
     },
     heroBrandImage: {
       width: "100%",
@@ -982,7 +984,7 @@ export default function App() {
       backgroundColor: "#f7fbfc",
     },
     heroBrandCaption: {
-      display: "grid",
+      display: isPhone ? "none" : "grid",
       gridTemplateColumns: isMobile ? "1fr" : "repeat(3, 1fr)",
       gap: "1px",
       backgroundColor: "#d8bd7a",
@@ -1592,6 +1594,23 @@ export default function App() {
         <div style={styles.heroInner}>
           <div style={{ ...styles.heroContent, ...homeRevealStyle(1, 14) }}>
             <div style={styles.heroEyebrow}>Private Acquisition Firm</div>
+            <div
+              style={{
+                ...styles.heroBrandVisual,
+                ...homeRevealStyle(2, 20),
+              }}
+            >
+              <img
+                src="/website-hero.png"
+                alt="Blue Capital Holdings acquisition and operations banner"
+                style={styles.heroBrandImage}
+              />
+              <div style={styles.heroBrandCaption}>
+                <span style={styles.heroBrandCaptionItem}>Disciplined Acquisitions</span>
+                <span style={styles.heroBrandCaptionItem}>Operational Stewardship</span>
+                <span style={styles.heroBrandCaptionItem}>Long-Term Ownership</span>
+              </div>
+            </div>
             <h1 style={styles.heroTitle}>
               A serious buyer for owners who care what happens next.
             </h1>
@@ -1640,27 +1659,6 @@ export default function App() {
             </div>
           </div>
           <div style={styles.heroAside}>
-            <div
-              style={{
-                ...styles.heroBrandVisual,
-                ...homeRevealStyle(2, 28),
-                ...(hoveredSurface === "heroBrandVisual" ? styles.elevatedHover : {}),
-              }}
-              onMouseEnter={() => setHoveredSurface("heroBrandVisual")}
-              onMouseLeave={() => setHoveredSurface("")}
-            >
-              <img
-                src="/website-hero.png"
-                alt="Blue Capital Holdings acquisition and operations banner"
-                style={styles.heroBrandImage}
-              />
-              <div style={styles.heroBrandCaption}>
-                <span style={styles.heroBrandCaptionItem}>Disciplined Acquisitions</span>
-                <span style={styles.heroBrandCaptionItem}>Operational Stewardship</span>
-                <span style={styles.heroBrandCaptionItem}>Long-Term Ownership</span>
-              </div>
-            </div>
-
             <div style={{ ...styles.homeExecutivePanel, ...homeRevealStyle(3, 26) }}>
               <div style={styles.homePanelLabel}>Acquisition Focus</div>
               <div style={styles.homePanelTitle}>
@@ -1705,10 +1703,7 @@ export default function App() {
           <div
             style={{
               ...styles.trustBadge,
-              ...(hoveredSurface === "trust1" ? styles.trustBadgeHover : {}),
             }}
-            onMouseEnter={() => setHoveredSurface("trust1")}
-            onMouseLeave={() => setHoveredSurface("")}
           >
             <div style={styles.trustBadgeTop}>
               <div style={styles.trustIcon}>LT</div>
@@ -1721,10 +1716,7 @@ export default function App() {
           <div
             style={{
               ...styles.trustBadge,
-              ...(hoveredSurface === "trust2" ? styles.trustBadgeHover : {}),
             }}
-            onMouseEnter={() => setHoveredSurface("trust2")}
-            onMouseLeave={() => setHoveredSurface("")}
           >
             <div style={styles.trustBadgeTop}>
               <div style={styles.trustIcon}>DB</div>
@@ -1737,10 +1729,7 @@ export default function App() {
           <div
             style={{
               ...styles.trustBadge,
-              ...(hoveredSurface === "trust3" ? styles.trustBadgeHover : {}),
             }}
-            onMouseEnter={() => setHoveredSurface("trust3")}
-            onMouseLeave={() => setHoveredSurface("")}
           >
             <div style={styles.trustBadgeTop}>
               <div style={styles.trustIcon}>US</div>
@@ -1753,10 +1742,7 @@ export default function App() {
           <div
             style={{
               ...styles.trustBadge,
-              ...(hoveredSurface === "trust4" ? styles.trustBadgeHover : {}),
             }}
-            onMouseEnter={() => setHoveredSurface("trust4")}
-            onMouseLeave={() => setHoveredSurface("")}
           >
             <div style={styles.trustBadgeTop}>
               <div style={styles.trustIcon}>CF</div>
@@ -2520,10 +2506,7 @@ export default function App() {
             <div
               style={{
                 ...styles.funnelChecklist,
-                ...(hoveredSurface === "funnelChecklist" ? styles.elevatedHover : {}),
               }}
-              onMouseEnter={() => setHoveredSurface("funnelChecklist")}
-              onMouseLeave={() => setHoveredSurface("")}
             >
               <div style={styles.sectionEyebrow}>A Different Kind of Buyer</div>
               <h2 style={{ ...styles.sectionTitle, marginBottom: "12px" }}>
@@ -2566,10 +2549,7 @@ export default function App() {
             <div
               style={{
                 ...styles.ctaPanel,
-                ...(hoveredSurface === "ctaPanel" ? styles.buttonHoverLift : {}),
               }}
-              onMouseEnter={() => setHoveredSurface("ctaPanel")}
-              onMouseLeave={() => setHoveredSurface("")}
             >
               <div style={styles.ctaEyebrow}>Confidential Next Step</div>
               <div style={styles.ctaTitle}>
