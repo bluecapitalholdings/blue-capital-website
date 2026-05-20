@@ -277,8 +277,18 @@ export default function App() {
       margin: "0 auto",
       display: "grid",
       gridTemplateColumns: "1fr",
-      gap: isMobile ? "26px" : "34px",
+      gap: isMobile ? "26px" : "38px",
       alignItems: "center",
+    },
+    heroTop: {
+      display: "grid",
+      gap: "16px",
+    },
+    heroStoryGrid: {
+      display: "grid",
+      gridTemplateColumns: isMobile ? "1fr" : "minmax(0, 1.05fr) minmax(360px, 0.75fr)",
+      gap: isMobile ? "26px" : "46px",
+      alignItems: "stretch",
     },
     heroContent: {
       maxWidth: "100%",
@@ -288,7 +298,7 @@ export default function App() {
       gap: "16px",
       paddingTop: 0,
       width: "100%",
-      maxWidth: "860px",
+      maxWidth: "100%",
     },
     heroEyebrow: {
       display: "inline-block",
@@ -304,13 +314,13 @@ export default function App() {
       color: "#d8bd7a",
     },
     heroTitle: {
-      fontSize: isPhone ? "clamp(30px, 9vw, 42px)" : isMobile ? "clamp(38px, 8vw, 54px)" : "clamp(54px, 6vw, 72px)",
+      fontSize: isPhone ? "clamp(30px, 9vw, 42px)" : isMobile ? "clamp(38px, 8vw, 54px)" : "clamp(52px, 5.4vw, 70px)",
       lineHeight: 1.02,
       fontWeight: 800,
       marginBottom: isPhone ? "16px" : isMobile ? "20px" : "26px",
       letterSpacing: 0,
       fontFamily: "Georgia, 'Times New Roman', serif",
-      maxWidth: "760px",
+      maxWidth: "780px",
       overflowWrap: "anywhere",
     },
     heroText: {
@@ -324,7 +334,7 @@ export default function App() {
       fontSize: isPhone ? "17px" : isMobile ? "20px" : "25px",
       lineHeight: 1.55,
       color: "#f6f8fb",
-      maxWidth: "720px",
+      maxWidth: "760px",
       marginBottom: isPhone ? "16px" : isMobile ? "18px" : "22px",
       fontWeight: 600,
       fontFamily: "Georgia, 'Times New Roman', serif",
@@ -761,19 +771,19 @@ export default function App() {
     },
     sellSection: {
       background:
-        "linear-gradient(135deg, #00305b 0%, #0d4b76 100%)",
+        "linear-gradient(135deg, #06182b 0%, #0b2742 58%, #15364f 100%)",
       color: "#ffffff",
-      padding: isPhone ? "16px 0 26px" : isMobile ? "22px 0 30px" : "24px 0 34px",
+      padding: isPhone ? "22px 0 30px" : isMobile ? "28px 0 36px" : "34px 0 44px",
     },
     sellText: {
-      color: "#dbeafe",
+      color: "#d5e0e9",
       fontSize: "18px",
       lineHeight: 1.8,
       maxWidth: "760px",
       marginBottom: "24px",
     },
     founderText: {
-      color: "#dbeafe",
+      color: "#d5e0e9",
       fontSize: isMobile ? "16px" : "18px",
       lineHeight: 1.85,
       maxWidth: "860px",
@@ -789,7 +799,7 @@ export default function App() {
     },
     founderRole: {
       fontSize: "15px",
-      color: "#2f8b99",
+      color: "#8a6a24",
       fontWeight: 700,
       letterSpacing: "0.06em",
       textTransform: "uppercase",
@@ -823,7 +833,7 @@ export default function App() {
       alignItems: "stretch",
     },
     founderImageFrame: {
-      borderRadius: "22px",
+      borderRadius: "6px",
       transition: "transform 0.2s ease",
       maxWidth: isMobile ? "260px" : "100%",
       margin: isMobile ? "0 auto" : "0",
@@ -832,14 +842,14 @@ export default function App() {
     founderImage: {
       width: "100%",
       display: "block",
-      borderRadius: "22px",
+      borderRadius: "6px",
       objectFit: "cover",
     },
     founderIntroCard: {
       background:
         "linear-gradient(180deg, #ffffff 0%, #f6fafc 100%)",
-      border: "1px solid #dfe9ef",
-      borderRadius: "24px",
+      border: "1px solid rgba(216,189,122,0.28)",
+      borderRadius: "6px",
       padding: "28px",
       boxShadow: "0 14px 28px rgba(0,48,91,0.06)",
       transition: "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
@@ -863,10 +873,10 @@ export default function App() {
     },
     founderHighlight: {
       padding: "10px 14px",
-      borderRadius: "999px",
-      backgroundColor: "#e8f6f7",
+      borderRadius: "3px",
+      backgroundColor: "#f5efe1",
       color: "#00305b",
-      border: "1px solid #c7e7ea",
+      border: "1px solid rgba(216,189,122,0.45)",
       fontSize: "14px",
       fontWeight: 600,
       width: isMobile ? "100%" : "fit-content",
@@ -901,9 +911,9 @@ export default function App() {
     },
     founderSection: {
       background:
-        "linear-gradient(135deg, #0a3f6d 0%, #0d4b76 100%)",
+        "linear-gradient(135deg, #06182b 0%, #0b2742 58%, #15364f 100%)",
       color: "#ffffff",
-      padding: isPhone ? "12px 0 22px" : isMobile ? "18px 0 26px" : "18px 0 30px",
+      padding: isPhone ? "22px 0 30px" : isMobile ? "28px 0 36px" : "34px 0 44px",
     },
     processGrid: {
       display: "grid",
@@ -913,7 +923,7 @@ export default function App() {
     },
     processCard: {
       backgroundColor: "#ffffff",
-      borderRadius: "20px",
+      borderRadius: "6px",
       padding: "24px",
       border: "1px solid #dfeaf0",
       boxShadow: "0 12px 28px rgba(0,48,91,0.06)",
@@ -922,9 +932,9 @@ export default function App() {
     processNumber: {
       width: "42px",
       height: "42px",
-      borderRadius: "999px",
-      backgroundColor: "#41b7c4",
-      color: "#ffffff",
+      borderRadius: "3px",
+      backgroundColor: "#f5efe1",
+      color: "#8a6a24",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -974,7 +984,8 @@ export default function App() {
       boxShadow: "0 32px 64px rgba(0,0,0,0.24)",
       transition: "opacity 0.75s ease, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1)",
       width: "100%",
-      marginBottom: isPhone ? "24px" : "34px",
+      maxWidth: "1180px",
+      margin: "0 auto",
     },
     heroBrandImage: {
       width: "100%",
@@ -1004,8 +1015,10 @@ export default function App() {
       backgroundColor: "rgba(255,255,255,0.97)",
       border: "1px solid rgba(216,189,122,0.45)",
       borderRadius: "6px",
-      padding: isPhone ? "20px" : "26px",
+      padding: isPhone ? "20px" : "30px",
       boxShadow: "0 28px 58px rgba(0,0,0,0.2)",
+      minHeight: isMobile ? "auto" : "100%",
+      boxSizing: "border-box",
     },
     homePanelLabel: {
       fontSize: "12px",
@@ -1042,6 +1055,32 @@ export default function App() {
       lineHeight: 1.65,
       color: "#516577",
       margin: 0,
+    },
+    homePanelStats: {
+      display: "grid",
+      gridTemplateColumns: isPhone ? "1fr" : "repeat(2, minmax(0, 1fr))",
+      gap: "10px",
+      marginTop: "18px",
+    },
+    homePanelStat: {
+      backgroundColor: "#f8fafc",
+      border: "1px solid #e0e6eb",
+      borderRadius: "4px",
+      padding: "14px",
+    },
+    homePanelStatValue: {
+      fontSize: "17px",
+      fontWeight: 800,
+      color: "#06182b",
+      marginBottom: "4px",
+    },
+    homePanelStatLabel: {
+      fontSize: "12px",
+      lineHeight: 1.5,
+      color: "#64748b",
+      textTransform: "uppercase",
+      letterSpacing: "0.06em",
+      fontWeight: 800,
     },
     homeCriteriaBar: {
       maxWidth: "1180px",
@@ -1370,7 +1409,7 @@ export default function App() {
     thankYouWrap: {
       minHeight: "100vh",
       background:
-        "linear-gradient(135deg, #00305b 0%, #0d4b76 100%)",
+        "linear-gradient(135deg, #06182b 0%, #0b2742 58%, #15364f 100%)",
       display: "flex",
       alignItems: "center",
       justifyContent: "center",
@@ -1592,12 +1631,11 @@ export default function App() {
         }}
       >
         <div style={styles.heroInner}>
-          <div style={{ ...styles.heroContent, ...homeRevealStyle(1, 14) }}>
+          <div style={{ ...styles.heroTop, ...homeRevealStyle(1, 14) }}>
             <div style={styles.heroEyebrow}>Private Acquisition Firm</div>
             <div
               style={{
                 ...styles.heroBrandVisual,
-                ...homeRevealStyle(2, 20),
               }}
             >
               <img
@@ -1611,6 +1649,10 @@ export default function App() {
                 <span style={styles.heroBrandCaptionItem}>Long-Term Ownership</span>
               </div>
             </div>
+          </div>
+
+          <div style={styles.heroStoryGrid}>
+            <div style={{ ...styles.heroContent, ...homeRevealStyle(2, 18) }}>
             <h1 style={styles.heroTitle}>
               A serious buyer for owners who care what happens next.
             </h1>
@@ -1657,9 +1699,10 @@ export default function App() {
               <div style={styles.reassurancePill}>Confidential review</div>
               <div style={styles.reassurancePill}>Long-term ownership</div>
             </div>
-          </div>
-          <div style={styles.heroAside}>
-            <div style={{ ...styles.homeExecutivePanel, ...homeRevealStyle(3, 26) }}>
+            </div>
+
+            <div style={{ ...styles.heroAside, ...homeRevealStyle(3, 24) }}>
+            <div style={styles.homeExecutivePanel}>
               <div style={styles.homePanelLabel}>Acquisition Focus</div>
               <div style={styles.homePanelTitle}>
                 Established companies where continuity matters.
@@ -1687,6 +1730,25 @@ export default function App() {
                   </p>
                 </div>
               </div>
+              <div style={styles.homePanelStats}>
+                <div style={styles.homePanelStat}>
+                  <div style={styles.homePanelStatValue}>$500K-$2M</div>
+                  <div style={styles.homePanelStatLabel}>Target earnings</div>
+                </div>
+                <div style={styles.homePanelStat}>
+                  <div style={styles.homePanelStatValue}>6-36 mo.</div>
+                  <div style={styles.homePanelStatLabel}>Planning window</div>
+                </div>
+                <div style={styles.homePanelStat}>
+                  <div style={styles.homePanelStatValue}>Midwest+</div>
+                  <div style={styles.homePanelStatLabel}>Geographic focus</div>
+                </div>
+                <div style={styles.homePanelStat}>
+                  <div style={styles.homePanelStatValue}>Services</div>
+                  <div style={styles.homePanelStatLabel}>Preferred model</div>
+                </div>
+              </div>
+            </div>
             </div>
           </div>
         </div>
@@ -2068,7 +2130,7 @@ export default function App() {
         }}
       >
         <div style={styles.section}>
-          <div style={{ ...styles.sectionEyebrow, color: "#bfdbfe" }}>
+          <div style={{ ...styles.sectionEyebrow, color: "#d8bd7a" }}>
             For owners considering a transition
           </div>
           <h2 style={{ ...styles.sectionTitle, color: "#ffffff" }}>
@@ -2371,7 +2433,7 @@ export default function App() {
         }}
       >
         <div style={styles.section}>
-          <div style={{ ...styles.sectionEyebrow, color: "#bfdbfe" }}>
+          <div style={{ ...styles.sectionEyebrow, color: "#d8bd7a" }}>
             Founder / operator
           </div>
           <h2 style={{ ...styles.sectionTitle, color: "#ffffff" }}>
