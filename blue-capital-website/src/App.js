@@ -839,7 +839,6 @@ export default function App() {
     },
     founderImageFrame: {
       borderRadius: "6px",
-      transition: "transform 0.2s ease",
       maxWidth: isMobile ? "260px" : "100%",
       margin: isMobile ? "0 auto" : "0",
       overflow: "hidden",
@@ -857,7 +856,6 @@ export default function App() {
       borderRadius: "6px",
       padding: "28px",
       boxShadow: "0 14px 28px rgba(0,48,91,0.06)",
-      transition: "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
       height: "100%",
       boxSizing: "border-box",
       overflow: "hidden",
@@ -892,9 +890,9 @@ export default function App() {
       textAlign: isMobile ? "center" : "left",
     },
     founderExtraText: {
-      fontSize: "16px",
+      fontSize: isMobile ? "16px" : "18px",
       lineHeight: 1.8,
-      color: "#5a7486",
+      color: "#4b6678",
       marginTop: "16px",
       marginBottom: 0,
       overflowWrap: "anywhere",
@@ -2608,20 +2606,14 @@ export default function App() {
             <div
               style={{
                 ...styles.founderIntroCard,
-                ...(hoveredSurface === "founderIntro" ? styles.elevatedHover : {}),
               }}
-              onMouseEnter={() => setHoveredSurface("founderIntro")}
-              onMouseLeave={() => setHoveredSurface("")}
             >
               <div style={styles.founderLeadGrid}>
                 <div style={styles.founderImageColumn}>
                   <div
                     style={{
                       ...styles.founderImageFrame,
-                      ...(hoveredSurface === "founderImage" ? styles.elevatedHover : {}),
                     }}
-                    onMouseEnter={() => setHoveredSurface("founderImage")}
-                    onMouseLeave={() => setHoveredSurface("")}
                     >
                       <img
                         src="/headshot.jpg"
@@ -2661,10 +2653,7 @@ export default function App() {
                 ...styles.card,
                 height: "100%",
                 boxSizing: "border-box",
-                ...(hoveredSurface === "founderCard" ? styles.elevatedHover : {}),
               }}
-              onMouseEnter={() => setHoveredSurface("founderCard")}
-              onMouseLeave={() => setHoveredSurface("")}
             >
               <div style={styles.cardTitle}>
                 Credentials and Operating Lens
