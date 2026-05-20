@@ -18,12 +18,37 @@ const initialFormData = {
   message: "",
 };
 
+const pageRoutes = {
+  home: "/",
+  about: "/about",
+  mission: "/mission",
+  criteria: "/criteria",
+  sell: "/sell-your-business",
+  process: "/process",
+  founder: "/founder",
+  faq: "/faq",
+  contact: "/contact",
+};
+
+const getPageFromPath = () => {
+  if (typeof window === "undefined") {
+    return "home";
+  }
+
+  const currentPath = window.location.pathname.replace(/\/+$/, "") || "/";
+  return (
+    Object.entries(pageRoutes).find(([, path]) => path === currentPath)?.[0] ||
+    "home"
+  );
+};
+
 export default function App() {
   const [submitted, setSubmitted] = useState(false);
   const [submitting, setSubmitting] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
   const [hoveredNav, setHoveredNav] = useState("");
   const [hoveredSurface, setHoveredSurface] = useState("");
+  const [currentPage, setCurrentPage] = useState(getPageFromPath);
   const [formData, setFormData] = useState(initialFormData);
   const [isMobile, setIsMobile] = useState(
     typeof window !== "undefined" ? window.innerWidth <= 900 : false
@@ -40,6 +65,31 @@ export default function App() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
+
+  useEffect(() => {
+    const handlePopState = () => {
+      setCurrentPage(getPageFromPath());
+      window.scrollTo({ top: 0, behavior: "auto" });
+    };
+
+    window.addEventListener("popstate", handlePopState);
+    return () => window.removeEventListener("popstate", handlePopState);
+  }, []);
+
+  const navigateToPage = (pageId) => {
+    const nextPath = pageRoutes[pageId] || pageRoutes.home;
+    if (window.location.pathname !== nextPath) {
+      window.history.pushState({}, "", nextPath);
+    }
+    setCurrentPage(pageId);
+    setSubmitted(false);
+    window.scrollTo({ top: 0, behavior: "smooth" });
+  };
+
+  const handlePageLink = (e, pageId) => {
+    e.preventDefault();
+    navigateToPage(pageId);
+  };
 
   const topNavItems = isPhone
     ? [
@@ -1329,7 +1379,7 @@ export default function App() {
           <button
             type="button"
             style={styles.thankYouButton}
-            onClick={() => setSubmitted(false)}
+            onClick={() => navigateToPage("home")}
           >
             Return to Homepage
           </button>
@@ -1354,11 +1404,12 @@ export default function App() {
             {topNavItems.map(([id, label]) => (
               <a
                 key={id}
-                href={`#${id}`}
+                href={pageRoutes[id]}
                 style={{
                   ...(id === "mission" ? styles.missionNavBtn : styles.link),
-                  ...(hoveredNav === id ? styles.navHover : {}),
+                  ...(hoveredNav === id || currentPage === id ? styles.navHover : {}),
                 }}
+                onClick={(e) => handlePageLink(e, id)}
                 onMouseEnter={() => setHoveredNav(id)}
                 onMouseLeave={() => setHoveredNav("")}
               >
@@ -1373,16 +1424,22 @@ export default function App() {
         <div style={styles.mobileShortcutsInner}>
           <div style={styles.mobileShortcutsLabel}>More sections</div>
           <div style={styles.mobileShortcutsRow}>
-            <a href="#mission" style={styles.mobileShortcut}>Mission</a>
-            <a href="#criteria" style={styles.mobileShortcut}>Criteria</a>
-            <a href="#sell" style={styles.mobileShortcut}>Sell Your Business</a>
-            <a href="#process" style={styles.mobileShortcut}>Process</a>
-            <a href="#faq" style={styles.mobileShortcut}>FAQ</a>
+            <a href={pageRoutes.mission} style={styles.mobileShortcut} onClick={(e) => handlePageLink(e, "mission")}>Mission</a>
+            <a href={pageRoutes.criteria} style={styles.mobileShortcut} onClick={(e) => handlePageLink(e, "criteria")}>Criteria</a>
+            <a href={pageRoutes.sell} style={styles.mobileShortcut} onClick={(e) => handlePageLink(e, "sell")}>Sell Your Business</a>
+            <a href={pageRoutes.process} style={styles.mobileShortcut} onClick={(e) => handlePageLink(e, "process")}>Process</a>
+            <a href={pageRoutes.faq} style={styles.mobileShortcut} onClick={(e) => handlePageLink(e, "faq")}>FAQ</a>
           </div>
         </div>
       </div>
 
-      <section id="home" style={styles.hero}>
+      <section
+        id="home"
+        style={{
+          ...styles.hero,
+          display: currentPage === "home" ? "block" : "none",
+        }}
+      >
         <div style={styles.heroInner}>
           <div style={styles.heroContent}>
             <div style={styles.heroEyebrow}>Private acquisition firm</div>
@@ -1402,24 +1459,26 @@ export default function App() {
             </p>
             <div style={styles.buttonRow}>
               <a
-                href="#contact"
+                href={pageRoutes.contact}
                 style={{
                   ...styles.primaryBtn,
                   ...(hoveredSurface === "heroPrimary" ? styles.buttonHoverLift : {}),
                 }}
+                onClick={(e) => handlePageLink(e, "contact")}
                 onMouseEnter={() => setHoveredSurface("heroPrimary")}
                 onMouseLeave={() => setHoveredSurface("")}
               >
                 Request a Confidential Conversation
               </a>
               <a
-                href="#process"
+                href={pageRoutes.process}
                 style={{
                   ...styles.secondaryBtn,
                   ...(hoveredSurface === "heroSecondary"
                     ? styles.secondaryBtnHover
                     : {}),
                 }}
+                onClick={(e) => handlePageLink(e, "process")}
                 onMouseEnter={() => setHoveredSurface("heroSecondary")}
                 onMouseLeave={() => setHoveredSurface("")}
               >
@@ -1580,7 +1639,12 @@ export default function App() {
         </div>
       </section>
 
-      <section style={styles.trustStrip}>
+      <section
+        style={{
+          ...styles.trustStrip,
+          display: currentPage === "home" ? "block" : "none",
+        }}
+      >
         <div style={styles.trustInner}>
           <div
             style={{
@@ -1649,7 +1713,13 @@ export default function App() {
         </div>
       </section>
 
-      <section id="about" style={styles.section}>
+      <section
+        id="about"
+        style={{
+          ...styles.section,
+          display: currentPage === "about" ? "block" : "none",
+        }}
+      >
         <div style={styles.sectionEyebrow}>Owner-first approach</div>
         <h2 style={styles.sectionTitle}>About Blue Capital Holdings</h2>
         <p style={styles.sectionLead}>
@@ -1731,7 +1801,13 @@ export default function App() {
         </div>
       </section>
 
-      <section id="mission" style={styles.standaloneMissionSection}>
+      <section
+        id="mission"
+        style={{
+          ...styles.standaloneMissionSection,
+          display: currentPage === "mission" ? "block" : "none",
+        }}
+      >
         <div style={styles.standaloneMissionWrap}>
           <div
             style={{
@@ -1805,7 +1881,13 @@ export default function App() {
         </div>
       </section>
 
-      <section id="criteria" style={styles.sectionGray}>
+      <section
+        id="criteria"
+        style={{
+          ...styles.sectionGray,
+          display: currentPage === "criteria" ? "block" : "none",
+        }}
+      >
         <div style={styles.section}>
           <h2 style={styles.sectionTitle}>Acquisition Criteria</h2>
 
@@ -1889,7 +1971,13 @@ export default function App() {
         </div>
       </section>
 
-      <section id="sell" style={styles.sellSection}>
+      <section
+        id="sell"
+        style={{
+          ...styles.sellSection,
+          display: currentPage === "sell" ? "block" : "none",
+        }}
+      >
         <div style={styles.section}>
           <div style={{ ...styles.sectionEyebrow, color: "#bfdbfe" }}>
             For owners considering a transition
@@ -1946,7 +2034,13 @@ export default function App() {
         </div>
       </section>
 
-      <section id="process" style={styles.processSection}>
+      <section
+        id="process"
+        style={{
+          ...styles.processSection,
+          display: currentPage === "process" ? "block" : "none",
+        }}
+      >
         <div style={styles.section}>
           <div style={styles.sectionEyebrow}>Simple and credible</div>
           <h2 style={styles.sectionTitle}>A Clear Process for Serious Owners</h2>
@@ -2025,7 +2119,13 @@ export default function App() {
         </div>
       </section>
 
-      <section id="credibility" style={styles.credibilitySection}>
+      <section
+        id="credibility"
+        style={{
+          ...styles.credibilitySection,
+          display: currentPage === "about" ? "block" : "none",
+        }}
+      >
         <div style={styles.section}>
           <div style={styles.sectionEyebrow}>Credibility and structure</div>
           <h2 style={styles.sectionTitle}>Built for Serious, Practical Transactions</h2>
@@ -2091,7 +2191,13 @@ export default function App() {
         </div>
       </section>
 
-      <section id="faq" style={styles.sectionGray}>
+      <section
+        id="faq"
+        style={{
+          ...styles.sectionGray,
+          display: currentPage === "faq" ? "block" : "none",
+        }}
+      >
         <div style={styles.section}>
           <div style={styles.sectionEyebrow}>Common owner questions</div>
           <h2 style={styles.sectionTitle}>Seller FAQ</h2>
@@ -2168,7 +2274,13 @@ export default function App() {
         </div>
       </section>
 
-      <section id="founder" style={styles.founderSection}>
+      <section
+        id="founder"
+        style={{
+          ...styles.founderSection,
+          display: currentPage === "founder" ? "block" : "none",
+        }}
+      >
         <div style={styles.section}>
           <div style={{ ...styles.sectionEyebrow, color: "#bfdbfe" }}>
             Founder / operator
@@ -2288,7 +2400,12 @@ export default function App() {
         </div>
       </section>
 
-      <section style={styles.funnelBand}>
+      <section
+        style={{
+          ...styles.funnelBand,
+          display: currentPage === "home" ? "block" : "none",
+        }}
+      >
         <div style={styles.funnelWrap}>
           <div
             style={{
@@ -2377,11 +2494,12 @@ export default function App() {
                 </div>
               </div>
               <a
-                href="#contact"
+                href={pageRoutes.contact}
                 style={{
                   ...styles.ctaButton,
                   ...(hoveredSurface === "ctaButton" ? styles.buttonHoverLift : {}),
                 }}
+                onClick={(e) => handlePageLink(e, "contact")}
                 onMouseEnter={() => setHoveredSurface("ctaButton")}
                 onMouseLeave={() => setHoveredSurface("")}
               >
@@ -2392,7 +2510,13 @@ export default function App() {
         </div>
       </section>
 
-      <section id="contact" style={styles.contactSection}>
+      <section
+        id="contact"
+        style={{
+          ...styles.contactSection,
+          display: currentPage === "contact" ? "block" : "none",
+        }}
+      >
         <div style={styles.contactWrap}>
           <div style={styles.contactPanel}>
             <div style={styles.sectionEyebrow}>Confidential inquiry</div>
