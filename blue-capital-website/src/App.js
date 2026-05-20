@@ -22,10 +22,12 @@ const pageRoutes = {
   home: "/",
   about: "/about",
   mission: "/mission",
+  why: "/why-blue-capital",
   criteria: "/criteria",
   sell: "/sell-your-business",
   process: "/process",
   founder: "/founder",
+  advisors: "/brokers-advisors",
   faq: "/faq",
   contact: "/contact",
 };
@@ -124,6 +126,7 @@ export default function App() {
         ["home", "Home"],
         ["about", "About"],
         ["founder", "Founder"],
+        ["criteria", "Criteria"],
         ["faq", "FAQ"],
         ["contact", "Contact"],
       ]
@@ -131,10 +134,12 @@ export default function App() {
         ["home", "Home"],
         ["about", "About"],
         ["mission", "Mission Statement"],
+        ["why", "Why Blue Capital"],
         ["criteria", "Criteria"],
         ["sell", "Sell Your Business"],
         ["process", "Process"],
         ["founder", "Founder"],
+        ["advisors", "Brokers & Advisors"],
         ["faq", "FAQ"],
         ["contact", "Contact"],
       ];
@@ -1615,9 +1620,11 @@ export default function App() {
           <div style={styles.mobileShortcutsLabel}>More sections</div>
           <div style={styles.mobileShortcutsRow}>
             <a href={pageRoutes.mission} style={styles.mobileShortcut} onClick={(e) => handlePageLink(e, "mission")}>Mission</a>
+            <a href={pageRoutes.why} style={styles.mobileShortcut} onClick={(e) => handlePageLink(e, "why")}>Why Blue Capital</a>
             <a href={pageRoutes.criteria} style={styles.mobileShortcut} onClick={(e) => handlePageLink(e, "criteria")}>Criteria</a>
             <a href={pageRoutes.sell} style={styles.mobileShortcut} onClick={(e) => handlePageLink(e, "sell")}>Sell Your Business</a>
             <a href={pageRoutes.process} style={styles.mobileShortcut} onClick={(e) => handlePageLink(e, "process")}>Process</a>
+            <a href={pageRoutes.advisors} style={styles.mobileShortcut} onClick={(e) => handlePageLink(e, "advisors")}>Advisors</a>
             <a href={pageRoutes.faq} style={styles.mobileShortcut} onClick={(e) => handlePageLink(e, "faq")}>FAQ</a>
           </div>
         </div>
@@ -2033,6 +2040,72 @@ export default function App() {
       </section>
 
       <section
+        id="why"
+        style={{
+          ...styles.sectionGray,
+          display: currentPage === "why" ? "block" : "none",
+        }}
+      >
+        <div style={styles.section}>
+          <div style={styles.sectionEyebrow}>Why Blue Capital</div>
+          <h2 style={styles.sectionTitle}>A Direct Buyer Built for Owner Transitions</h2>
+          <p style={styles.sectionLead}>
+            Blue Capital Holdings is designed for owners who want more than a
+            transaction. We offer a private, operator-led path for sellers who
+            care about confidentiality, continuity, employees, customers, and the
+            long-term health of the business.
+          </p>
+
+          <div style={styles.criteriaGrid}>
+            <div style={styles.card}>
+              <div style={styles.cardTitle}>Compared with a broad auction</div>
+              <p style={styles.paragraph}>
+                We can begin with a quiet conversation before an owner is ready
+                to expose the business to a wider market.
+              </p>
+            </div>
+            <div style={styles.card}>
+              <div style={styles.cardTitle}>Compared with a strategic buyer</div>
+              <p style={styles.paragraph}>
+                We are focused on stewardship and operating improvement, not
+                simply absorbing the company into a larger competitor.
+              </p>
+            </div>
+            <div style={styles.card}>
+              <div style={styles.cardTitle}>Compared with doing nothing</div>
+              <p style={styles.paragraph}>
+                We help owners explore timing, fit, and options before succession
+                questions become urgent.
+              </p>
+            </div>
+          </div>
+
+          <div style={styles.twoCol}>
+            <div style={styles.card}>
+              <div style={styles.cardTitle}>What Owners Can Expect</div>
+              <ul style={styles.list}>
+                <li>Direct communication with the buyer</li>
+                <li>A confidential review of business fit</li>
+                <li>Respect for employees, customers, and reputation</li>
+                <li>A practical discussion around timing and transition goals</li>
+                <li>Long-term ownership intent rather than short-term resale</li>
+              </ul>
+            </div>
+            <div style={styles.card}>
+              <div style={styles.cardTitle}>What Makes the Approach Different</div>
+              <ul style={styles.list}>
+                <li>Operator-led evaluation rooted in execution and process improvement</li>
+                <li>Finance and supply chain background for disciplined decision-making</li>
+                <li>Focus on practical service businesses with durable relationships</li>
+                <li>Willingness to have early conversations before a formal sale process</li>
+                <li>Preference for continuity, accountability, and measured growth</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section
         id="criteria"
         style={{
           ...styles.sectionGray,
@@ -2040,7 +2113,13 @@ export default function App() {
         }}
       >
         <div style={styles.section}>
+          <div style={styles.sectionEyebrow}>What we look for</div>
           <h2 style={styles.sectionTitle}>Acquisition Criteria</h2>
+          <p style={styles.sectionLead}>
+            We focus on established, profitable businesses where the owner wants
+            a credible transition partner and the company has a foundation for
+            continued operating improvement.
+          </p>
 
           <div style={styles.criteriaGrid}>
             <div
@@ -2051,8 +2130,8 @@ export default function App() {
               onMouseEnter={() => setHoveredSurface("criteria1")}
               onMouseLeave={() => setHoveredSurface("")}
             >
-              <div style={styles.cardTitle}>Revenue</div>
-              <p style={styles.metricText}>$500,000 to $2,000,000 annually</p>
+              <div style={styles.cardTitle}>Target Earnings</div>
+              <p style={styles.metricText}>$500,000 to $2,000,000 of annual cash flow</p>
             </div>
 
             <div
@@ -2063,9 +2142,9 @@ export default function App() {
               onMouseEnter={() => setHoveredSurface("criteria2")}
               onMouseLeave={() => setHoveredSurface("")}
             >
-              <div style={styles.cardTitle}>Profitability</div>
+              <div style={styles.cardTitle}>Business Quality</div>
               <p style={styles.metricText}>
-                Consistent positive cash flow and stable operations
+                Consistent profitability, durable demand, and stable operations
               </p>
             </div>
 
@@ -2078,7 +2157,7 @@ export default function App() {
               onMouseLeave={() => setHoveredSurface("")}
             >
               <div style={styles.cardTitle}>Geography</div>
-              <p style={styles.metricText}>United States based businesses</p>
+              <p style={styles.metricText}>Indiana, Midwest, and select U.S. opportunities</p>
             </div>
           </div>
 
@@ -2118,6 +2197,16 @@ export default function App() {
                 <li>Flexible transition structures, including seller financing</li>
               </ul>
             </div>
+          </div>
+
+          <div style={{ ...styles.missionPanel, marginTop: "28px" }}>
+            <div style={styles.missionTitle}>Usually Not a Fit</div>
+            <p style={styles.paragraph}>
+              We are generally not the best fit for distressed turnarounds,
+              pre-revenue startups, highly speculative businesses, companies with
+              severe customer concentration, or situations where confidentiality
+              cannot be protected during early conversations.
+            </p>
           </div>
         </div>
       </section>
@@ -2343,6 +2432,68 @@ export default function App() {
       </section>
 
       <section
+        id="advisors"
+        style={{
+          ...styles.sectionGray,
+          display: currentPage === "advisors" ? "block" : "none",
+        }}
+      >
+        <div style={styles.section}>
+          <div style={styles.sectionEyebrow}>Brokers and advisors</div>
+          <h2 style={styles.sectionTitle}>A Responsive Buyer for Quality Owner-Led Businesses</h2>
+          <p style={styles.sectionLead}>
+            Blue Capital Holdings welcomes conversations with brokers, M&A
+            advisors, attorneys, accountants, lenders, and referral partners
+            representing owners who value confidentiality, continuity, and a
+            practical path to transition.
+          </p>
+
+          <div style={styles.twoCol}>
+            <div style={styles.card}>
+              <div style={styles.cardTitle}>What We Review</div>
+              <ul style={styles.list}>
+                <li>Established service-based businesses</li>
+                <li>$500,000 to $2,000,000 of annual cash flow</li>
+                <li>Owners considering retirement, succession, or staged transition</li>
+                <li>Companies with experienced employees and repeatable operations</li>
+                <li>Situations where a direct, confidential buyer may be preferred</li>
+              </ul>
+            </div>
+
+            <div style={styles.card}>
+              <div style={styles.cardTitle}>How We Work With Advisors</div>
+              <ul style={styles.list}>
+                <li>Prompt review of basic opportunity materials</li>
+                <li>Clear feedback on fit, questions, and next steps</li>
+                <li>Respect for process, confidentiality, and seller relationships</li>
+                <li>Direct communication and practical decision-making</li>
+                <li>Flexible transition discussions when seller financing or rollover involvement makes sense</li>
+              </ul>
+            </div>
+          </div>
+
+          <div style={{ ...styles.ctaPanel, marginTop: "26px" }}>
+            <div style={styles.ctaEyebrow}>Referral partners</div>
+            <div style={styles.ctaTitle}>
+              Send opportunities where legacy, fit, and operational stewardship matter.
+            </div>
+            <p style={styles.ctaText}>
+              We are best suited for thoughtful owners who want a serious buyer,
+              not a rushed process. If an opportunity appears to fit, we will
+              respond directly and handle the conversation with discretion.
+            </p>
+            <a
+              href={pageRoutes.contact}
+              style={styles.ctaButton}
+              onClick={(e) => handlePageLink(e, "contact")}
+            >
+              Contact Blue Capital
+            </a>
+          </div>
+        </div>
+      </section>
+
+      <section
         id="faq"
         style={{
           ...styles.sectionGray,
@@ -2440,16 +2591,17 @@ export default function App() {
             Meet Michael McMullan
           </h2>
           <p style={styles.founderText}>
-            Michael McMullan brings an operator&apos;s mindset to acquisitions,
-            combining finance, supply chain, and process improvement experience
-            with a long-term commitment to building durable companies
-            responsibly.
+            Michael McMullan founded Blue Capital Holdings to acquire and operate
+            established small businesses where disciplined execution,
+            accountability, and thoughtful stewardship can protect what an owner
+            has built while creating the next phase of growth.
           </p>
           <p style={styles.founderText}>
-            Based in Avon, Indiana, he founded Blue Capital Holdings LLC to
-            acquire and grow quality small businesses through disciplined
-            ownership, operational stewardship, and a direct working style that
-            resonates with owners planning a thoughtful transition.
+            His background includes more than 15 years of leadership experience
+            across high-volume operational environments, with practical work in
+            workforce leadership, KPI management, labor planning, forecasting,
+            process improvement, productivity optimization, and business
+            performance execution.
           </p>
 
           <div style={styles.founderCardsGrid}>
@@ -2478,7 +2630,7 @@ export default function App() {
                       />
                   </div>
                   <div style={styles.founderBadgeStack}>
-                    <div style={styles.founderHighlight}>10+ years management experience</div>
+                    <div style={styles.founderHighlight}>15+ years operational leadership experience</div>
                     <div style={styles.founderHighlight}>Finance and supply chain background</div>
                     <div style={styles.founderHighlight}>Lean Six Sigma Green Belt certified</div>
                     <div style={styles.founderHighlight}>Bloomberg Market Concepts certified</div>
@@ -2489,15 +2641,16 @@ export default function App() {
                   <div style={styles.founderName}>Michael McMullan</div>
                   <div style={styles.founderRole}>Founder and Operator</div>
                   <p style={styles.founderIntroText}>
-                    Over a decade of management experience across operations,
-                    finance, and supply chain, with a practical focus on
-                    execution, process improvement, and long-term business
-                    performance.
+                    Michael brings an execution-focused operating style shaped by
+                    years of leading teams, improving systems, managing
+                    performance metrics, and building accountability in demanding
+                    business environments.
                   </p>
                   <p style={styles.founderExtraText}>
-                    Owners often want to know whether the next steward can make
-                    practical decisions, communicate directly, and improve the
-                    business without losing what made it valuable in the first place.
+                    For business owners considering succession, that experience
+                    matters. The next steward needs to understand people,
+                    processes, customers, financial discipline, and the daily
+                    execution required to keep a company moving.
                   </p>
                 </div>
               </div>
@@ -2527,25 +2680,51 @@ export default function App() {
               </ul>
 
               <p style={styles.founderExtraText}>
-                Blue Capital Holdings is built around steady ownership, operational
-                discipline, and the kind of direct communication owners usually
-                hope to find before beginning a broader transition process.
+                Blue Capital Holdings is built around steady ownership,
+                operational discipline, and the kind of direct communication
+                owners usually hope to find before beginning a broader transition
+                process.
               </p>
 
               <p style={styles.founderExtraText}>
-                For many sellers, the best first step is not launching an auction.
-                It is finding a serious buyer who understands timing, confidentiality,
-                and the personal weight behind a transition.
+                Michael&apos;s objective is not to buy a business and quickly move on.
+                The goal is to become a responsible long-term operator who can
+                preserve the company&apos;s foundation, support its people, and
+                improve performance through disciplined execution.
               </p>
 
               <p style={styles.founderCardNote}>
                 <span style={{ ...styles.founderHighlight, whiteSpace: "normal" }}>
-                  Built for owners who care about legacy, continuity, and thoughtful long-term stewardship.
+                  Built for owners who care about legacy, continuity, and practical operating leadership.
                 </span>
                 <span style={{ ...styles.founderHighlight, whiteSpace: "normal" }}>
                   A good fit for owners who want a calm, direct conversation before entering a broader sale process.
                 </span>
               </p>
+            </div>
+          </div>
+
+          <div style={{ ...styles.twoCol, marginTop: "28px" }}>
+            <div style={styles.card}>
+              <div style={styles.cardTitle}>Operating Philosophy</div>
+              <ul style={styles.founderList}>
+                <li>Protect the strengths that made the business valuable</li>
+                <li>Earn trust with employees through clarity and consistency</li>
+                <li>Use metrics to improve performance without losing common sense</li>
+                <li>Strengthen systems, accountability, and customer execution</li>
+                <li>Grow with patience instead of forcing unnecessary disruption</li>
+              </ul>
+            </div>
+
+            <div style={styles.card}>
+              <div style={styles.cardTitle}>What Owners Can Expect From Michael</div>
+              <ul style={styles.founderList}>
+                <li>A direct, respectful conversation about goals and timing</li>
+                <li>A practical review of the company&apos;s operations and transition needs</li>
+                <li>Confidentiality around employees, customers, and reputation</li>
+                <li>A long-term mindset toward ownership and stewardship</li>
+                <li>A focus on execution, people, process, and measured growth</li>
+              </ul>
             </div>
           </div>
         </div>
