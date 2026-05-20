@@ -49,6 +49,7 @@ export default function App() {
   const [hoveredNav, setHoveredNav] = useState("");
   const [hoveredSurface, setHoveredSurface] = useState("");
   const [currentPage, setCurrentPage] = useState(getPageFromPath);
+  const [homeMotionStage, setHomeMotionStage] = useState(0);
   const [formData, setFormData] = useState(initialFormData);
   const [isMobile, setIsMobile] = useState(
     typeof window !== "undefined" ? window.innerWidth <= 900 : false
@@ -75,6 +76,33 @@ export default function App() {
     window.addEventListener("popstate", handlePopState);
     return () => window.removeEventListener("popstate", handlePopState);
   }, []);
+
+  useEffect(() => {
+    if (currentPage !== "home") {
+      setHomeMotionStage(0);
+      return undefined;
+    }
+
+    const prefersReducedMotion =
+      typeof window !== "undefined" &&
+      window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+
+    if (prefersReducedMotion) {
+      setHomeMotionStage(5);
+      return undefined;
+    }
+
+    setHomeMotionStage(0);
+    const timers = [
+      window.setTimeout(() => setHomeMotionStage(1), 180),
+      window.setTimeout(() => setHomeMotionStage(2), 850),
+      window.setTimeout(() => setHomeMotionStage(3), 1350),
+      window.setTimeout(() => setHomeMotionStage(4), 1850),
+      window.setTimeout(() => setHomeMotionStage(5), 2350),
+    ];
+
+    return () => timers.forEach((timer) => window.clearTimeout(timer));
+  }, [currentPage]);
 
   const navigateToPage = (pageId) => {
     const nextPath = pageRoutes[pageId] || pageRoutes.home;
@@ -1414,6 +1442,17 @@ export default function App() {
     },
   };
 
+  const homeRevealStyle = (stage, distance = 22) => ({
+    opacity: homeMotionStage >= stage ? 1 : 0,
+    transform:
+      homeMotionStage >= stage
+        ? "translateY(0)"
+        : `translateY(${distance}px)`,
+    transition:
+      "opacity 0.75s ease, transform 0.75s cubic-bezier(0.22, 1, 0.36, 1)",
+    willChange: "opacity, transform",
+  });
+
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData((prev) => ({
@@ -1551,7 +1590,7 @@ export default function App() {
         }}
       >
         <div style={styles.heroInner}>
-          <div style={styles.heroContent}>
+          <div style={{ ...styles.heroContent, ...homeRevealStyle(1, 14) }}>
             <div style={styles.heroEyebrow}>Private Acquisition Firm</div>
             <h1 style={styles.heroTitle}>
               A serious buyer for owners who care what happens next.
@@ -1604,6 +1643,7 @@ export default function App() {
             <div
               style={{
                 ...styles.heroBrandVisual,
+                ...homeRevealStyle(2, 28),
                 ...(hoveredSurface === "heroBrandVisual" ? styles.elevatedHover : {}),
               }}
               onMouseEnter={() => setHoveredSurface("heroBrandVisual")}
@@ -1621,7 +1661,7 @@ export default function App() {
               </div>
             </div>
 
-            <div style={styles.homeExecutivePanel}>
+            <div style={{ ...styles.homeExecutivePanel, ...homeRevealStyle(3, 26) }}>
               <div style={styles.homePanelLabel}>Acquisition Focus</div>
               <div style={styles.homePanelTitle}>
                 Established companies where continuity matters.
@@ -1657,6 +1697,7 @@ export default function App() {
       <section
         style={{
           ...styles.trustStrip,
+          ...homeRevealStyle(4, 18),
           display: currentPage === "home" ? "block" : "none",
         }}
       >
@@ -1731,6 +1772,7 @@ export default function App() {
       <section
         style={{
           backgroundColor: "#f8fafc",
+          ...homeRevealStyle(5, 18),
           display: currentPage === "home" ? "block" : "none",
         }}
       >
@@ -2464,6 +2506,7 @@ export default function App() {
       <section
         style={{
           ...styles.funnelBand,
+          ...homeRevealStyle(5, 18),
           display: currentPage === "home" ? "block" : "none",
         }}
       >
