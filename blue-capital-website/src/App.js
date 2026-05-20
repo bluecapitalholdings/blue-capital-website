@@ -264,9 +264,9 @@ export default function App() {
       whiteSpace: "nowrap",
     },
     navHover: {
-      backgroundColor: "#e8f6f7",
-      boxShadow: "inset 0 0 0 1px #bde7eb",
-      color: "#00305b",
+      backgroundColor: "#f5efe1",
+      boxShadow: "inset 0 0 0 1px #d8bd7a",
+      color: "#06182b",
       fontWeight: 700,
     },
     hero: {
