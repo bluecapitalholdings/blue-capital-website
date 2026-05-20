@@ -620,16 +620,15 @@ export default function App() {
     },
     card: {
       backgroundColor: "#ffffff",
-      borderRadius: "18px",
+      borderRadius: "6px",
       padding: "26px",
       boxShadow: "0 12px 28px rgba(0,48,91,0.06)",
       border: "1px solid #e3edf3",
-      transition: "transform 0.2s ease, box-shadow 0.2s ease, border-color 0.2s ease",
+      transition: "box-shadow 0.2s ease, border-color 0.2s ease",
     },
     elevatedHover: {
-      transform: "translateY(-4px)",
-      boxShadow: "0 20px 34px rgba(0,48,91,0.1)",
-      borderColor: "#c5dae4",
+      boxShadow: "0 16px 30px rgba(6,24,43,0.08)",
+      borderColor: "#d8bd7a",
     },
     cardTitle: {
       fontSize: "22px",
@@ -1314,9 +1313,10 @@ export default function App() {
       display: "inline-block",
       width: "fit-content",
       padding: "8px 12px",
-      borderRadius: "999px",
-      backgroundColor: "#e8f6f7",
-      color: "#00305b",
+      borderRadius: "3px",
+      backgroundColor: "#f5efe1",
+      color: "#06182b",
+      border: "1px solid rgba(216,189,122,0.45)",
       fontSize: "13px",
       fontWeight: 800,
       letterSpacing: "0.04em",
@@ -1336,17 +1336,55 @@ export default function App() {
       marginBottom: "6px",
     },
     contactWrap: {
-      maxWidth: "860px",
+      maxWidth: "1180px",
       margin: "0 auto",
-      padding: isPhone ? "18px 16px 28px" : isMobile ? "24px 20px 32px" : "24px 28px 38px",
+      padding: isPhone ? "18px 16px 30px" : isMobile ? "24px 20px 34px" : "30px 28px 46px",
     },
     contactPanel: {
       background:
         "linear-gradient(180deg, rgba(247,251,252,0.96) 0%, rgba(255,255,255,1) 100%)",
-      borderRadius: "24px",
+      borderRadius: "6px",
       padding: "28px",
       border: "1px solid #dfe9ef",
       boxShadow: "0 16px 36px rgba(0,48,91,0.06)",
+    },
+    contactGrid: {
+      display: "grid",
+      gridTemplateColumns: isMobile ? "1fr" : "0.92fr 1.08fr",
+      gap: "24px",
+      alignItems: "start",
+    },
+    contactSidePanel: {
+      background:
+        "linear-gradient(145deg, #06182b 0%, #0b2742 64%, #15364f 100%)",
+      color: "#ffffff",
+      borderRadius: "6px",
+      padding: isPhone ? "22px" : "28px",
+      border: "1px solid rgba(216,189,122,0.28)",
+      boxShadow: "0 18px 34px rgba(6,24,43,0.16)",
+    },
+    contactStepGrid: {
+      display: "grid",
+      gap: "14px",
+      marginTop: "20px",
+    },
+    contactStep: {
+      borderTop: "1px solid rgba(216,189,122,0.28)",
+      paddingTop: "14px",
+    },
+    contactStepTitle: {
+      color: "#d8bd7a",
+      fontSize: "13px",
+      fontWeight: 800,
+      letterSpacing: "0.08em",
+      textTransform: "uppercase",
+      marginBottom: "6px",
+    },
+    contactStepText: {
+      color: "#d5e0e9",
+      fontSize: "15px",
+      lineHeight: 1.7,
+      margin: 0,
     },
     form: {
       display: "grid",
@@ -1453,36 +1491,65 @@ export default function App() {
       cursor: "pointer",
     },
     footer: {
-      backgroundColor: "#f4f8fa",
-      textAlign: "center",
-      padding: isPhone ? "28px 16px" : "36px",
+      backgroundColor: "#06182b",
+      padding: isPhone ? "30px 16px" : "38px 28px",
       fontSize: "14px",
       lineHeight: 1.8,
-      borderTop: "1px solid #e5e7eb",
-      color: "#5b7081",
+      borderTop: "1px solid rgba(216,189,122,0.35)",
+      color: "#d5e0e9",
+    },
+    footerInner: {
+      maxWidth: "1180px",
+      margin: "0 auto",
+      display: "grid",
+      gridTemplateColumns: isMobile ? "1fr" : "1.1fr 0.9fr",
+      gap: "24px",
+      alignItems: "start",
     },
     footerBrand: {
-      fontWeight: 700,
-      color: "#00305b",
+      fontWeight: 800,
+      color: "#ffffff",
+      fontSize: "18px",
+      marginBottom: "6px",
+      fontFamily: "Georgia, 'Times New Roman', serif",
+    },
+    footerTagline: {
+      color: "#d8bd7a",
+      fontSize: "12px",
+      fontWeight: 800,
+      letterSpacing: "0.08em",
+      textTransform: "uppercase",
+      marginBottom: "10px",
+    },
+    footerText: {
+      color: "#d5e0e9",
+      maxWidth: "560px",
+      margin: 0,
     },
     footerMeta: {
       display: "flex",
-      justifyContent: "center",
+      justifyContent: isMobile ? "flex-start" : "flex-end",
       alignItems: "center",
       gap: isPhone ? "8px" : "10px",
       flexWrap: "wrap",
-      marginTop: "4px",
+      marginTop: "10px",
     },
     footerDivider: {
-      color: "#8aa0b1",
+      color: "rgba(216,189,122,0.55)",
       display: isPhone ? "none" : "inline",
     },
     footerLink: {
-      color: "#5b7081",
+      color: "#f6f8fb",
       textDecoration: "none",
-      fontWeight: 500,
+      fontWeight: 700,
       overflowWrap: "anywhere",
       wordBreak: "break-word",
+    },
+    footerNav: {
+      display: "flex",
+      justifyContent: isMobile ? "flex-start" : "flex-end",
+      gap: "14px",
+      flexWrap: "wrap",
     },
   };
 
@@ -2118,6 +2185,28 @@ export default function App() {
             a credible transition partner and the company has a foundation for
             continued operating improvement.
           </p>
+
+          <div style={{ ...styles.ctaPanel, marginBottom: "26px" }}>
+            <div style={styles.ctaEyebrow}>Acquisition Criteria Snapshot</div>
+            <div style={styles.homeCriteriaGrid}>
+              <div style={styles.homePanelStat}>
+                <div style={styles.homePanelStatValue}>$500K-$2M</div>
+                <div style={styles.homePanelStatLabel}>Annual cash flow</div>
+              </div>
+              <div style={styles.homePanelStat}>
+                <div style={styles.homePanelStatValue}>Midwest+</div>
+                <div style={styles.homePanelStatLabel}>Geography</div>
+              </div>
+              <div style={styles.homePanelStat}>
+                <div style={styles.homePanelStatValue}>Services</div>
+                <div style={styles.homePanelStatLabel}>Preferred model</div>
+              </div>
+              <div style={styles.homePanelStat}>
+                <div style={styles.homePanelStatValue}>Succession</div>
+                <div style={styles.homePanelStatLabel}>Owner transition</div>
+              </div>
+            </div>
+          </div>
 
           <div style={styles.criteriaGrid}>
             <div
@@ -2832,31 +2921,57 @@ export default function App() {
         }}
       >
         <div style={styles.contactWrap}>
-          <div style={styles.contactPanel}>
-            <div style={styles.sectionEyebrow}>Confidential inquiry</div>
-            <h2 style={styles.sectionTitle}>Contact</h2>
-            <p style={styles.sectionLead}>
-              If you are a business owner, broker, or advisor exploring a
-              transition, use the form below to begin a confidential conversation.
-              The more context you share, the more thoughtfully we can evaluate
-              fit and respond.
-            </p>
-            <div style={styles.intakeHeader}>
-              <div style={styles.intakeBadge}>Seller Intake</div>
-              <p style={styles.paragraph}>
-                This form is designed for business owners who want an initial
-                confidential conversation about transition timing, legacy, and fit.
+          <div style={styles.contactGrid}>
+            <div style={styles.contactSidePanel}>
+              <div style={styles.ctaEyebrow}>Confidential inquiry</div>
+              <div style={styles.ctaTitle}>Start with clarity, not pressure.</div>
+              <p style={styles.ctaText}>
+                This page is for owners, brokers, and advisors who want a private
+                first conversation about fit, timing, and transition goals.
+              </p>
+              <div style={styles.contactStepGrid}>
+                <div style={styles.contactStep}>
+                  <div style={styles.contactStepTitle}>1. We review fit</div>
+                  <p style={styles.contactStepText}>
+                    We look at the business profile, cash flow, industry,
+                    location, timing, and transition goals.
+                  </p>
+                </div>
+                <div style={styles.contactStep}>
+                  <div style={styles.contactStepTitle}>2. We protect confidentiality</div>
+                  <p style={styles.contactStepText}>
+                    Early conversations are handled privately to protect
+                    employees, customers, vendors, and reputation.
+                  </p>
+                </div>
+                <div style={styles.contactStep}>
+                  <div style={styles.contactStepTitle}>3. We respond if aligned</div>
+                  <p style={styles.contactStepText}>
+                    If there appears to be a potential fit, the next step is a
+                    direct conversation. There is no obligation to move forward.
+                  </p>
+                </div>
+              </div>
+              <div style={styles.ctaDivider} />
+              <p style={styles.contactStepText}>
+                <strong>Email:</strong> info@bluecapitalholdingsllc.com
+                <br />
+                <strong>Phone:</strong> 812-312-1910
+                <br />
+                <strong>Location:</strong> Avon, Indiana
               </p>
             </div>
-            <p style={styles.paragraph}>
-              <strong>Email:</strong> info@bluecapitalholdingsllc.com
-            </p>
-            <p style={styles.paragraph}>
-              <strong>Phone:</strong> 812-312-1910
-            </p>
-            <p style={styles.paragraph}>
-              <strong>Location:</strong> Avon, Indiana
-            </p>
+
+            <div style={styles.contactPanel}>
+              <div style={styles.intakeHeader}>
+                <div style={styles.intakeBadge}>Seller Intake</div>
+                <h2 style={{ ...styles.sectionTitle, marginBottom: "4px" }}>Contact</h2>
+                <p style={styles.paragraph}>
+                  Share enough context for a thoughtful confidential review. The
+                  more specific you are about ownership goals, timing, revenue,
+                  and cash flow, the more useful the first response can be.
+                </p>
+              </div>
 
             <form onSubmit={handleSubmit} style={styles.form}>
               <input
@@ -3023,26 +3138,55 @@ export default function App() {
                 {submitting ? "Submitting..." : "Submit Confidentially"}
               </button>
             </form>
+            </div>
           </div>
         </div>
       </section>
 
       <footer style={styles.footer}>
-        <div style={styles.footerBrand}>Blue Capital Holdings LLC</div>
-        <div>Business Acquisition & Investment Firm</div>
-        <div style={styles.footerMeta}>
-          <span>Avon, Indiana</span>
-          <span style={styles.footerDivider}>|</span>
-          <a
-            href="mailto:info@bluecapitalholdingsllc.com"
-            style={styles.footerLink}
-          >
-            info@bluecapitalholdingsllc.com
-          </a>
-          <span style={styles.footerDivider}>|</span>
-          <a href="tel:8123121910" style={styles.footerLink}>
-            812-312-1910
-          </a>
+        <div style={styles.footerInner}>
+          <div>
+            <div style={styles.footerBrand}>Blue Capital Holdings LLC</div>
+            <div style={styles.footerTagline}>Private acquisition firm</div>
+            <p style={styles.footerText}>
+              Built for confidential owner transitions where continuity,
+              employees, customers, and long-term stewardship matter.
+            </p>
+          </div>
+          <div>
+            <div style={styles.footerNav}>
+              {[
+                ["why", "Why Blue Capital"],
+                ["criteria", "Criteria"],
+                ["founder", "Founder"],
+                ["advisors", "Advisors"],
+                ["contact", "Contact"],
+              ].map(([id, label]) => (
+                <a
+                  key={id}
+                  href={pageRoutes[id]}
+                  style={styles.footerLink}
+                  onClick={(e) => handlePageLink(e, id)}
+                >
+                  {label}
+                </a>
+              ))}
+            </div>
+            <div style={styles.footerMeta}>
+              <span>Avon, Indiana</span>
+              <span style={styles.footerDivider}>|</span>
+              <a
+                href="mailto:info@bluecapitalholdingsllc.com"
+                style={styles.footerLink}
+              >
+                info@bluecapitalholdingsllc.com
+              </a>
+              <span style={styles.footerDivider}>|</span>
+              <a href="tel:8123121910" style={styles.footerLink}>
+                812-312-1910
+              </a>
+            </div>
+          </div>
         </div>
       </footer>
     </div>
